@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | System FAQ & Intelligence Briefing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor {
+            display: flex; align-items: center;
+            padding-top: 45px; padding-left: 60px;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); }
+
+        .system-border {
+            width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--os-cobalt), transparent);
+            margin-top: 50px;
+        }
+
+        nav { display: flex; gap: 20px; }
+        .nav-link {
+            text-decoration: none; color: var(--os-neon);
+            font-size: 0.75rem; font-weight: 900; text-transform: uppercase;
+            padding: 10px; transition: 0.4s;
+        }
+
+        /* --- FAQ CONTENT --- */
+        main { margin-top: 280px; padding: 0 15% 100px 15%; }
+
+        .faq-item {
+            background: rgba(10, 10, 20, 0.5);
+            border: 1px solid #1a1a2e;
+            margin-bottom: 20px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .faq-item:hover {
+            border-color: var(--os-neon);
+            background: rgba(0, 102, 255, 0.05);
+        }
+
+        .question {
+            font-family: 'Orbitron';
+            color: var(--os-neon);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .question::before {
+            content: "Q_";
+            color: var(--os-cobalt);
+            margin-right: 10px;
+            font-weight: 900;
+        }
+
+        .answer {
+            color: #ccc;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            border-left: 2px solid var(--os-cobalt);
+            padding-left: 20px;
+        }
+
+        .hl { color: var(--os-neon); font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav>
+                <a href="index.html" class="nav-link">KERNEL</a>
+                <a href="os_manifesto.html" class="nav-link">MANIFESTO</a>
+                <a href="faq_terminal.html" class="nav-link" style="color:#fff; border-bottom: 2px solid var(--os-neon);">FAQ_INTEL</a>
+                <a href="guild_subscription.html" class="nav-link">GUILD</a>
+            </nav>
+            <div style="width: 120px;"></div>
+        </div>
+        <div class="system-border"></div>
+    </header>
+
+    <main>
+        <h1 style="font-family: 'Orbitron'; margin-bottom: 50px; text-align: center;">SYSTEM_INTELLIGENCE_BRIEFING</h1>
+
+        <div class="faq-item">
+            <div class="question">HOW DOES THE 10-YEAR LEGACY COMMITMENT WORK?</div>
+            <div class="answer">
+                The <span class="hl">10-Year Legacy</span> option is designed for patrons who view KinOS as a cornerstone of the community's future. It provides long-term capital for hardware acquisition—like our <span class="hl">Corsair Vengeance i7500</span> clusters—ensuring that our tech remains cutting-edge for a decade of innovative development.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question">IS KinOS REALLY FOR AGES 10 TO ADULTHOOD?</div>
+            <div class="answer">
+                Yes. Our <span class="hl">Intergenerational Nexus</span> model is built on the fact that younger minds excel at pattern recognition (gaming) while veterans provide the engineering discipline. By working together in our Philly hub, we create a "Neural Bridge" that accelerates product development for all ages.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question">WHAT IS THE ROLE OF AEA H.ORG?</div>
+            <div class="answer">
+                <span class="hl">AEA H.org</span> serves as our primary safety auditor. They help us maintain the "Digital Sanctuary" protocol, ensuring that our software environment and physical labs are free from electronic abuse and data-mining, protecting our Cadets as they build.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question">ARE THE PROTOTYPES OPEN-SOURCE?</div>
+            <div class="answer">
+                We believe in <span class="hl">Community Sovereignty</span>. While we protect the intellectual property of our members, the "Top Innovative Products" developed within KinOS are built to benefit the community first, often utilizing open-source kernels to ensure longevity and transparency.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question">HOW CAN GOVERNMENT AGENCIES GET INVOLVED?</div>
+            <div class="answer">
+                Government liaisons can enlist via the <span class="hl">Architect</span> tier or contact us via the Recruitment Nexus for strategic alignment. We offer a direct pipeline to a workforce that is already trained in AI, hardware prototyping, and high-performance system management.
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
