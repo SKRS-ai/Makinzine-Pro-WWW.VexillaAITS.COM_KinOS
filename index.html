@@ -2,166 +2,174 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>KinOS | System Interface v4.2</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <title>KinOS | The Future of American Innovation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --os-cobalt: #0066ff;
             --os-neon: #00f2ff;
-            --os-obsidian: #020205;
-            --panel-bg: rgba(8, 8, 15, 0.95);
-            --header-height: 160px; /* Increased to house larger logo */
+            --os-obsidian: #010103;
+            --panel-bg: rgba(5, 5, 10, 0.98);
+            --header-height: 220px; /* Increased to house 2X Logo */
         }
 
         body, html {
-            margin: 0; padding: 0; height: 100%;
+            margin: 0; padding: 0;
             background-color: var(--os-obsidian);
             color: #ffffff;
             font-family: 'JetBrains Mono', monospace;
-            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
-        /* --- THE LOGO-FIRST HEADER --- */
+        /* --- STABILIZED NAVIGATION & LOGO HEADER --- */
         header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: var(--header-height);
-            background: var(--panel-bg);
-            backdrop-filter: blur(20px);
+            position: fixed; top: 0; width: 100%; height: var(--header-height);
+            background: var(--panel-bg); backdrop-filter: blur(25px);
             border-bottom: 3px solid var(--os-cobalt);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 60px;
-            z-index: 10000;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            display: flex; flex-direction: column; justify-content: space-between;
+            z-index: 10000; box-shadow: 0 15px 40px rgba(0,0,0,0.9);
         }
 
-        /* LOGO: FIXED TOP-LEFT / 2X LARGER / NO CUT-OFF */
-        .logo-system-anchor {
-            display: flex;
-            align-items: center;
-            height: 100%; /* Ensures vertical centering */
+        /* LOGO: TOP-LEFT / 2X LARGER / NO OVERLAP */
+        .logo-system-container {
+            padding: 20px 60px;
+            display: flex; align-items: flex-start;
         }
 
-        .logo-system-anchor img {
-            height: 130px; /* 2X Increase - High visibility scale */
+        .logo-system-container img {
+            height: 140px; /* 2X Enlargement */
             width: auto;
-            filter: drop-shadow(0 0 15px var(--os-cobalt));
-            transition: transform 0.3s ease;
+            filter: drop-shadow(0 0 20px var(--os-cobalt));
         }
 
-        .logo-system-anchor img:hover {
-            transform: scale(1.05);
-        }
-
-        /* NAVIGATION: RIGHT-ALIGNED / OS STYLE */
+        /* NAVIGATION: CENTER-FIXED STABILIZATION */
         nav {
-            display: flex;
-            gap: 20px;
+            width: 100%; background: rgba(0,0,0,0.5);
+            display: flex; justify-content: center; padding: 10px 0;
+            border-top: 1px solid #222;
         }
 
-        .nav-btn {
-            background: rgba(0, 102, 255, 0.1);
-            border: 1px solid var(--os-cobalt);
-            color: var(--os-neon);
-            padding: 12px 24px;
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 10% 100%);
-            transition: all 0.3s;
+        .nav-link {
+            text-decoration: none; color: var(--os-neon);
+            font-size: 0.8rem; font-weight: 800; margin: 0 25px;
+            text-transform: uppercase; transition: 0.3s;
         }
 
-        .nav-btn:hover {
-            background: var(--os-cobalt);
-            color: white;
-            box-shadow: 0 0 20px var(--os-cobalt);
+        .nav-link:hover { color: white; text-shadow: 0 0 15px var(--os-cobalt); }
+
+        /* --- CONTENT SECTIONING --- */
+        main { margin-top: calc(var(--header-height) + 20px); padding: 0 8% 100px 8%; }
+
+        .os-window {
+            background: rgba(10, 10, 20, 0.9); border: 1px solid #1a1a2e;
+            border-top: 35px solid #111; padding: 50px; margin-bottom: 80px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.7);
         }
 
-        /* --- MAIN VIEWPORT (Accounting for Large Header) --- */
-        main {
-            margin-top: calc(var(--header-height) + 40px);
-            padding: 0 10% 100px 10%;
+        /* --- 4-TIER DONATION SYSTEM --- */
+        .tier-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;
         }
 
-        /* --- OS INTERFACE WINDOWS --- */
-        .window-shell {
-            background: rgba(10, 10, 20, 0.8);
-            border: 1px solid #1a1a2e;
-            border-top: 35px solid #111111;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-            margin-bottom: 60px;
-            position: relative;
+        .tier-card {
+            background: #000; border: 1px solid var(--os-cobalt); padding: 30px;
+            text-align: center; transition: 0.4s;
         }
 
-        .window-title {
-            position: absolute;
-            top: -28px;
-            left: 15px;
-            font-size: 0.7rem;
-            color: var(--os-neon);
-            text-transform: uppercase;
+        .tier-card:hover { transform: scale(1.05); box-shadow: 0 0 30px var(--os-cobalt); }
+
+        select.duration-picker {
+            background: #111; color: var(--os-neon); border: 1px solid var(--os-cobalt);
+            padding: 10px; margin-top: 20px; width: 100%;
         }
 
-        .content-body { padding: 40px; }
-
-        /* --- SYSTEM TRAY (FOOTER) --- */
+        /* --- FOOTER --- */
         footer {
-            background: #000;
-            border-top: 2px solid var(--os-cobalt);
-            padding: 50px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 80px 8%; background: #000; border-top: 3px solid var(--os-cobalt);
+            display: flex; justify-content: space-between; align-items: center;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-system-anchor">
-            <img src="KINOS LOGO.png" alt="KinOS OS Official Logo">
+        <div class="logo-system-container">
+            <img src="KINOS LOGO.png" alt="KinOS Vanguard Seal">
         </div>
         <nav>
-            <a href="index.html" class="nav-btn">KERNEL</a>
-            <a href="nonprofits.html" class="nav-btn">PARTNERS</a>
-            <a href="grants.html" class="nav-btn">GRANT_INITIATIVE</a>
-            <a href="donations.html" class="nav-btn">FUNDING</a>
-            <a href="hardware.html" class="nav-btn">DEVICES</a>
+            <a href="index.html" class="nav-link">KERNEL</a>
+            <a href="#about" class="nav-link">ABOUT_US</a>
+            <a href="#donations" class="nav-link">FUND_FUTURE</a>
+            <a href="#grants" class="nav-link">GRANTS</a>
+            <a href="#hardware" class="nav-link">DEVICES</a>
         </nav>
     </header>
 
     <main>
-        <div class="window-shell">
-            <div class="window-title">SYSTEM_INITIATIVE.TXT</div>
-            <div class="content-body">
-                <h1 style="font-family: 'Orbitron'; color: var(--os-cobalt);">KinOS: Redefining American Innovation</h1>
-                <p>Welcome to the first community-driven Operating System. **KinOS** is not just software; it is a platform for gaming, high-productivity AI, and blockchain minting. We enable communities to lead the charge in creating the next top innovative products to change the world.</p>
-            </div>
-        </div>
+        <section id="about" class="os-window">
+            <h1 style="font-family: 'Orbitron'; color: var(--os-cobalt);">KinOS: The American Operating System</h1>
+            <p><strong>KinOS</strong> is a revolutionary non-profit endeavor building the next generation of American infrastructure. We are more than just a gaming OS; we are a high-productivity ecosystem integrating AI, Blockchain minting, and advanced prototyping tools.</p>
+            <p>Our mission is to empower communities to design and own the <strong>next top innovative products</strong>. By partnering with local hubs and worldwide events, we ensure that the citizens responsible for innovation are the ones who benefit from its success.</p>
+        </section>
 
-        <div class="window-shell">
-            <div class="window-title">4_TIER_COMMITMENT_MATRIX.DAT</div>
-            <div class="content-body">
-                <h3 style="color: var(--os-neon);">Select Your Commitment Duration</h3>
-                <p>Commit to the future of technology. Select a duration from 1 month up to 10 years per tier.</p>
-                <div style="border: 1px dashed var(--os-cobalt); padding: 20px; text-align: center;">
-                    [ CADET ] | [ SENTINEL ] | [ VANGUARD ] | [ ARCHITECT ]
+        <section id="donations" class="os-window">
+            <h2 style="font-family: 'Orbitron'; color: var(--os-neon); text-align: center;">4-TIER COMMITMENT PROTOCOL</h2>
+            <div class="tier-grid">
+                <div class="tier-card">
+                    <h3>CADET</h3>
+                    <p>$10 / Month</p>
+                    <select class="duration-picker">
+                        <option>1 Month Commitment</option>
+                        <option>12 Months (1 Year)</option>
+                        <option>10 Years (Legacy)</option>
+                    </select>
+                    <button style="margin-top:20px; background:var(--os-cobalt); border:none; color:white; padding:10px 20px;">INITIATE</button>
+                </div>
+                <div class="tier-card" style="border-color: #fff;">
+                    <h3>SENTINEL</h3>
+                    <p>$50 / Month</p>
+                    <select class="duration-picker">
+                        <option>1 Month Commitment</option>
+                        <option>12 Months (1 Year)</option>
+                        <option>10 Years (Legacy)</option>
+                    </select>
+                    <button style="margin-top:20px; background:white; color:black; padding:10px 20px;">INITIATE</button>
+                </div>
+                <div class="tier-card">
+                    <h3>VANGUARD</h3>
+                    <p>$150 / Month</p>
+                    <select class="duration-picker">
+                        <option>1 Month Commitment</option>
+                        <option>12 Months (1 Year)</option>
+                        <option>10 Years (Legacy)</option>
+                    </select>
+                    <button style="margin-top:20px; background:var(--os-cobalt); border:none; color:white; padding:10px 20px;">INITIATE</button>
+                </div>
+                <div class="tier-card" style="border: 2px solid var(--os-neon);">
+                    <h3>ARCHITECT</h3>
+                    <p>$500 / Month</p>
+                    <select class="duration-picker">
+                        <option>1 Month Commitment</option>
+                        <option>12 Months (1 Year)</option>
+                        <option>10 Years (Legacy)</option>
+                    </select>
+                    <button style="margin-top:20px; background:var(--os-neon); border:none; color:black; padding:10px 20px;">INITIATE</button>
                 </div>
             </div>
-        </div>
+            <p style="font-size: 0.8rem; margin-top: 30px; text-align: center; color: #888;">*All donations go directly into Community Hardware Prototyping and STEAM Education Grants.</p>
+        </section>
+
+        <section id="hardware" class="os-window">
+            <h2 style="color: var(--os-cobalt);">DEVICE PROTOTYPING & INNOVATION</h2>
+            <p>We are currently prototyping high-performance devices supported by <strong>KinOS</strong>. Using the 180°C thermal-tested components and the <strong>[Corsair Vengeance i7500]</strong> as our training kernel, we are building the hardware America needs to stay competitive.</p>
+        </section>
     </main>
 
     <footer>
-        <div class="footer-logo">
-            <img src="KINOS LOGO.png" alt="KinOS Seal" style="height: 60px; opacity: 0.6;">
-        </div>
-        <div style="text-align: right; color: #444; font-size: 0.7rem;">
-            &copy; 2026 KinOS | POWERED BY VEXILLAAITS.COM<br>
-            PHILADELPHIA ACADEMY HUB | AEA H.ORG PARTNER
+        <img src="KINOS LOGO.png" alt="KinOS Logo Footer" style="height: 80px; opacity: 0.5;">
+        <div style="text-align: right; color: #555;">
+            &copy; 2026 KinOS | Philadelphia Hub | AEA H.ORG Partner<br>
+            Changing the way America innovates.
         </div>
     </footer>
 
