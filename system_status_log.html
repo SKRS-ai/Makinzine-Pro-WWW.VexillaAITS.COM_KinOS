@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | System Status Live Log</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@200;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-gold: #ffcc00;
+            --os-red: #ff3333;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            height: 100vh; overflow: hidden;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- TERMINAL DISPLAY --- */
+        main { margin-top: 200px; padding: 0 5%; height: calc(100vh - 250px); }
+
+        .terminal-container {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #1a1a2e;
+            height: 100%;
+            padding: 30px;
+            overflow-y: hidden;
+            position: relative;
+            box-shadow: inset 0 0 50px rgba(0, 102, 255, 0.1);
+        }
+
+        .log-entry {
+            font-size: 0.75rem;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            border-left: 2px solid transparent;
+            padding-left: 15px;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
+
+        .ts { color: #444; margin-right: 15px; }
+        .node { color: var(--os-cobalt); font-weight: 800; margin-right: 15px; }
+        .event { color: #888; }
+        
+        .type-secure { border-color: var(--os-neon); }
+        .type-mission { border-color: var(--os-gold); }
+        .type-hardware { border-color: var(--os-cobalt); }
+        .type-alert { border-color: var(--os-red); }
+
+        .highlight { color: var(--os-neon); }
+        .gold { color: var(--os-gold); }
+
+        /* SCANLINE EFFECT */
+        .scanline {
+            width: 100%; height: 100px; background: linear-gradient(0deg, transparent, rgba(0, 242, 255, 0.05), transparent);
+            position: absolute; top: 0; pointer-events: none; animation: scan 8s linear infinite;
+        }
+        @keyframes scan { from { top: -100px; } to { top: 100%; } }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav style="font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-neon);">REALTIME_NETWORK_OS</nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="terminal-container">
+            <div class="scanline"></div>
+            
+            <div class="log-entry type-secure">
+                <span class="ts">17:14:02</span> <span class="node">[NODE_01]</span> <span class="event">AEAH.org Protocol Handshake: <span class="highlight">VERIFIED</span> - Kensington_Safe_Zone</span>
+            </div>
+            <div class="log-entry type-hardware">
+                <span class="ts">17:13:55</span> <span class="node">[NODE_43]</span> <span class="event">New Hardware Initialization: <span class="highlight">MAKINZINE_PRO_v2</span> - Serial: #MKZ-9942</span>
+            </div>
+            <div class="log-entry type-mission">
+                <span class="ts">17:13:10</span> <span class="node">[NODE_45]</span> <span class="event">Mission Completed: <span class="gold">"Mesh_Relay_Audit"</span> - Cadet_Marcus_V +2,500 PX</span>
+            </div>
+            <div class="log-entry type-hardware">
+                <span class="ts">17:12:45</span> <span class="node">[NODE_03]</span> <span class="event">Corsair i7500 Node Online: <span class="highlight">North_Philly_Cluster_Alpha</span></span>
+            </div>
+            <div class="log-entry type-alert">
+                <span class="ts">17:11:02</span> <span class="node">[NODE_42]</span> <span class="event">Unauthorized Access Blocked: <span style="color:var(--os-red)">IP_REDACTED</span> - AEAH_Shield_Active</span>
+            </div>
+            <div class="log-entry type-secure">
+                <span class="ts">17:10:30</span> <span class="node">[NODE_39]</span> <span class="event">DAO Governance Vote Cast: <span class="gold">PROP_ID: 042-HW-MOD</span></span>
+            </div>
+            <div class="log-entry type-mission">
+                <span class="ts">17:09:15</span> <span class="node">[NODE_10]</span> <span class="event">New Cadet Enlisted: <span class="highlight">CADET_ALEXA_R</span> - South_Philly_Hub</span>
+            </div>
+            <div style="color: var(--os-neon); font-size: 0.7rem; margin-top: 20px;">[ LISTENING_FOR_TRAFFIC... ]</div>
+        </div>
+    </main>
+
+</body>
+</html>
