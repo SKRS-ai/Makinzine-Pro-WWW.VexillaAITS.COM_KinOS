@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Node 50 Live Stream</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@200;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-red: #ff3333;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            overflow: hidden;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- BROADCAST LAYOUT --- */
+        main { 
+            margin-top: 180px; 
+            display: grid; 
+            grid-template-columns: 1fr 350px; 
+            height: calc(100vh - 180px);
+        }
+
+        .video-feed {
+            background: #000;
+            position: relative;
+            border: 1px solid #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .live-indicator {
+            position: absolute; top: 30px; left: 30px;
+            display: flex; align-items: center; gap: 10px;
+            background: rgba(0,0,0,0.6); padding: 5px 15px; border-radius: 20px;
+        }
+
+        .blink-dot {
+            width: 10px; height: 10px; background: var(--os-red);
+            border-radius: 50%; animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+
+        .chat-sidebar {
+            background: #050508;
+            border-left: 1px solid #1a1a2e;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            padding: 20px; border-bottom: 1px solid #1a1a2e;
+            font-family: 'Orbitron'; font-size: 0.7rem; color: var(--os-neon);
+        }
+
+        .chat-messages {
+            flex: 1; padding: 20px; font-size: 0.7rem; overflow-y: auto;
+        }
+
+        .msg { margin-bottom: 15px; }
+        .u { color: var(--os-cobalt); font-weight: 800; margin-right: 5px; }
+
+        .vr-toggle {
+            position: absolute; bottom: 30px; right: 30px;
+            background: var(--os-cobalt); color: #fff;
+            border: none; padding: 10px 20px; font-family: 'Orbitron';
+            font-size: 0.7rem; cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav style="font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-neon);">STREAM_SECURED_AEAH.org</nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="video-feed">
+            <div class="live-indicator">
+                <div class="blink-dot"></div>
+                <span style="font-family: 'Orbitron'; font-size: 0.6rem; letter-spacing: 2px;">LIVE_SIGNAL</span>
+            </div>
+            
+            <div style="text-align: center; color: #222;">
+                <h2 style="font-family: 'Orbitron'; margin: 0;">WAITING_FOR_UPLINK</h2>
+                <p style="font-size: 0.6rem;">NODE_50_STAGING_IN_PROGRESS</p>
+            </div>
+
+            <button class="vr-toggle">ENABLE_360_VR</button>
+        </div>
+
+        <div class="chat-sidebar">
+            <div class="chat-header">GUILD_COMMS [GLOBAL]</div>
+            <div class="chat-messages">
+                <div class="msg"><span class="u">CADET_MARCUS:</span> Systems green in North Philly!</div>
+                <div class="msg"><span class="u">NAIROBI_HUB:</span> Watching from Kenya. We are ready for sync.</div>
+                <div class="msg"><span class="u">MENTOR_JAKE:</span> Great to see the v2 units lined up.</div>
+                <div class="msg" style="color: var(--os-neon); font-style: italic;">SYSTEM: 1,240 Peers Connected.</div>
+            </div>
+            <div style="padding: 20px; border-top: 1px solid #1a1a2e;">
+                <input type="text" placeholder="Send comms..." style="width: 100%; background: #000; border: 1px solid #222; color: #fff; padding: 10px; font-family: 'JetBrains Mono'; font-size: 0.7rem;">
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
