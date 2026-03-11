@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Global Grant Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-warn: #f2ff00;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor {
+            display: flex; align-items: center;
+            padding-top: 45px; padding-left: 60px;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); }
+
+        .system-border {
+            width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--os-cobalt), transparent);
+            margin-top: 50px;
+        }
+
+        /* --- TRACKER TABLE --- */
+        main { margin-top: 280px; padding: 0 5% 100px 5%; }
+
+        table {
+            width: 100%; border-collapse: collapse;
+            background: rgba(10, 10, 20, 0.8); border: 1px solid #1a1a2e;
+        }
+
+        th {
+            background: var(--os-cobalt); color: white; font-family: 'Orbitron';
+            padding: 15px; text-align: left; font-size: 0.8rem;
+        }
+
+        td {
+            padding: 15px; border-bottom: 1px solid #1a1a2e; font-size: 0.85rem;
+        }
+
+        .status-pill {
+            padding: 5px 10px; font-size: 0.6rem; font-weight: 900;
+            border-radius: 2px; text-transform: uppercase;
+        }
+
+        .pending { background: var(--os-warn); color: #000; }
+        .secured { background: #00ff00; color: #000; }
+        .evaluating { background: var(--os-neon); color: #000; }
+
+        .funding-amt { font-weight: bold; color: var(--os-neon); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav style="display: flex; gap: 20px;">
+                <a href="index.html" style="color: var(--os-neon); text-decoration: none; font-size: 0.8rem; font-weight: 800;">[ BACK_TO_KERNEL ]</a>
+            </nav>
+            <div style="width: 120px;"></div>
+        </div>
+        <div class="system-border"></div>
+    </header>
+
+    <main>
+        <h1 style="font-family: 'Orbitron'; margin-bottom: 40px; border-left: 5px solid var(--os-neon); padding-left: 20px;">GRANT_DEPLOYMENT_TRACKER</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>TARGET_INSTITUTION</th>
+                    <th>INITIATIVE_FOCUS</th>
+                    <th>PROJECTED_FUNDING</th>
+                    <th>STATUS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>National Science Foundation (NSF)</td>
+                    <td>AI-Driven Intergenerational Learning</td>
+                    <td class="funding-amt">$250,000</td>
+                    <td><span class="status-pill evaluation">EVALUATING</span></td>
+                </tr>
+                <tr>
+                    <td>Department of Education (Office of Ed Tech)</td>
+                    <td>Gamer-to-Engineer Pipeline Prototype</td>
+                    <td class="funding-amt">$150,000</td>
+                    <td><span class="status-pill pending">PENDING_SUBMISSION</span></td>
+                </tr>
+                <tr>
+                    <td>Knight Foundation</td>
+                    <td>Philadelphia Hub Infrastructure</td>
+                    <td class="funding-amt">$500,000</td>
+                    <td><span class="status-pill evaluation">EVALUATING</span></td>
+                </tr>
+                <tr>
+                    <td>Ford Foundation</td>
+                    <td>AEA H.org Digital Sanctuary Rollout</td>
+                    <td class="funding-amt">$300,000</td>
+                    <td><span class="status-pill secured">SECURED</span></td>
+                </tr>
+                <tr>
+                    <td>PA Dept of Community & Economic Dev</td>
+                    <td>Philly Hub Hardware Labs</td>
+                    <td class="funding-amt">$200,000</td>
+                    <td><span class="status-pill pending">PENDING_SUBMISSION</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+</body>
+</html>
