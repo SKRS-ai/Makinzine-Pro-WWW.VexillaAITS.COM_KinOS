@@ -2,137 +2,189 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>KinOS | The Neural Nexus & Global Innovation Hub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <title>KinOS | Neural Operating System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --os-cobalt: #0066ff;
             --os-neon: #00f2ff;
             --os-obsidian: #010103;
-            --panel-bg: rgba(5, 5, 10, 0.98);
+            --window-bg: rgba(5, 5, 10, 0.95);
+            --header-height: 165px; 
         }
 
         body, html {
             margin: 0; padding: 0;
             background-color: var(--os-obsidian);
-            color: #ffffff;
+            color: #fff;
             font-family: 'JetBrains Mono', monospace;
+            overflow-x: hidden;
             scroll-behavior: smooth;
         }
 
-        /* --- THE RECALIBRATED FLOATING LOGO HEADER --- */
+        /* --- THE STABILIZED HEADER --- */
         header {
             position: fixed; top: 0; width: 100%;
-            height: 140px; /* Adjusted for the lowered logo */
-            background: var(--panel-bg); backdrop-filter: blur(30px);
+            height: var(--header-height);
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(25px);
             z-index: 10000;
-            display: flex; flex-direction: column; align-items: center;
+            display: flex; flex-direction: column;
+            justify-content: center;
         }
 
-        .header-main {
-            width: 100%; display: flex; justify-content: space-between;
-            align-items: center; padding: 15px 5%; height: 100px;
-        }
-
+        /* LOGO: SHIFTED RIGHT FROM EDGE & 1X LARGER */
         .logo-system-container {
-            display: flex; align-items: center;
-            padding-top: 10px; /* Logo lowered slightly as requested */
+            padding-left: 80px; /* Shifted right from the far left edge */
+            display: flex;
+            align-items: center;
         }
 
         .logo-system-container img {
-            height: 145px; /* Large scale maintained */
+            height: 155px; /* Incremented size (+1 larger) */
             width: auto;
-            filter: drop-shadow(0 0 30px var(--os-cobalt));
+            filter: drop-shadow(0 0 25px var(--os-cobalt));
         }
 
-        /* Border positioned BELOW the logo, not touching */
+        /* HEADER BORDER: FLOATING BELOW LOGO */
         .header-border {
             width: 100%;
-            height: 3px;
+            height: 2px;
             background: linear-gradient(90deg, transparent, var(--os-cobalt), transparent);
-            margin-top: 25px; /* Creates the requested clearance */
+            margin-top: 15px; /* Vertical clearance so they don't touch */
         }
 
-        /* --- CENTERED SYSTEM NAVIGATION --- */
-        nav { display: flex; gap: 40px; }
+        /* NAVIGATION: CENTER-CENTERED FOR STABILITY */
+        nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 10px;
+        }
+
         .nav-link {
             text-decoration: none; color: var(--os-neon);
-            font-size: 0.8rem; font-weight: 900;
+            font-size: 0.85rem; font-weight: 900;
             text-transform: uppercase; letter-spacing: 3px;
-            transition: 0.4s;
-        }
-        .nav-link:hover { color: white; text-shadow: 0 0 15px var(--os-neon); }
-
-        /* --- ENHANCED MISSION BODY --- */
-        main { margin-top: 200px; padding: 0 8% 100px 8%; }
-
-        .terminal-window {
-            background: rgba(10, 10, 20, 0.9);
-            border: 1px solid #1a1a2e; border-left: 5px solid var(--os-cobalt);
-            padding: 60px; margin-bottom: 60px;
-            box-shadow: 0 50px 100px rgba(0,0,0,0.8);
-        }
-
-        .highlight { color: var(--os-neon); font-weight: 800; }
-
-        /* --- DONATION MATRIX --- */
-        .subscription-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;
-        }
-        .tier-card {
-            background: #000; border: 1px solid #333; padding: 40px;
             transition: 0.3s ease;
         }
-        .tier-card:hover { border-color: var(--os-cobalt); transform: translateY(-5px); }
+
+        .nav-link:hover { color: white; text-shadow: 0 0 15px var(--os-neon); }
+
+        /* --- MAIN OS CONTENT --- */
+        main {
+            margin-top: calc(var(--header-height) + 60px);
+            padding: 0 10% 100px 10%;
+        }
+
+        .os-window {
+            background: var(--window-bg);
+            border: 1px solid #1a1a2e;
+            border-top: 35px solid #111;
+            padding: 50px;
+            margin-bottom: 80px;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.8);
+            position: relative;
+        }
+
+        .window-title {
+            position: absolute; top: -28px; left: 15px;
+            font-size: 0.7rem; color: var(--os-neon);
+        }
+
+        /* --- 4-TIER SUBSCRIPTION MATRIX --- */
+        .tier-grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 25px;
+        }
+
+        .tier-card {
+            background: #000; border: 1px solid #222; padding: 40px;
+            text-align: center; border-radius: 4px;
+        }
+
+        .tier-card h3 { color: var(--os-cobalt); font-family: 'Orbitron'; }
+
+        select.duration-picker {
+            width: 100%; padding: 12px; background: #111; 
+            color: var(--os-neon); border: 1px solid var(--os-cobalt);
+            margin-top: 20px; font-family: 'JetBrains Mono';
+        }
+
+        footer {
+            padding: 60px 10%; background: #000; border-top: 2px solid var(--os-cobalt);
+            display: flex; justify-content: space-between; align-items: center;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="header-main">
-            <div class="logo-system-container">
-                <img src="KINOS LOGO.png" alt="KinOS Official Logo">
-            </div>
-            <nav>
-                <a href="#about" class="nav-link">OS_MANIFESTO</a>
-                <a href="#alliance" class="nav-link">ALLIANCES</a>
-                <a href="#donations" class="nav-link">COMMITMENT</a>
-            </nav>
-            <div style="width: 100px;"></div> </div>
+        <div class="logo-system-container">
+            <img src="KINOS LOGO.png" alt="KinOS Shield">
+        </div>
         <div class="header-border"></div>
+        <nav>
+            <a href="#kernel" class="nav-link">KERNEL</a>
+            <a href="#about" class="nav-link">MISSION</a>
+            <a href="#donations" class="nav-link">FUND_FUTURE</a>
+            <a href="#hardware" class="nav-link">DEVICE_LAB</a>
+        </nav>
     </header>
 
     <main>
-        <section id="about" class="terminal-window">
-            <h1 style="font-family: 'Orbitron'; font-size: 3rem;">THE KinOS ARCHITECTURE</h1>
-            <p style="font-size: 1.1rem; line-height: 2;">
-                <span class="highlight">KinOS</span> is a high-performance, decentralized Operating System engineered to bridge the gap between <span class="highlight">Gaming Mastery</span> and <span class="highlight">Industrial Innovation</span>. We believe the cognitive reflexes developed in high-tier gaming are the primary currency of the 21st-century workforce. 
-                <br><br>
-                Our organization serves as an <span class="highlight">Intergenerational Mentorship Nexus</span>. We unite prodigies (Ages 10+) with veteran engineers to prototype the next generation of American-made hardware, blockchain protocols, and AI kernels.
+        <section id="about" class="os-window">
+            <div class="window-title">SYSTEM_MANIFESTO.DAT</div>
+            <h1 style="font-family: 'Orbitron'; font-size: 2.5rem; color: var(--os-cobalt);">The KinOS Endeavor</h1>
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+                <strong>KinOS</strong> is a non-profit technology powerhouse designed to unify <span style="color:var(--os-neon)">Ages 10 to Infinity</span>. We utilize high-tier gaming psychology to bridge the gap between community engagement and elite government-level innovation. This is not just an Operating System; it is a collaborative nexus for mentoring the next generation of American innovators.
             </p>
         </section>
 
-        <section id="alliance" class="terminal-window">
-            <h2 style="font-family: 'Orbitron'; color: var(--os-cobalt);">ASSOCIATIONS & NONPROFIT FORMATION</h2>
-            <p>
-                In exclusive partnership with <span class="highlight">AEA H.org</span>, KinOS operates under a strict "Digital Sanctuary" mandate. We are a registered nonprofit technology organization committed to <span class="highlight">Government Engagement</span> and <span class="highlight">Civic Empowerment</span>. 
-                <br><br>
-                Our incentives are simple: To win 20 major strategic grants—from the <span class="highlight">Knight Foundation</span> to federal technology awards—and reinvest 100% of those resources back into community-led R&D. We are changing the way America innovates by putting the power of a proprietary OS into the hands of the people.
-            </p>
-        </section>
-
-        <section id="donations" class="subscription-grid">
-            <div class="tier-card">
-                <h3 style="color:var(--os-neon)">CADET (Age 10+)</h3>
-                <p>Entry-level dev tools & community mentorship.</p>
-                <select style="width:100%; padding:10px; background:#111; color:white; border:1px solid var(--os-cobalt);">
-                    <option>1 Month Commitment</option>
-                    <option>1 Year Commitment</option>
-                    <option>10 Year Legacy</option>
-                </select>
+        <section id="donations" class="os-window">
+            <div class="window-title">COMMITMENT_MATRIX_v4.0</div>
+            <h2 style="text-align: center; font-family: 'Orbitron';">SELECT YOUR CLEARANCE TIER</h2>
+            <div class="tier-grid">
+                <div class="tier-card">
+                    <h3>CADET</h3>
+                    <p>Foundation tools for innovators Ages 10+.</p>
+                    <select class="duration-picker">
+                        <option>1 Month</option><option>1 Year</option><option>10 Years</option>
+                    </select>
+                </div>
+                <div class="tier-card">
+                    <h3>SENTINEL</h3>
+                    <p>Community safety & hardware beta-testing.</p>
+                    <select class="duration-picker">
+                        <option>1 Month</option><option>1 Year</option><option>10 Years</option>
+                    </select>
+                </div>
+                <div class="tier-card">
+                    <h3>VANGUARD</h3>
+                    <p>Priority AI access & Global Event voting.</p>
+                    <select class="duration-picker">
+                        <option>1 Month</option><option>1 Year</option><option>10 Years</option>
+                    </select>
+                </div>
+                <div class="tier-card">
+                    <h3>ARCHITECT</h3>
+                    <p>Legacy Partner. Direct R&D influence.</p>
+                    <select class="duration-picker">
+                        <option>1 Month</option><option>1 Year</option><option>10 Years</option>
+                    </select>
+                </div>
             </div>
-            </section>
+        </section>
     </main>
+
+    <footer>
+        <img src="KINOS LOGO.png" alt="KinOS Footer" style="height: 60px; opacity: 0.4;">
+        <div style="text-align: right; color: #444; font-size: 0.7rem;">
+            &copy; 2026 KinOS | Philadelphia Hub | AEA H.ORG Partner
+        </div>
+    </footer>
 
 </body>
 </html>
