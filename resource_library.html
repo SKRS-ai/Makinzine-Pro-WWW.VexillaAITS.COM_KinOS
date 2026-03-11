@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Resource Library & Open-Source Blueprints</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-gold: #ffcc00;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- LIBRARY LAYOUT --- */
+        main { margin-top: 280px; padding: 0 10% 100px 10%; }
+
+        .library-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px;
+        }
+
+        .resource-card {
+            background: rgba(255, 255, 255, 0.02); border: 1px solid #1a1a2e;
+            padding: 25px; transition: 0.3s; position: relative;
+        }
+
+        .resource-card:hover { border-color: var(--os-neon); background: rgba(0, 242, 255, 0.05); }
+
+        .file-type {
+            font-size: 0.6rem; color: var(--os-gold); border: 1px solid var(--os-gold);
+            padding: 2px 6px; display: inline-block; margin-bottom: 15px;
+        }
+
+        .resource-name { font-family: 'Orbitron'; font-size: 0.9rem; margin-bottom: 10px; color: #fff; }
+        .resource-desc { font-size: 0.7rem; color: #777; line-height: 1.4; margin-bottom: 20px; }
+
+        .download-btn {
+            background: transparent; border: 1px solid var(--os-cobalt); color: var(--os-cobalt);
+            padding: 8px 15px; font-family: 'Orbitron'; font-size: 0.6rem;
+            cursor: pointer; font-weight: 800; width: 100%;
+        }
+
+        .download-btn:hover { background: var(--os-cobalt); color: #fff; }
+
+        .aeah-verified {
+            font-size: 0.55rem; color: var(--os-neon); text-align: center; margin-top: 15px;
+            font-weight: 900; letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav style="display: flex; gap: 20px;">
+                <a href="index.html" style="color: var(--os-neon); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ KERNEL ]</a>
+                <a href="makinzine_pro.html" style="color: var(--os-gold); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ MAKINZINE_PRO ]</a>
+                <a href="resource_library.html" style="color: #fff; text-decoration: none; font-size: 0.75rem; font-weight: 900; border-bottom: 2px solid var(--os-neon);">[ RESOURCE_LIBRARY ]</a>
+            </nav>
+            <div style="font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-neon);">BLUEPRINTS_VERIFIED_AEAH.org</div>
+        </div>
+    </header>
+
+    <main>
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h1 style="font-family: 'Orbitron'; font-size: 2rem; margin: 0;">BLUEPRINT_REPOSITORY</h1>
+            <p style="color: #666;">Open-source hardware and software assets for the KinOS Guild.</p>
+        </div>
+
+        <div class="library-grid">
+            <div class="resource-card">
+                <div class="file-type">.STL (3D_MODEL)</div>
+                <div class="resource-name">MAKINZINE_PRO_CHASSIS_v2</div>
+                <div class="resource-desc">Revised outer shell for 3D printing. Optimized for impact resistance and heat dissipation.</div>
+                <button class="download-btn">DOWNLOAD_BLUEPRINT</button>
+                <div class="aeah-verified">AEAH_CLEAN_SCAN_PASS</div>
+            </div>
+
+            <div class="resource-card">
+                <div class="file-type">.JSON (NEURAL_DATA)</div>
+                <div class="resource-name">PHILLY_REFLEX_MODEL_BETA</div>
+                <div class="resource-desc">Pre-trained neural weights for low-latency pattern recognition. Optimized for Corsair i7500 clusters.</div>
+                <button class="download-btn">PULL_REPOSITORY</button>
+                <div class="aeah-verified">AEAH_CLEAN_SCAN_PASS</div>
+            </div>
+
+            <div class="resource-card">
+                <div class="file-type">.PDF (SCHEMATICS)</div>
+                <div class="resource-name">IO_EXPANSION_PORT_GUIDE</div>
+                <div class="resource-desc">Electrical schematics for creating custom peripherals that handshake with the MAKINZINE PRO.</div>
+                <button class="download-btn">VIEW_DOCUMENT</button>
+                <div class="aeah-verified">AEAH_CLEAN_SCAN_PASS</div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
