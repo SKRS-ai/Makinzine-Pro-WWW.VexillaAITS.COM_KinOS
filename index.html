@@ -3,132 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VEXILLA | Makinzine Pro & KinOS</title>
+    <title>KinOS USA | Philadelphia Digital Sanctuary</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@300;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold: #d4af37;
-            --deep-slate: #0a0b0c;
-            --text-silver: #e0e0e0;
-            --interface-cyan: #00e5ff;
+            --midnight: #0a0a0a;
+            --obsidian: #121212;
+            --kinos-red: #cc0000;
+            --cyber-silver: #a0a0a0;
+            --agent-white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.05);
         }
 
-        body, html {
-            margin: 0; padding: 0; width: 100%; height: 100%;
-            background-color: var(--deep-slate);
-            color: var(--text-silver);
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
+        body {
+            margin: 0;
+            background-color: var(--midnight);
+            color: var(--agent-white);
+            font-family: 'JetBrains Mono', monospace;
             overflow-x: hidden;
         }
 
-        /* High-Level Nav */
-        nav {
-            position: fixed; top: 0; width: 100%; height: 80px;
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 0 50px; box-sizing: border-box;
-            background: rgba(10, 11, 12, 0.9);
-            backdrop-filter: blur(20px); z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        /* Fixed Navigation System Tray */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            z-index: 1000;
         }
 
-        .logo { font-weight: 800; letter-spacing: 4px; color: var(--gold); }
-        .nav-links a { 
-            text-decoration: none; color: white; margin-left: 30px; 
-            font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;
-            opacity: 0.6; transition: 0.3s;
-        }
-        .nav-links a:hover { opacity: 1; color: var(--interface-cyan); }
-
-        /* Hero Section */
-        section { height: 100vh; display: flex; align-items: center; padding: 0 10%; position: relative; }
-        
-        .hero-text { max-width: 500px; z-index: 2; }
-        .hero-text h1 { font-size: 4rem; line-height: 1; margin: 0; font-weight: 900; }
-        .hero-text p { color: #888; font-size: 1.1rem; margin-top: 20px; }
-
-        .device-bg {
-            position: absolute; right: 0; top: 10%; width: 60%; height: 80%;
-            background: url('https://via.placeholder.com/1200x800/0a0b0c/00e5ff?text=MAKINZINE_PRO_PARALLAX_RENDER') no-repeat center right;
-            background-size: contain; z-index: 1;
+        .logo-terminal {
+            display: flex;
+            align-items: center;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            color: var(--kinos-red);
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        /* Bento Presentation Grid */
-        .grid-section { 
-            display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; 
-            padding: 100px 50px; background: #0e0f11;
+        .logo-terminal img {
+            height: 40px;
+            margin-right: 15px;
+            filter: drop-shadow(0 0 5px var(--kinos-red));
         }
 
-        .tile { 
-            background: #141518; border: 1px solid rgba(255,255,255,0.05); 
-            padding: 40px; border-radius: 4px; transition: 0.4s;
+        nav a {
+            color: var(--cyber-silver);
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 0.8rem;
+            transition: 0.3s;
         }
-        .tile:hover { border-color: var(--interface-cyan); transform: scale(1.02); }
 
-        .feature-tile { grid-column: span 4; height: 300px; }
-        .large-tile { grid-column: span 8; height: 620px; grid-row: span 2; }
-        
-        /* Buttons */
-        .cta-btn {
-            display: inline-block; padding: 15px 40px; border: 1px solid var(--gold);
-            color: var(--gold); text-decoration: none; margin-top: 30px;
-            letter-spacing: 3px; font-size: 0.8rem; transition: 0.3s;
+        nav a:hover {
+            color: var(--kinos-red);
+            text-shadow: 0 0 10px var(--kinos-red);
         }
-        .cta-btn:hover { background: var(--gold); color: black; }
 
-        .stat-number { font-size: 3rem; font-weight: 900; color: var(--interface-cyan); }
+        .btn-login {
+            border: 1px solid var(--kinos-red);
+            padding: 8px 20px;
+            color: var(--kinos-red);
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: 0.4s;
+        }
 
+        .btn-login:hover {
+            background: var(--kinos-red);
+            color: white;
+            box-shadow: 0 0 20px var(--kinos-red);
+        }
+
+        /* Hero Boot Sequence */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a0000 0%, var(--midnight) 70%);
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 5px;
+        }
+
+        .hero p {
+            color: var(--cyber-silver);
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .cta-container {
+            margin-top: 30px;
+        }
+
+        .btn-main {
+            background: var(--kinos-red);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+            transition: 0.3s;
+        }
+
+        .btn-main:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        /* Footer Log */
+        footer {
+            padding: 50px;
+            background: var(--obsidian);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.7rem;
+            color: #555;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-links a {
+            color: #777;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .footer-links a:hover { color: var(--kinos-red); }
     </style>
 </head>
 <body>
 
-<nav>
-    <div class="logo">VEXILLA.AITS</div>
-    <div class="nav-links">
-        <a href="#showroom">[V_SHOWROOM]</a>
-        <a href="#os">[K_OS]</a>
-        <a href="#vault">[ROI_VAULT]</a>
-        <a href="#collective">[COMMUNITY]</a>
-        <a href="#gov">[FED_SECURE]</a>
-    </div>
-</nav>
-
-<section id="hero">
-    <div class="hero-text">
-        <h1>NOT A TABLET.</h1>
-        <p>The Makinzine Pro is a purpose-driven literary synthesizer. 120-hour active battery. 10-year hardware lifecycle. The new standard for the Focus Economy.</p>
-        <a href="#" class="cta-btn">ACCESS THE REGISTRY</a>
-    </div>
-    <div class="device-bg"></div>
-</section>
-
-<div class="grid-section">
-    <div class="tile feature-tile">
-        <div class="stat-number">350%</div>
-        <p>Projected User Focus Retention vs. Standard Tablets.</p>
-    </div>
-
-    <div class="tile large-tile">
-        <h2>KINOS: THE PURPOSE-DRIVEN KERNEL</h2>
-        <p>A zero-bloat, air-gapped operating system designed for government contracts and high-fidelity literary luxury.</p>
-        <div style="margin-top: 50px; border-left: 2px solid var(--interface-cyan); padding-left: 20px;">
-            <p>> NO NOTIFICATIONS<br>> NO TRACKERS<br>> NO DATA LEAKAGE</p>
+    <header>
+        <div class="logo-terminal">
+            <img src="kinos-logo.png" alt="KINOS LOGO">
+            KinOS USA
         </div>
-        
-    </div>
+        <nav>
+            <a href="#hub">[01_THE_HUB]</a>
+            <a href="#shield">[02_THE_SHIELD]</a>
+            <a href="#circuits">[03_THE_CIRCUIT]</a>
+            <a href="#intel">[04_INTEL]</a>
+        </nav>
+        <div class="btn-login" onclick="location.href='#login'">[AGENT_LOGIN]</div>
+    </header>
 
-    <div class="tile feature-tile">
-        <h2>SNAP-FIX 2.0</h2>
-        <p>User-replaceable modules. Designed to combat planned obsolescence and secure EPA Green-Tech grants.</p>
-    </div>
+    <section class="hero">
+        <h1 id="typing-text">INITIALIZING...</h1>
+        <p>LEVEL UP THE MIND. GUARD THE GAME. <br> PHILADELPHIA'S PREMIER GLOBAL GAMING SANCTUARY & ACADEMY.</p>
+        <div class="cta-container">
+            <a href="#register" class="btn-main">INITIALIZE_DOSSIER</a>
+        </div>
+    </section>
 
-    <div class="tile feature-tile" style="grid-column: span 12; display: flex; justify-content: space-between; align-items: center;">
+    <section id="hub" style="padding: 100px 50px;">
+        <h2 style="font-family: 'Orbitron'; color: var(--kinos-red);">THE PHILADELPHIA ALPHA WING</h2>
+        <p>Our members-only training facility is equipped with elite-grade hardware designed for peak performance and cognitive safety.</p>
+        </section>
+
+    <footer>
         <div>
-            <h2>THE COLLECTIVE [NON-PROFIT]</h2>
-            <p>20+ Targeted Federal & Private Grants including NSF, DARPA, and NEA.</p>
+            &copy; 2026 KINOS USA | PHILADELPHIA HUB | COORDINATES: 39.9526&deg; N, 75.1652&deg; W
+            <br>POWERED BY WWW.VEXILLAAITS.COM KINOS
         </div>
-        <a href="#" class="cta-btn" style="border-color: var(--interface-cyan); color: var(--interface-cyan);">VIEW GRANT PORTFOLIO</a>
-    </div>
-</div>
+        <div class="footer-links">
+            <a href="#privacy">PRIVACY_POLICY</a>
+            <a href="#terms">TERMS_OF_SERVICE</a>
+            <a href="https://aeah.org">AEA_H_ORG</a>
+            <a href="#report">REPORT_ABUSE</a>
+        </div>
+    </footer>
 
+    <script>
+        // Simple Typing Effect
+        const text = "INITIALIZING KinOS_USA.v3...";
+        let i = 0;
+        function type() {
+            if (i < text.length) {
+                document.getElementById("typing-text").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, 100);
+            }
+        }
+        window.onload = () => {
+            document.getElementById("typing-text").innerHTML = "> ";
+            type();
+        };
+    </script>
 </body>
 </html>
