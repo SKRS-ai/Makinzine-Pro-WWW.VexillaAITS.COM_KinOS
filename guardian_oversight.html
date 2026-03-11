@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Guardian Oversight Console</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-safe: #00ff88;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); border-bottom: 1px solid #222;
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- GUARDIAN DASHBOARD --- */
+        main { margin-top: 250px; padding: 0 10% 100px 10%; }
+
+        .oversight-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .control-panel {
+            background: rgba(10, 10, 25, 0.8);
+            border: 1px solid #1a1a2e;
+            padding: 40px;
+        }
+
+        .safety-toggle {
+            display: flex; justify-content: space-between;
+            align-items: center; padding: 15px;
+            background: #000; border-left: 4px solid var(--os-safe);
+            margin-bottom: 20px;
+        }
+
+        .status-dot {
+            height: 10px; width: 10px; background: var(--os-safe);
+            border-radius: 50%; box-shadow: 0 0 8px var(--os-safe);
+        }
+
+        .skill-meter {
+            height: 10px; background: #111; margin: 10px 0;
+            position: relative;
+        }
+
+        .skill-fill {
+            height: 100%; background: var(--os-cobalt); width: 75%;
+        }
+
+        .aea-badge {
+            margin-top: 40px; padding: 20px;
+            border: 1px dashed var(--os-safe);
+            text-align: center; color: var(--os-safe);
+            font-size: 0.7rem; letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <div style="font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-safe);">GUARDIAN_MODE: ACTIVE</div>
+            <div style="width: 120px;"></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="oversight-grid">
+            <div class="control-panel">
+                <h2 style="font-family: 'Orbitron'; margin-top: 0; font-size: 1.2rem;">SANCTUARY_CONTROLS</h2>
+                
+                <div class="safety-toggle">
+                    <div>
+                        <div style="font-size: 0.8rem; font-weight: bold;">AEA H.org FILTERING</div>
+                        <div style="font-size: 0.6rem; color: #666;">Hardware-level anti-harassment active</div>
+                    </div>
+                    <div class="status-dot"></div>
+                </div>
+
+                <div class="safety-toggle">
+                    <div>
+                        <div style="font-size: 0.8rem; font-weight: bold;">MENTOR_VERIFICATION</div>
+                        <div style="font-size: 0.6rem; color: #666;">Background check & certification current</div>
+                    </div>
+                    <div class="status-dot"></div>
+                </div>
+
+                <div class="aea-badge">
+                    SECURED IN ASSOCIATION WITH AEA H.ORG<br>
+                    PROTECTING THE NEXT GENERATION OF PHILADELPHIA INNOVATORS
+                </div>
+            </div>
+
+            <div class="control-panel">
+                <h2 style="font-family: 'Orbitron'; margin-top: 0; font-size: 1.2rem;">CADET_DEVELOPMENT</h2>
+                
+                <label style="font-size: 0.7rem; color: #888;">AI & NEURAL MODELING</label>
+                <div class="skill-meter"><div class="skill-fill" style="width: 85%;"></div></div>
+
+                <label style="font-size: 0.7rem; color: #888;">HARDWARE PROTOTYPING</label>
+                <div class="skill-meter"><div class="skill-fill" style="width: 40%;"></div></div>
+
+                <label style="font-size: 0.7rem; color: #888;">COMMUNITY LEADERSHIP</label>
+                <div class="skill-meter"><div class="skill-fill" style="width: 60%;"></div></div>
+
+                <p style="font-size: 0.75rem; color: #666; margin-top: 30px; line-height: 1.6;">
+                    Your Cadet is currently utilizing the <strong>[Corsair Vengeance i7500]</strong> station for a collaborative quest with a Senior Mentor.
+                </p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
