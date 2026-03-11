@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Global Nerve Center (Sitemap)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- SITEMAP GRID --- */
+        main { margin-top: 280px; padding: 0 5% 100px 5%; }
+
+        .system-map {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .map-sector {
+            border: 1px solid #1a1a2e;
+            padding: 25px;
+            background: rgba(10, 10, 20, 0.5);
+            transition: 0.3s;
+        }
+
+        .map-sector:hover { border-color: var(--os-neon); }
+
+        .sector-title {
+            font-family: 'Orbitron'; color: var(--os-cobalt);
+            font-size: 0.8rem; letter-spacing: 2px;
+            margin-bottom: 15px; border-bottom: 1px solid #222; padding-bottom: 10px;
+        }
+
+        .node-link {
+            display: block; color: #888; text-decoration: none;
+            font-size: 0.75rem; margin-bottom: 8px; transition: 0.2s;
+        }
+
+        .node-link:hover { color: var(--os-neon); padding-left: 5px; }
+
+        .infrastructure-note {
+            margin-top: 60px; padding: 30px; border-top: 1px solid var(--os-cobalt);
+            font-size: 0.7rem; color: #444; text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <div style="font-family: 'Orbitron'; color: var(--os-neon); font-size: 0.8rem;">SYSTEM_MAP_v1.0</div>
+            <div style="width: 120px;"></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="system-map">
+            <div class="map-sector">
+                <div class="sector-title">CORE_KERNEL</div>
+                <a href="index.html" class="node-link">> EXECUTIVE_OVERVIEW</a>
+                <a href="os_manifesto.html" class="node-link">> PHILOSOPHY_WHITE_PAPER</a>
+                <a href="faq_terminal.html" class="node-link">> INTELLIGENCE_FAQ</a>
+            </div>
+
+            <div class="map-sector">
+                <div class="sector-title">FINANCIAL_ENGINE</div>
+                <a href="grants_initiative.html" class="node-link">> GRANT_STRATEGY</a>
+                <a href="guild_subscription.html" class="node-link">> REVENUE_MATRIX</a>
+                <a href="global_grant_tracker.html" class="node-link">> INTERNAL_FUNDING_MONITOR</a>
+            </div>
+
+            <div class="map-sector">
+                <div class="sector-title">INNOVATION_LABS</div>
+                <a href="hardware_lab.html" class="node-link">> PROTOTYPE_SHOWCASE</a>
+                <a href="community_hubs.html" class="node-link">> GLOBAL_NEXUS_MAP</a>
+                <a href="impact_analytics.html" class="node-link">> SOCIAL_IMPACT_STATS</a>
+            </div>
+
+            <div class="map-sector">
+                <div class="sector-title">GUILD_OPERATIONS</div>
+                <a href="recruitment_nexus.html" class="node-link">> ENLISTMENT_PORTAL</a>
+                <a href="member_portal_v1.html" class="node-link">> CADET_WORKSPACE</a>
+                <a href="legacy_archives.html" class="node-link">> FOUNDER_REGISTRY</a>
+            </div>
+
+            <div class="map-sector">
+                <div class="sector-title">SANCTUARY_DEFENSE</div>
+                <a href="security_protocols.html" class="node-link">> DATA_SOVEREIGNTY</a>
+                <a href="guardian_oversight.html" class="node-link">> PARENTAL_CONTROL</a>
+                <a href="association_nexus.html" class="node-link">> ALLIANCE_NETWORK</a>
+            </div>
+
+            <div class="map-sector">
+                <div class="sector-title">COMMUNICATIONS</div>
+                <a href="press_archive.html" class="node-link">> MEDIA_RELEASES</a>
+                <a href="developer_console.html" class="node-link">> ADMIN_DASHBOARD</a>
+                <a href="contact.html" class="node-link">> SECURE_CHANNEL</a>
+            </div>
+        </div>
+
+        <div class="infrastructure-note">
+            KinOS SYSTEM INFRASTRUCTURE | SECURED BY AEA H.ORG | POWERED BY CORSAIR VENGEANCE i7500<br>
+            ESTABLISHED 2026 - PHILADELPHIA, PA
+        </div>
+    </main>
+
+</body>
+</html>
