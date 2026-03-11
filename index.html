@@ -9,7 +9,7 @@
             --os-cobalt: #0066ff;
             --os-neon: #00f2ff;
             --os-obsidian: #010103;
-            --header-h: 120px;
+            --header-h: 130px; /* Slightly taller to accommodate lowered logo */
         }
 
         body, html {
@@ -21,7 +21,7 @@
             overflow-x: hidden;
         }
 
-        /* --- THE TITAN HEADER: STABILIZED & PROFESSIONAL --- */
+        /* --- THE TITAN HEADER: RE-CENTERED & STABILIZED --- */
         header {
             position: fixed; top: 0; width: 100%; height: var(--header-h);
             background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
@@ -34,24 +34,26 @@
             align-items: center; padding: 0 5%; height: 100%;
         }
 
-        /* LOGO: LARGER, LOWERED, NO CLIPPING */
+        /* LOGO: LOWERED AND SHIFTED RIGHT */
         .logo-anchor {
-            display: flex; align-items: center;
-            padding-top: 15px; /* Moves logo down away from screen top */
+            display: flex; 
+            align-items: center;
+            padding-top: 45px; /* Lowered to prevent top-clipping */
+            padding-left: 60px; /* Shifted right to move away from far-left edge */
         }
 
         .logo-anchor img {
-            height: 185px; /* Increased size (+1) */
+            height: 190px; /* Large, authoritative scale maintained */
             width: auto;
-            filter: drop-shadow(0 0 30px var(--os-cobalt));
-            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            filter: drop-shadow(0 0 35px var(--os-cobalt));
+            transition: 0.3s ease-in-out;
         }
 
-        /* HEADER BORDER: PERFECTLY POSITIONED BELOW LOGO */
+        /* HEADER BORDER: FLOATING PERFECTLY BELOW LOGO */
         .system-border {
             width: 100%; height: 2px;
             background: linear-gradient(90deg, transparent, var(--os-cobalt), transparent);
-            margin-top: 35px; /* Keeps the border below the oversized logo */
+            margin-top: 50px; /* Ensures border is below the logo base */
         }
 
         /* --- NAV: GAMER COMMAND STYLE --- */
@@ -65,7 +67,7 @@
         .nav-btn:hover { color: #fff; border-bottom: 2px solid var(--os-neon); }
 
         /* --- CONTENT: STRATEGIC INTRO --- */
-        main { margin-top: 240px; padding: 0 10% 100px 10%; }
+        main { margin-top: 260px; padding: 0 10% 100px 10%; }
 
         .nexus-window {
             background: rgba(10, 10, 20, 0.85);
@@ -95,10 +97,12 @@
             <nav>
                 <a href="#about" class="nav-btn">KERNEL_INFO</a>
                 <a href="grants_initiative.html" class="nav-btn">GRANT_DOSSIER</a>
-                <a href="#guild" class="nav-btn">GUILD_SUBSCRIPTION</a>
+                <a href="guild_subscription.html" class="nav-btn">GUILD_SUBSCRIPTION</a>
                 <a href="#hardware" class="nav-btn">LAB_PROTOTYPES</a>
             </nav>
-            <div style="width: 100px; color: var(--os-neon); font-size: 0.6rem;">NODE: PHILLY_CENTRAL</div>
+            <div style="width: 120px; color: var(--os-neon); font-size: 0.65rem; text-align: right;">
+                [ SYSTEM_STABILIZED ] <br> PHL_HUB_ACTIVE
+            </div>
         </div>
         <div class="system-border"></div>
     </header>
@@ -112,8 +116,7 @@
                 This is a meeting point for elite minds, from <span class="hl">Ages 10 to Infinity</span>. We believe the future of America isn't built in corporate boardrooms, but in the collaborative "Guilds" of our communities. By aligning with <span class="hl">AEA H.org</span> and government stakeholders, we are minting a new era of <span class="hl">Top Innovative Products</span>. We are taking the reflexes and strategy of gamers and pivoting them toward world-changing hardware and AI breakthroughs.
             </p>
         </section>
-
-        </main>
+    </main>
 
 </body>
 </html>
