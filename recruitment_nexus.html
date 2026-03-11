@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Recruitment & Alliance Nexus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- STABILIZED TITAN HEADER (PERSISTENT ACROSS ALL PAGES) --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor {
+            display: flex; align-items: center;
+            padding-top: 45px; padding-left: 60px;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); }
+
+        .system-border {
+            width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--os-cobalt), transparent);
+            margin-top: 50px;
+        }
+
+        nav { display: flex; gap: 30px; }
+        .nav-btn {
+            text-decoration: none; color: var(--os-neon);
+            font-size: 0.8rem; font-weight: 900; text-transform: uppercase;
+            padding: 10px 15px; transition: 0.4s;
+        }
+
+        /* --- RECRUITMENT FORM AREA --- */
+        main { margin-top: 280px; padding: 0 15% 100px 15%; }
+
+        .terminal-box {
+            background: rgba(5, 5, 15, 0.9);
+            border: 1px solid #1a1a2e;
+            padding: 50px;
+            box-shadow: 0 0 60px rgba(0, 102, 255, 0.1);
+        }
+
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 25px; }
+
+        label { display: block; font-size: 0.7rem; color: var(--os-cobalt); margin-bottom: 8px; font-weight: 800; }
+
+        input, select, textarea {
+            width: 100%; background: #000; border: 1px solid #222;
+            padding: 15px; color: #fff; font-family: 'JetBrains Mono';
+            outline: none; transition: 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus { border-color: var(--os-neon); box-shadow: 0 0 15px rgba(0, 242, 255, 0.2); }
+
+        .submit-btn {
+            width: 100%; padding: 20px; background: var(--os-cobalt);
+            color: white; border: none; font-family: 'Orbitron';
+            font-weight: 900; letter-spacing: 3px; cursor: pointer;
+            margin-top: 30px; transition: 0.4s;
+        }
+
+        .submit-btn:hover { background: var(--os-neon); color: #000; transform: scale(1.01); }
+
+        .disclaimer { font-size: 0.65rem; color: #555; text-align: center; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav>
+                <a href="index.html" class="nav-btn">KERNEL</a>
+                <a href="hardware_lab.html" class="nav-btn">LAB</a>
+                <a href="community_hubs.html" class="nav-btn">NEXUS</a>
+                <a href="recruitment_nexus.html" class="nav-btn" style="color:#fff; border-bottom: 2px solid var(--os-neon);">RECRUIT_ENLIST</a>
+            </nav>
+            <div style="width: 120px;"></div>
+        </div>
+        <div class="system-border"></div>
+    </header>
+
+    <main>
+        <div class="terminal-box">
+            <h1 style="font-family: 'Orbitron'; color: var(--os-neon); margin-top: 0;">ENLISTMENT_PORTAL</h1>
+            <p style="color: #888; margin-bottom: 40px;">Select your designation. Our intergenerational mentorship council will review your data for hub placement.</p>
+
+            <form>
+                <div class="form-row">
+                    <div>
+                        <label>FULL_NAME_OR_HANDLE</label>
+                        <input type="text" placeholder="Identity Verification Required">
+                    </div>
+                    <div>
+                        <label>COMM_CHANNEL (EMAIL)</label>
+                        <input type="email" placeholder="user@secure_node.com">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div>
+                        <label>CHOSEN_DESIGNATION</label>
+                        <select>
+                            <option>PRODIGY_CADET (Ages 10-17)</option>
+                            <option>SYSTEM_MENTOR (Experienced Innovator)</option>
+                            <option>GOVERNMENT_NGO_LIAISON</option>
+                            <option>HARDWARE_ENGINEER</option>
+                            <option>INVESTOR_GUILD_MEMBER</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>CURRENT_LOCATION</label>
+                        <input type="text" placeholder="Philly Hub / Remote Node">
+                    </div>
+                </div>
+
+                <label>CORE_OBJECTIVES & SKILLS</label>
+                <textarea rows="5" placeholder="Detail your experience in gaming strategy, coding, AI, or hardware prototyping..."></textarea>
+
+                <button type="submit" class="submit-btn">SEND_ENLISTMENT_DATA</button>
+            </form>
+
+            <div class="disclaimer">
+                KinOS is a Registered Nonprofit Organization. All data is processed under the AEA H.org Safety Enclave protocols. We do not sell your data; we protect your innovation.
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
