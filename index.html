@@ -2,158 +2,168 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>KinOS | Neural Operating System</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=JetBrains+Mono:wght@300;500&display=swap" rel="stylesheet">
+    <title>KinOS | System Interface v4.2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --os-cobalt: #0055ff;
-            --os-neon: #00d4ff;
-            --os-obsidian: #030303;
-            --window-bg: rgba(5, 5, 10, 0.9);
-            --glass-border: 1px solid rgba(0, 212, 255, 0.3);
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #020205;
+            --panel-bg: rgba(8, 8, 15, 0.95);
+            --header-height: 160px; /* Increased to house larger logo */
         }
 
         body, html {
             margin: 0; padding: 0; height: 100%;
             background-color: var(--os-obsidian);
-            color: #fff;
+            color: #ffffff;
             font-family: 'JetBrains Mono', monospace;
-            overflow: hidden; /* Lock scroll to behave like a Desktop */
+            overflow-x: hidden;
         }
 
-        /* --- BACKGROUND: COMMAND-LINE MATRIX PLUGIN --- */
-        #bg-matrix {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            color: rgba(0, 85, 255, 0.1); font-size: 0.7rem;
-            padding: 20px; z-index: -1; pointer-events: none;
-        }
-
-        /* --- THE SYSTEM HEADER (TASKBAR TOP) --- */
+        /* --- THE LOGO-FIRST HEADER --- */
         header {
-            position: fixed; top: 0; width: 100%; height: 120px;
-            background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(20px);
-            border-bottom: 2px solid var(--os-cobalt);
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 0 40px; z-index: 10000;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: var(--header-height);
+            background: var(--panel-bg);
+            backdrop-filter: blur(20px);
+            border-bottom: 3px solid var(--os-cobalt);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 60px;
+            z-index: 10000;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
         }
 
-        /* LOGO: 3X LARGE TOP-RIGHT */
-        .system-logo-anchor {
-            order: 2; /* Force to Right */
+        /* LOGO: FIXED TOP-LEFT / 2X LARGER / NO CUT-OFF */
+        .logo-system-anchor {
+            display: flex;
+            align-items: center;
+            height: 100%; /* Ensures vertical centering */
         }
-        .system-logo-anchor img {
-            height: 100px; /* 3x Scale */
+
+        .logo-system-anchor img {
+            height: 130px; /* 2X Increase - High visibility scale */
+            width: auto;
             filter: drop-shadow(0 0 15px var(--os-cobalt));
-            transition: 0.5s;
+            transition: transform 0.3s ease;
         }
 
-        /* NAVIGATION: TASKBAR STYLE */
-        nav { order: 1; display: flex; gap: 15px; }
-        .nav-item {
-            background: var(--window-bg); border: var(--glass-border);
-            color: var(--os-neon); padding: 10px 20px;
-            text-decoration: none; font-size: 0.7rem; font-weight: bold;
-            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-            transition: 0.3s;
-        }
-        .nav-item:hover { background: var(--os-cobalt); color: white; box-shadow: 0 0 20px var(--os-cobalt); }
-
-        /* --- DESKTOP WINDOWS --- */
-        .desktop-area {
-            padding-top: 150px; height: calc(100vh - 200px);
-            display: flex; justify-content: space-around; align-items: flex-start;
+        .logo-system-anchor img:hover {
+            transform: scale(1.05);
         }
 
-        .window {
-            width: 45%; background: var(--window-bg);
-            border: var(--glass-border); border-top: 30px solid #111;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            position: relative; animation: window-pop 0.5s ease-out;
+        /* NAVIGATION: RIGHT-ALIGNED / OS STYLE */
+        nav {
+            display: flex;
+            gap: 20px;
         }
 
-        @keyframes window-pop { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-
-        .window-header {
-            position: absolute; top: -25px; left: 10px;
-            font-size: 0.6rem; color: var(--os-neon); font-weight: bold;
+        .nav-btn {
+            background: rgba(0, 102, 255, 0.1);
+            border: 1px solid var(--os-cobalt);
+            color: var(--os-neon);
+            padding: 12px 24px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 10% 100%);
+            transition: all 0.3s;
         }
 
-        .window-content { padding: 25px; line-height: 1.5; font-size: 0.85rem; }
+        .nav-btn:hover {
+            background: var(--os-cobalt);
+            color: white;
+            box-shadow: 0 0 20px var(--os-cobalt);
+        }
 
-        /* --- FOOTER: SYSTEM TRAY --- */
+        /* --- MAIN VIEWPORT (Accounting for Large Header) --- */
+        main {
+            margin-top: calc(var(--header-height) + 40px);
+            padding: 0 10% 100px 10%;
+        }
+
+        /* --- OS INTERFACE WINDOWS --- */
+        .window-shell {
+            background: rgba(10, 10, 20, 0.8);
+            border: 1px solid #1a1a2e;
+            border-top: 35px solid #111111;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .window-title {
+            position: absolute;
+            top: -28px;
+            left: 15px;
+            font-size: 0.7rem;
+            color: var(--os-neon);
+            text-transform: uppercase;
+        }
+
+        .content-body { padding: 40px; }
+
+        /* --- SYSTEM TRAY (FOOTER) --- */
         footer {
-            position: fixed; bottom: 0; width: 100%; height: 50px;
-            background: #000; border-top: 1px solid var(--os-cobalt);
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 0 30px; font-size: 0.6rem; color: #444;
+            background: #000;
+            border-top: 2px solid var(--os-cobalt);
+            padding: 50px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
     </style>
 </head>
 <body>
 
-    <div id="bg-matrix"></div>
-
     <header>
-        <div class="system-logo-anchor">
-            <img src="KINOS LOGO.png" alt="KinOS OS Logo">
+        <div class="logo-system-anchor">
+            <img src="KINOS LOGO.png" alt="KinOS OS Official Logo">
         </div>
         <nav>
-            <a href="index.html" class="nav-item">[SYSTEM_KERNEL]</a>
-            <a href="grants.html" class="nav-item">[GRANT_METRICS]</a>
-            <a href="donations.html" class="nav-item">[FUND_PROTOCOLS]</a>
-            <a href="hardware.html" class="nav-item">[DEVICE_LAB]</a>
+            <a href="index.html" class="nav-btn">KERNEL</a>
+            <a href="nonprofits.html" class="nav-btn">PARTNERS</a>
+            <a href="grants.html" class="nav-btn">GRANT_INITIATIVE</a>
+            <a href="donations.html" class="nav-btn">FUNDING</a>
+            <a href="hardware.html" class="nav-btn">DEVICES</a>
         </nav>
     </header>
 
-    <div class="desktop-area">
-        <div class="window">
-            <div class="window-header">CORE_MISSION.EXE</div>
-            <div class="window-content">
-                <h2 style="color:var(--os-cobalt); font-family: 'Orbitron';">KinOS: The Future of America</h2>
-                <p>A decentralized OS for Gaming, AI, and Productivity. We are turning local communities into the next wave of tech innovators. By bridging the gap between non-profits and technology, we allow everyday members to become the architects of the next world-changing products.</p>
-                <p>> STATUS: PROTOTYPING HARDWARE SUPPORT</p>
+    <main>
+        <div class="window-shell">
+            <div class="window-title">SYSTEM_INITIATIVE.TXT</div>
+            <div class="content-body">
+                <h1 style="font-family: 'Orbitron'; color: var(--os-cobalt);">KinOS: Redefining American Innovation</h1>
+                <p>Welcome to the first community-driven Operating System. **KinOS** is not just software; it is a platform for gaming, high-productivity AI, and blockchain minting. We enable communities to lead the charge in creating the next top innovative products to change the world.</p>
             </div>
         </div>
 
-        <div class="window">
-            <div class="window-header">NONPROFIT_INITIATIVES.SH</div>
-            <div class="window-content">
-                <h3 style="color:var(--os-neon);">Community Reinvestment</h3>
-                <p>We target 20 major grants to fuel neighborhood engagement. From blockchain minting to high-performance AI workstations, every dollar won is returned to the creators of the KinOS ecosystem.</p>
-                <div style="border: 1px solid #333; padding: 10px; margin-top: 10px; font-size: 0.7rem;">
-                    [LISTING_TOP_GRANTS...] <br>
-                    01. Knight Foundation <br>
-                    02. National Science Foundation <br>
-                    03. NEA Digital Arts
+        <div class="window-shell">
+            <div class="window-title">4_TIER_COMMITMENT_MATRIX.DAT</div>
+            <div class="content-body">
+                <h3 style="color: var(--os-neon);">Select Your Commitment Duration</h3>
+                <p>Commit to the future of technology. Select a duration from 1 month up to 10 years per tier.</p>
+                <div style="border: 1px dashed var(--os-cobalt); padding: 20px; text-align: center;">
+                    [ CADET ] | [ SENTINEL ] | [ VANGUARD ] | [ ARCHITECT ]
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <footer>
-        <div>KINOS_OS_KERNEL_v4.0.0 | UPTIME: 99.9%</div>
-        <div style="color:var(--os-cobalt)">AFFILIATED: AEA H.ORG | VEXILLAAITS.COM</div>
+        <div class="footer-logo">
+            <img src="KINOS LOGO.png" alt="KinOS Seal" style="height: 60px; opacity: 0.6;">
+        </div>
+        <div style="text-align: right; color: #444; font-size: 0.7rem;">
+            &copy; 2026 KinOS | POWERED BY VEXILLAAITS.COM<br>
+            PHILADELPHIA ACADEMY HUB | AEA H.ORG PARTNER
+        </div>
     </footer>
 
-    <script>
-        // Automatic Code Stream Script
-        const term = document.getElementById('bg-matrix');
-        const code = [
-            "root@KinOS:~# boot --neural-link",
-            "Checking System Integrity... 100%",
-            "Initializing Cobalt Interface...",
-            "Loading AEA H.org Safety Shield...",
-            "Connecting to Philadelphia Hub Node...",
-            "Grant Proposal: 20 Targets Identified.",
-            "Minting Blockchain Consensus Protocol...",
-            "AI Prototype v1.2: Online."
-        ];
-        let i = 0;
-        setInterval(() => {
-            term.innerText += code[i % code.length] + "\n";
-            i++;
-            if(i > 50) term.innerText = ""; // Clear log to avoid overflow
-        }, 1200);
-    </script>
 </body>
 </html>
