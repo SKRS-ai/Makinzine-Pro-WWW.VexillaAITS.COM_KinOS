@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | MAKINZINE PRO Assembly Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-gold: #ffcc00;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- ASSEMBLY CONTENT --- */
+        main { margin-top: 280px; padding: 0 15% 100px 15%; }
+
+        .step-container {
+            margin-bottom: 80px; border-left: 2px solid #222; padding-left: 40px; position: relative;
+        }
+
+        .step-number {
+            position: absolute; left: -15px; top: 0;
+            background: var(--os-cobalt); color: #fff;
+            font-family: 'Orbitron'; font-size: 0.8rem; padding: 5px 10px;
+        }
+
+        .step-title { font-family: 'Orbitron'; font-size: 1.3rem; color: var(--os-neon); margin-bottom: 20px; }
+        
+        .diagram-placeholder {
+            width: 100%; height: 300px; background: #050510;
+            border: 1px solid #1a1a2e; margin: 20px 0;
+            display: flex; align-items: center; justify-content: center;
+            color: #333; font-size: 0.7rem; text-transform: uppercase;
+        }
+
+        .component-list {
+            background: rgba(255, 204, 0, 0.05); border: 1px solid var(--os-gold);
+            padding: 20px; margin-bottom: 40px;
+        }
+
+        .tool-tag {
+            font-size: 0.6rem; color: var(--os-gold); border: 1px solid var(--os-gold);
+            padding: 2px 8px; margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav style="display: flex; gap: 20px;">
+                <a href="index.html" style="color: var(--os-neon); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ KERNEL ]</a>
+                <a href="makinzine_pro.html" style="color: var(--os-gold); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ SPECS ]</a>
+                <a href="hardware_assembly.html" style="color: #fff; text-decoration: none; font-size: 0.75rem; font-weight: 900; border-bottom: 2px solid var(--os-neon);">[ ASSEMBLY_GUIDE ]</a>
+            </nav>
+            <div style="font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-neon);">TECH_MANUAL_v1.0</div>
+        </div>
+    </header>
+
+    <main>
+        <div style="margin-bottom: 60px;">
+            <h1 style="font-family: 'Orbitron'; font-size: 2.2rem; margin: 0;">MAKINZINE_PRO_ASSEMBLY</h1>
+            <p style="color: #666;">Step-by-step physical integration for Philadelphia Cadets.</p>
+        </div>
+
+        <div class="component-list">
+            <h4 style="margin-top: 0; font-family: 'Orbitron'; font-size: 0.7rem;">REQUIRED_TOOLS</h4>
+            <span class="tool-tag">Hex Driver (2.5mm)</span>
+            <span class="tool-tag">ESD Wrist Strap</span>
+            <span class="tool-tag">AEAH_Flash_Drive</span>
+        </div>
+
+        <div class="step-container">
+            <div class="step-number">01</div>
+            <div class="step-title">CHASSIS_UNBOXING</div>
+            <p style="font-size: 0.85rem; color: #ccc;">Inspect the 3D-printed skeleton for any structural integrity issues. Ensure the E-WIN 2.0 mounting brackets are aligned with the central spine.</p>
+            <div class="diagram-placeholder">[ DIAGRAM_MKZ_CHASSIS_EXP_01 ]</div>
+        </div>
+
+        <div class="step-container">
+            <div class="step-number">02</div>
+            <div class="step-title">LOGIC_BOARD_SEATING</div>
+            <p style="font-size: 0.85rem; color: #ccc;">Install the primary logic board. Connect the dual-redundant cooling fans. Warning: Do not apply power until the AEAH Shield Module is seated in the primary PCIe slot.</p>
+            <div class="diagram-placeholder">[ DIAGRAM_MKZ_LOGIC_SEAT_02 ]</div>
+        </div>
+
+        <div class="step-container">
+            <div class="step-number">03</div>
+            <div class="step-title">INITIAL_BOOT_HANDSHAKE</div>
+            <p style="font-size: 0.85rem; color: #ccc;">Insert the AEAH.org authentication key. The system will cycle through a series of cobalt LED pulses. If the signal turns red, refer to Node 42 for diagnostic recovery.</p>
+            <div class="diagram-placeholder">[ DIAGRAM_MKZ_BOOT_SYNC_03 ]</div>
+        </div>
+    </main>
+
+</body>
+</html>
