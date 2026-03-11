@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Grand Opening Node 50</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@200;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-gold: #ffcc00;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            overflow-x: hidden;
+            height: 100vh;
+        }
+
+        /* --- CINEMATIC BACKGROUND --- */
+        .video-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative; z-index: 10;
+            height: 100vh; display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center; padding: 0 10%;
+        }
+
+        .glitch-title {
+            font-family: 'Orbitron'; font-size: 4rem; font-weight: 900;
+            text-transform: uppercase; letter-spacing: 15px;
+            margin: 0; color: #fff; text-shadow: 0 0 20px var(--os-cobalt);
+        }
+
+        .subtitle {
+            font-family: 'JetBrains Mono'; font-size: 1rem; color: var(--os-neon);
+            margin-top: 20px; letter-spacing: 5px; font-weight: 200;
+        }
+
+        /* --- THE INVITATION BOX --- */
+        .invite-card {
+            margin-top: 50px; background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            padding: 40px; max-width: 600px;
+            backdrop-filter: blur(20px);
+        }
+
+        .invite-details {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 30px;
+            text-align: left; margin-top: 30px; border-top: 1px solid #222;
+            padding-top: 30px;
+        }
+
+        .detail-label { font-size: 0.6rem; color: var(--os-gold); margin-bottom: 5px; }
+        .detail-val { font-family: 'Orbitron'; font-size: 0.8rem; }
+
+        .rsvp-btn {
+            margin-top: 40px; width: 100%; padding: 20px;
+            background: var(--os-cobalt); color: #fff;
+            font-family: 'Orbitron'; font-weight: 900; font-size: 1rem;
+            border: none; cursor: pointer; transition: 0.3s;
+            clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+        }
+
+        .rsvp-btn:hover { background: var(--os-neon); color: #000; box-shadow: 0 0 30px var(--os-neon); }
+
+        .logo-small { height: 120px; margin-bottom: 30px; filter: drop-shadow(0 0 15px var(--os-cobalt)); }
+
+    </style>
+</head>
+<body>
+
+    <div class="video-overlay"></div>
+
+    <main class="hero-content">
+        <img src="KINOS LOGO.png" alt="KinOS Shield" class="logo-small">
+        
+        <h1 class="glitch-title">NODE_50_LIVE</h1>
+        <div class="subtitle">PHILADELPHIA SOVEREIGNTY HAS ARRIVED</div>
+
+        <div class="invite-card">
+            <p style="font-size: 0.9rem; line-height: 1.6; color: #ccc;">
+                You are cordially invited to the official activation of the <span style="color: var(--os-neon)">KinOS Innovation Hub</span>. 
+                Witness the unveiling of the <span style="color: var(--os-gold)">MAKINZINE PRO</span> fleet and meet the first generation of Philadelphia Cadets secured by AEAH.org.
+            </p>
+
+            <div class="invite-details">
+                <div>
+                    <div class="detail-label">LOCATION</div>
+                    <div class="detail-val">North Philly Central Hub<br>Kensington, PA</div>
+                </div>
+                <div>
+                    <div class="detail-label">TIMESTAMP</div>
+                    <div class="detail-val">March 20, 2026<br>18:00 EST</div>
+                </div>
+            </div>
+
+            <button class="rsvp-btn">REQUEST_ACCESS_RSVP</button>
+        </div>
+
+        <div style="margin-top: 40px; font-size: 0.6rem; color: #444; letter-spacing: 2px;">
+            SECURED BY AEAH.org | POWERED BY CORSAIR & E-WIN
+        </div>
+    </main>
+
+</body>
+</html>
