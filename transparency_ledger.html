@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Sovereign Transparency Ledger</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-gold: #ffcc00;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- LEDGER CONTENT --- */
+        main { margin-top: 280px; padding: 0 10% 100px 10%; }
+
+        .ledger-summary {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .stat-box {
+            background: rgba(0, 242, 255, 0.03); border: 1px solid #1a1a2e;
+            padding: 30px; text-align: center;
+        }
+
+        .stat-value { font-family: 'Orbitron'; font-size: 1.5rem; color: var(--os-neon); }
+        .stat-label { font-size: 0.6rem; color: #555; letter-spacing: 2px; margin-top: 10px; }
+
+        .ledger-table {
+            width: 100%; border-collapse: collapse; background: #000;
+        }
+
+        .ledger-table th {
+            text-align: left; padding: 15px; border-bottom: 2px solid var(--os-cobalt);
+            font-family: 'Orbitron'; font-size: 0.75rem; color: var(--os-cobalt);
+        }
+
+        .ledger-table td {
+            padding: 15px; border-bottom: 1px solid #111; font-size: 0.8rem;
+        }
+
+        .tx-id { color: #444; font-size: 0.7rem; }
+        .unit-count { color: var(--os-gold); font-weight: 800; }
+        .verification-tag { color: var(--os-neon); font-size: 0.6rem; font-weight: 900; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav style="display: flex; gap: 20px;">
+                <a href="index.html" style="color: var(--os-neon); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ KERNEL ]</a>
+                <a href="transparency_ledger.html" style="color: #fff; text-decoration: none; font-size: 0.75rem; font-weight: 900; border-bottom: 2px solid var(--os-neon);">[ LIVE_LEDGER ]</a>
+            </nav>
+            <div style="font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-neon);">AUDITED_BY_AEAH.org</div>
+        </div>
+    </header>
+
+    <main>
+        <h1 style="font-family: 'Orbitron'; margin-bottom: 10px;">SOVEREIGN_TRANSPARENCY_LEDGER</h1>
+        <p style="color: #666; margin-bottom: 40px;">Conversion of donor capital into physical innovation assets.</p>
+
+        <div class="ledger-summary">
+            <div class="stat-box">
+                <div class="stat-value">$1,240,500</div>
+                <div class="stat-label">TOTAL_CAPITAL_DEPLOYED</div>
+            </div>
+            <div class="stat-box" style="border-color: var(--os-gold);">
+                <div class="stat-value" style="color: var(--os-gold);">412</div>
+                <div class="stat-label">MAKINZINE_PRO_UNITS_ACTIVE</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">22</div>
+                <div class="stat-label">CORSAIR_i7500_NODES_ONLINE</div>
+            </div>
+        </div>
+
+        <table class="ledger-table">
+            <thead>
+                <tr>
+                    <th>TIMESTAMP</th>
+                    <th>ASSET_ALLOCATION</th>
+                    <th>QTY</th>
+                    <th>VERIFICATION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tx-id">2026-03-11:14:22</td>
+                    <td>MAKINZINE PRO [Standard Issue]</td>
+                    <td class="unit-count">12 Units</td>
+                    <td class="verification-tag">AEAH.org_VALIDATED</td>
+                </tr>
+                <tr>
+                    <td class="tx-id">2026-03-09:09:45</td>
+                    <td>Corsair Vengeance i7500 Node</td>
+                    <td class="unit-count">2 Units</td>
+                    <td class="verification-tag">AEAH.org_VALIDATED</td>
+                </tr>
+                <tr>
+                    <td class="tx-id">2026-03-05:16:10</td>
+                    <td>E-WIN 2.0 RGB Prototyping Station</td>
+                    <td class="unit-count">5 Units</td>
+                    <td class="verification-tag">AEAH.org_VALIDATED</td>
+                </tr>
+                <tr>
+                    <td class="tx-id">2026-02-28:11:02</td>
+                    <td>MAKINZINE PRO [Architect Edition]</td>
+                    <td class="unit-count">1 Unit</td>
+                    <td class="verification-tag">AEAH.org_VALIDATED</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+</body>
+</html>
