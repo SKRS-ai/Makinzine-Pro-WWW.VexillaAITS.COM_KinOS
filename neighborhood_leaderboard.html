@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Philadelphia Neighborhood Leaderboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-gold: #ffcc00;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- LEADERBOARD CONTENT --- */
+        main { margin-top: 280px; padding: 0 10% 100px 10%; }
+
+        .leaderboard-table {
+            width: 100%; border-collapse: collapse; margin-top: 30px;
+            background: rgba(255, 255, 255, 0.01);
+        }
+
+        .leaderboard-table th {
+            text-align: left; font-family: 'Orbitron'; font-size: 0.7rem;
+            color: var(--os-neon); border-bottom: 1px solid #222; padding: 20px;
+        }
+
+        .leaderboard-table td {
+            padding: 25px 20px; border-bottom: 1px solid #111; font-size: 0.85rem;
+        }
+
+        .rank-number { font-family: 'Orbitron'; font-weight: 900; color: var(--os-cobalt); }
+        .district-name { font-weight: 800; color: #fff; letter-spacing: 1px; }
+        
+        .uptime-bar-container {
+            width: 100%; height: 4px; background: #111; position: relative;
+        }
+        .uptime-bar-fill { height: 100%; background: var(--os-neon); box-shadow: 0 0 10px var(--os-neon); }
+
+        .merit-points { font-family: 'Orbitron'; color: var(--os-gold); font-size: 0.9rem; }
+
+        .highlight-row { background: rgba(0, 102, 255, 0.05); border-left: 4px solid var(--os-cobalt); }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav style="display: flex; gap: 20px;">
+                <a href="index.html" style="color: var(--os-neon); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ KERNEL ]</a>
+                <a href="regional_alliance.html" style="color: var(--os-gold); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ MAP ]</a>
+                <a href="neighborhood_leaderboard.html" style="color: #fff; text-decoration: none; font-size: 0.75rem; font-weight: 900; border-bottom: 2px solid var(--os-neon);">[ MERIT_HUD ]</a>
+            </nav>
+            <div style="font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-neon);">REALTIME_METRICS_AEAH.org</div>
+        </div>
+    </header>
+
+    <main>
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h1 style="font-family: 'Orbitron'; font-size: 2rem; margin: 0;">PHILADELPHIA_DISTRICT_MERIT</h1>
+            <p style="color: #666;">Ranking the most active hubs in the KinOS network.</p>
+        </div>
+
+        <table class="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>RANK</th>
+                    <th>DISTRICT_SECTOR</th>
+                    <th>NETWORK_UPTIME</th>
+                    <th>MISSIONS_COMPLETE</th>
+                    <th>MERIT_TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="highlight-row">
+                    <td class="rank-number">01</td>
+                    <td class="district-name">NORTH_PHILLY_CENTRAL</td>
+                    <td>
+                        <div class="uptime-bar-container"><div class="uptime-bar-fill" style="width: 99.8%;"></div></div>
+                        <div style="font-size: 0.6rem; color: #555; margin-top: 5px;">99.8% STABLE</div>
+                    </td>
+                    <td>1,240</td>
+                    <td class="merit-points">42,500 PX</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">02</td>
+                    <td class="district-name">WEST_PHILLY_CLUSTER</td>
+                    <td>
+                        <div class="uptime-bar-container"><div class="uptime-bar-fill" style="width: 94.2%;"></div></div>
+                        <div style="font-size: 0.6rem; color: #555; margin-top: 5px;">94.2% STABLE</div>
+                    </td>
+                    <td>982</td>
+                    <td class="merit-points">31,200 PX</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">03</td>
+                    <td class="district-name">SOUTH_PHILLY_NODE</td>
+                    <td>
+                        <div class="uptime-bar-container"><div class="uptime-bar-fill" style="width: 88.5%;"></div></div>
+                        <div style="font-size: 0.6rem; color: #555; margin-top: 5px;">88.5% STABLE</div>
+                    </td>
+                    <td>754</td>
+                    <td class="merit-points">24,800 PX</td>
+                </tr>
+                <tr>
+                    <td class="rank-number">04</td>
+                    <td class="district-name">KENSINGTON_HUB</td>
+                    <td>
+                        <div class="uptime-bar-container"><div class="uptime-bar-fill" style="width: 76.0%; background: var(--os-gold);"></div></div>
+                        <div style="font-size: 0.6rem; color: #555; margin-top: 5px;">76.0% STABLE [SYNCING]</div>
+                    </td>
+                    <td>412</td>
+                    <td class="merit-points">12,400 PX</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+</body>
+</html>
