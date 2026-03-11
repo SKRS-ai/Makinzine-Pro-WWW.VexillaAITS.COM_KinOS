@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Network Diagnostics & Hardware Telemetry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-gold: #ffcc00;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            overflow-x: hidden;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- DIAGNOSTICS LAYOUT --- */
+        main { margin-top: 280px; padding: 0 5% 100px 5%; }
+
+        .dashboard-grid {
+            display: grid; grid-template-columns: 2fr 1fr; gap: 30px;
+        }
+
+        .telemetry-card {
+            background: rgba(0, 102, 255, 0.02); border: 1px solid #1a1a2e;
+            padding: 30px; position: relative;
+        }
+
+        .telemetry-header {
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid #222; padding-bottom: 15px; margin-bottom: 25px;
+        }
+
+        .live-indicator {
+            width: 10px; height: 10px; background: #00ff00; border-radius: 50%;
+            box-shadow: 0 0 10px #00ff00; display: inline-block; margin-right: 10px;
+        }
+
+        /* HARDWARE STATUS BARS */
+        .status-row { margin-bottom: 20px; }
+        .status-label { font-size: 0.65rem; color: #666; display: flex; justify-content: space-between; }
+        .status-bar-bg { height: 6px; background: #111; margin-top: 8px; position: relative; }
+        .status-bar-fill { height: 100%; background: var(--os-neon); }
+
+        /* TELEMETRY LIST */
+        .telemetry-list { font-size: 0.7rem; color: #888; list-style: none; padding: 0; }
+        .telemetry-list li { padding: 10px 0; border-bottom: 1px solid #111; display: flex; justify-content: space-between; }
+        .val-neon { color: var(--os-neon); font-weight: bold; }
+        .val-gold { color: var(--os-gold); }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav style="display: flex; gap: 20px;">
+                <a href="index.html" style="color: var(--os-neon); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ KERNEL ]</a>
+                <a href="network_diagnostics.html" style="color: #fff; text-decoration: none; font-size: 0.75rem; font-weight: 900; border-bottom: 2px solid var(--os-gold);">[ DIAGNOSTICS ]</a>
+            </nav>
+            <div style="font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-neon);">AUDITED_BY_AEAH.org</div>
+        </div>
+    </header>
+
+    <main>
+        <div class="dashboard-grid">
+            <section class="telemetry-card">
+                <div class="telemetry-header">
+                    <h2 style="font-family: 'Orbitron'; margin: 0; font-size: 1.1rem;">CITY-WIDE_HARDWARE_HEALTH</h2>
+                    <span style="font-size: 0.6rem; color: #555;"><span class="live-indicator"></span>LIVE_FEED_031126</span>
+                </div>
+
+                <div class="status-row">
+                    <div class="status-label"><span>MAKINZINE_PRO_ARRAY_STABILITY</span><span>98.4%</span></div>
+                    <div class="status-bar-bg"><div class="status-bar-fill" style="width: 98.4%;"></div></div>
+                </div>
+
+                <div class="status-row">
+                    <div class="status-label"><span>CORSAIR_i7500_NODE_THERMALS</span><span>42°C AVG</span></div>
+                    <div class="status-bar-bg"><div class="status-bar-fill" style="width: 45%; background: var(--os-gold);"></div></div>
+                </div>
+
+                <div class="status-row">
+                    <div class="status-label"><span>AEAH.org_SHIELD_INTEGRITY</span><span>OPTIMAL</span></div>
+                    <div class="status-bar-bg"><div class="status-bar-fill" style="width: 100%; background: var(--os-neon);"></div></div>
+                </div>
+            </section>
+
+            <section class="telemetry-card">
+                <div class="telemetry-header">
+                    <h2 style="font-family: 'Orbitron'; margin: 0; font-size: 0.8rem;">LOCAL_ACTIVE_UNITS</h2>
+                </div>
+                <ul class="telemetry-list">
+                    <li><span>UNIT_MKZ-01_NORTH_PHILLY</span><span class="val-neon">ONLINE</span></li>
+                    <li><span>UNIT_MKZ-02_WEST_PHILLY</span><span class="val-neon">ONLINE</span></li>
+                    <li><span>UNIT_MKZ-03_SOUTH_PHILLY</span><span class="val-gold">MAINTENANCE</span></li>
+                    <li><span>UNIT_MKZ-04_KENSINGTON</span><span class="val-neon">ONLINE</span></li>
+                    <li><span>CORSAIR_CLUSTER_ALPHA</span><span class="val-neon">PEAK_LOAD</span></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+</body>
+</html>
