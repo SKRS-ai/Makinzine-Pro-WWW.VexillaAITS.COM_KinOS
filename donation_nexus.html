@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Donation Nexus: Sponsor the Future</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-gold: #ffcc00;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- DONATION GRID --- */
+        main { margin-top: 280px; padding: 0 10% 100px 10%; }
+
+        .nexus-intro { text-align: center; margin-bottom: 60px; }
+
+        .tier-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;
+        }
+
+        .tier-card {
+            background: rgba(10, 10, 20, 0.8); border: 1px solid #1a1a2e;
+            padding: 40px; text-align: center; transition: 0.3s;
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+
+        .tier-card:hover { border-color: var(--os-neon); transform: scale(1.02); }
+        .tier-card.featured { border-color: var(--os-gold); box-shadow: 0 0 20px rgba(255, 204, 0, 0.1); }
+
+        .tier-price { font-family: 'Orbitron'; font-size: 2.5rem; color: #fff; margin: 20px 0; }
+        .tier-title { font-family: 'Orbitron'; font-size: 1rem; color: var(--os-neon); letter-spacing: 2px; }
+        .tier-gold { color: var(--os-gold); }
+
+        .impact-list { text-align: left; font-size: 0.75rem; color: #888; margin: 25px 0; padding: 0; list-style: none; }
+        .impact-list li { margin-bottom: 10px; display: flex; align-items: flex-start; }
+        .impact-list li::before { content: "»"; color: var(--os-cobalt); margin-right: 10px; }
+
+        .fund-btn {
+            background: var(--os-cobalt); color: #fff; border: none;
+            padding: 15px; font-family: 'Orbitron'; font-weight: 900;
+            cursor: pointer; width: 100%; transition: 0.3s;
+        }
+
+        .fund-btn:hover { background: var(--os-neon); color: #000; }
+        .btn-gold { background: var(--os-gold); color: #000; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav style="display: flex; gap: 20px;">
+                <a href="index.html" style="color: var(--os-neon); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ KERNEL ]</a>
+                <a href="transparency_ledger.html" style="color: #fff; text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ LEDGER ]</a>
+                <a href="donation_nexus.html" style="color: var(--os-gold); text-decoration: none; font-size: 0.75rem; font-weight: 900; border-bottom: 2px solid var(--os-gold);">[ DONATION_NEXUS ]</a>
+            </nav>
+            <div style="font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-neon);">SECURED_BY_AEAH.org</div>
+        </div>
+    </header>
+
+    <main>
+        <div class="nexus-intro">
+            <h1 style="font-family: 'Orbitron'; font-size: 2.5rem; margin: 0;">HARDWARE_SPONSORSHIP</h1>
+            <p style="color: #666;">Directly fund the tools that build Philadelphia's next generation of architects.</p>
+        </div>
+
+        <div class="tier-grid">
+            <div class="tier-card">
+                <div>
+                    <div class="tier-title">CADET_STARTER</div>
+                    <div class="tier-price">$450</div>
+                    <ul class="impact-list">
+                        <li>(1) MAKINZINE PRO Hardware Unit</li>
+                        <li>(1) Year of AEAH.org Encryption</li>
+                        <li>Entry into the North Philly Safe Zone</li>
+                    </ul>
+                </div>
+                <button class="fund-btn">SPONSOR_NOW</button>
+            </div>
+
+            <div class="tier-card featured">
+                <div>
+                    <div class="tier-title tier-gold">VANGUARD_STATION</div>
+                    <div class="tier-price">$2,500</div>
+                    <ul class="impact-list">
+                        <li>(1) E-WIN 2.0 RGB Tactical Station</li>
+                        <li>(1) MAKINZINE PRO Architect Edition</li>
+                        <li>Direct Mentorship matching for 1 Cadet</li>
+                        <li>Legacy recognition on the Alumni Wall</li>
+                    </ul>
+                </div>
+                <button class="fund-btn btn-gold">SPONSOR_STATION</button>
+            </div>
+
+            <div class="tier-card">
+                <div>
+                    <div class="tier-title">ARCHITECT_NODE</div>
+                    <div class="tier-price">$12,000</div>
+                    <ul class="impact-list">
+                        <li>(1) Corsair Vengeance i7500 AI Node</li>
+                        <li>Full lab integration for 5 Cadets</li>
+                        <li>Naming rights for the Philadelphia Hub Wing</li>
+                    </ul>
+                </div>
+                <button class="fund-btn">SPONSOR_NODE</button>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
