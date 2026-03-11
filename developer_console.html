@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | System Command Console</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor {
+            display: flex; align-items: center;
+            padding-top: 45px; padding-left: 60px;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); }
+
+        .system-border {
+            width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--os-cobalt), transparent);
+            margin-top: 50px;
+        }
+
+        /* --- CONSOLE LAYOUT --- */
+        main { margin-top: 280px; padding: 0 5% 100px 5%; }
+
+        .console-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .node-card {
+            background: #05050a;
+            border: 1px solid #1a1a2e;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .node-card:hover { border-color: var(--os-neon); background: rgba(0, 242, 255, 0.02); }
+
+        .node-info h3 { font-family: 'Orbitron'; font-size: 0.9rem; margin: 0; color: var(--os-cobalt); }
+        .node-info p { font-size: 0.7rem; color: #555; margin: 5px 0 0 0; }
+
+        .status-light {
+            width: 10px; height: 10px; border-radius: 50%;
+            background: #00ff00; box-shadow: 0 0 10px #00ff00;
+        }
+
+        .launch-btn {
+            text-decoration: none; color: var(--os-neon);
+            font-size: 0.7rem; border: 1px solid var(--os-neon);
+            padding: 5px 10px; font-weight: 800;
+        }
+
+        .launch-btn:hover { background: var(--os-neon); color: #000; }
+
+        .sys-log {
+            margin-top: 50px; background: #000; border: 1px solid #222;
+            padding: 20px; font-size: 0.75rem; color: #00ff00;
+            max-height: 200px; overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <div style="color: var(--os-neon); font-family: 'Orbitron'; font-weight: 900;">SYSTEM_ADMIN_v1.0</div>
+            <div style="width: 120px;"></div>
+        </div>
+        <div class="system-border"></div>
+    </header>
+
+    <main>
+        <h2 style="font-family: 'Orbitron'; margin-bottom: 30px;">ACTIVE_NODE_DIRECTORY</h2>
+        
+        <div class="console-grid">
+            <div class="node-card">
+                <div class="node-info">
+                    <h3>INDEX.HTML</h3>
+                    <p>Core Kernel / Executive Intro</p>
+                </div>
+                <div class="status-light"></div>
+                <a href="index.html" class="launch-btn">ACCESS</a>
+            </div>
+
+            <div class="node-card">
+                <div class="node-info">
+                    <h3>GUILD_SUBSCRIPTION.HTML</h3>
+                    <p>Revenue & Tier Matrix</p>
+                </div>
+                <div class="status-light"></div>
+                <a href="guild_subscription.html" class="launch-btn">ACCESS</a>
+            </div>
+
+            <div class="node-card">
+                <div class="node-info">
+                    <h3>HARDWARE_LAB.HTML</h3>
+                    <p>Prototyping & Product Proof</p>
+                </div>
+                <div class="status-light"></div>
+                <a href="hardware_lab.html" class="launch-btn">ACCESS</a>
+            </div>
+
+            <div class="node-card">
+                <div class="node-info">
+                    <h3>RECRUITMENT_NEXUS.HTML</h3>
+                    <p>Enlistment & Funnel</p>
+                </div>
+                <div class="status-light"></div>
+                <a href="recruitment_nexus.html" class="launch-btn">ACCESS</a>
+            </div>
+
+            </div>
+
+        <div class="sys-log">
+            [SYSTEM]: All 14 Nodes Successfully Linked.<br>
+            [HARDWARE]: Corsair Vengeance i7500 Nodes Operational.<br>
+            [SECURITY]: AEA H.org Shield Active.<br>
+            [STATUS]: Ready for Global Grant Deployment.
+        </div>
+    </main>
+
+</body>
+</html>
