@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Sovereign Governance DAO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-gold: #ffcc00;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- DAO CONTENT --- */
+        main { margin-top: 280px; padding: 0 10% 100px 10%; }
+
+        .dao-info { margin-bottom: 50px; border-left: 2px solid var(--os-gold); padding-left: 20px; }
+
+        .proposal-card {
+            background: #050510; border: 1px solid #1a1a2e;
+            padding: 35px; margin-bottom: 30px; position: relative;
+        }
+
+        .proposal-status {
+            position: absolute; top: 20px; right: 20px;
+            font-size: 0.6rem; padding: 4px 12px; border: 1px solid var(--os-neon);
+            color: var(--os-neon); font-weight: 900;
+        }
+
+        .proposal-id { font-size: 0.6rem; color: #555; letter-spacing: 2px; }
+        .proposal-title { font-family: 'Orbitron'; font-size: 1.2rem; color: #fff; margin: 10px 0; }
+        
+        .vote-meter {
+            height: 8px; background: #111; margin: 25px 0; border-radius: 4px; overflow: hidden;
+            display: flex;
+        }
+
+        .vote-yes { background: var(--os-neon); height: 100%; }
+        .vote-no { background: #333; height: 100%; }
+
+        .vote-actions { display: flex; gap: 15px; }
+        .btn-vote {
+            flex: 1; padding: 12px; font-family: 'Orbitron'; font-size: 0.7rem;
+            font-weight: 800; cursor: pointer; border: 1px solid #222; background: transparent; color: #fff;
+        }
+
+        .btn-yes:hover { border-color: var(--os-neon); color: var(--os-neon); }
+        .btn-no:hover { border-color: #ff3333; color: #ff3333; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav style="display: flex; gap: 20px;">
+                <a href="index.html" style="color: var(--os-neon); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ KERNEL ]</a>
+                <a href="governance_dao.html" style="color: #fff; text-decoration: none; font-size: 0.75rem; font-weight: 900; border-bottom: 2px solid var(--os-gold);">[ GOVERNANCE_DAO ]</a>
+            </nav>
+            <div style="font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-neon);">VOTING_SECURED_AEAH.org</div>
+        </div>
+    </header>
+
+    <main>
+        <div class="dao-info">
+            <h1 style="font-family: 'Orbitron'; font-size: 2rem; margin: 0;">SOVEREIGN_CONSENSUS</h1>
+            <p style="color: #888;">Direct governance of the Philadelphia Hub by those who build it.</p>
+        </div>
+
+        <div class="proposal-card">
+            <div class="proposal-status">ACTIVE_VOTE</div>
+            <span class="proposal-id">PROP_ID: 042-HW-MOD</span>
+            <div class="proposal-title">UPGRADE: MKZ-PRO GPU EXPANSION BAY</div>
+            <p style="font-size: 0.8rem; color: #ccc; line-height: 1.6;">
+                Allocation of $45,000 from the Treasury to prototype a modular GPU enclosure for the MAKINZINE PRO, allowing Cadets to run higher-order neural simulations locally.
+            </p>
+            <div class="vote-meter">
+                <div class="vote-yes" style="width: 72%;"></div>
+                <div class="vote-no" style="width: 28%;"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.6rem; color: #555; margin-bottom: 20px;">
+                <span>YES: 72% (1,240 REPUTATION)</span>
+                <span>NO: 28% (480 REPUTATION)</span>
+            </div>
+            <div class="vote-actions">
+                <button class="btn-vote btn-yes">CAST_YES</button>
+                <button class="btn-vote btn-no">CAST_NO</button>
+            </div>
+        </div>
+
+        <div class="proposal-card" style="opacity: 0.6;">
+            <div class="proposal-status" style="border-color: #555; color: #555;">CONCLUDED</div>
+            <span class="proposal-id">PROP_ID: 041-LOC-EXP</span>
+            <div class="proposal-title">ESTABLISH: KENSINGTON_ACADEMY_SAFE_ZONE</div>
+            <p style="font-size: 0.8rem; color: #ccc;">Partner with Kensington Academy to install 10 E-WIN 2.0 Stations and a Corsair Node cluster.</p>
+            <div style="font-size: 0.7rem; color: var(--os-neon); font-weight: 800; margin-top: 15px;">RESULT: PASSED (94% AFFIRMATIVE)</div>
+        </div>
+    </main>
+
+</body>
+</html>
