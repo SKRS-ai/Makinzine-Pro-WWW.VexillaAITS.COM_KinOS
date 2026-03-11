@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Lab Prototypes & Experimental R&D</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-gold: #ffcc00;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        main { margin-top: 280px; padding: 0 10% 100px 10%; }
+
+        .proto-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px;
+        }
+
+        .proto-card {
+            background: linear-gradient(145deg, #050510, #0a0a1a);
+            border: 1px solid #1a1a2e; padding: 0; overflow: hidden;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .proto-card:hover { transform: translateY(-10px); border-color: var(--os-neon); box-shadow: 0 10px 30px rgba(0, 242, 255, 0.1); }
+
+        .proto-img {
+            width: 100%; height: 200px; background: #111;
+            display: flex; align-items: center; justify-content: center;
+            border-bottom: 1px solid #1a1a2e; font-size: 0.6rem; color: #333;
+        }
+
+        .proto-content { padding: 25px; }
+        .proto-status {
+            font-size: 0.55rem; color: var(--os-gold); border: 1px solid var(--os-gold);
+            padding: 2px 8px; display: inline-block; margin-bottom: 15px;
+        }
+
+        .proto-title { font-family: 'Orbitron'; font-size: 1rem; margin: 0 0 10px 0; }
+        .proto-desc { font-size: 0.75rem; color: #777; line-height: 1.5; margin-bottom: 20px; }
+
+        .contribute-btn {
+            width: 100%; background: transparent; border: 1px solid var(--os-cobalt);
+            color: var(--os-cobalt); padding: 12px; font-family: 'Orbitron';
+            font-size: 0.7rem; cursor: pointer; transition: 0.3s;
+        }
+
+        .contribute-btn:hover { background: var(--os-cobalt); color: #fff; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav style="display: flex; gap: 20px;">
+                <a href="index.html" style="color: var(--os-neon); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ KERNEL ]</a>
+                <a href="lab_prototypes.html" style="color: #fff; text-decoration: none; font-size: 0.75rem; font-weight: 900; border-bottom: 2px solid var(--os-neon);">[ LAB_PROTOTYPES ]</a>
+            </nav>
+            <div style="font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-neon);">R&D_STAGING_AEAH.org</div>
+        </div>
+    </header>
+
+    <main>
+        <div style="margin-bottom: 60px;">
+            <h1 style="font-family: 'Orbitron'; font-size: 2.2rem; margin: 0;">HARDWARE_SANDBOX</h1>
+            <p style="color: #666;">Experimental modifications and next-gen components for the KinOS ecosystem.</p>
+        </div>
+
+        <div class="proto-grid">
+            <div class="proto-card">
+                <div class="proto-img">[ SCHEMATIC_MKZ_LIQUID_01 ]</div>
+                <div class="proto-content">
+                    <div class="proto-status">PHASE: ALPHA_TESTING</div>
+                    <h3 class="proto-title">Hydro-Flow Chassis v4</h3>
+                    <p class="proto-desc">A custom 3D-printed case for the Makinzine Pro with integrated micro-liquid cooling channels. Increases CPU stability during heavy AI rendering.</p>
+                    <button class="contribute-btn">JOIN_TEST_GROUP</button>
+                </div>
+            </div>
+
+            <div class="proto-card">
+                <div class="proto-img">[ SCHEMATIC_AEAH_PULSE_02 ]</div>
+                <div class="proto-content">
+                    <div class="proto-status">PHASE: CONCEPT</div>
+                    <h3 class="proto-title">AEAH Pulse Bracelet</h3>
+                    <p class="proto-desc">Wearable hardware that provides haptic feedback when a Cadet enters a verified Digital Sanctuary. Requires biometric handshake sync.</p>
+                    <button class="contribute-btn">VIEW_WHITE_PAPER</button>
+                </div>
+            </div>
+
+            <div class="proto-card">
+                <div class="proto-img">[ SCHEMATIC_SOLAR_NODE_03 ]</div>
+                <div class="proto-content">
+                    <div class="proto-status">PHASE: BETA_STAGING</div>
+                    <h3 class="proto-title">Solar Relay Node</h3>
+                    <p class="proto-desc">Off-grid infrastructure for neighborhoods with unstable power. Powers a Corsair i7500 node using 100% renewable energy.</p>
+                    <button class="contribute-btn">REQUEST_DEPLOYMENT</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
