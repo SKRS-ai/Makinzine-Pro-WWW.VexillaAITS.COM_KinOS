@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Executive Mission Dossier 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.6;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- DOSSIER CONTENT --- */
+        main { margin-top: 280px; padding: 0 15% 100px 15%; }
+
+        .dossier-card {
+            background: #fff; color: #000;
+            padding: 60px; border-radius: 0;
+            box-shadow: 20px 20px 0px var(--os-cobalt);
+        }
+
+        .dossier-header {
+            border-bottom: 2px solid #000;
+            margin-bottom: 40px; padding-bottom: 20px;
+        }
+
+        .dossier-label { font-family: 'Orbitron'; font-weight: 900; font-size: 0.7rem; color: var(--os-cobalt); }
+
+        .executive-summary { font-size: 1.1rem; font-weight: 500; margin-bottom: 40px; }
+
+        .tactical-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .spec-item { border-left: 3px solid var(--os-neon); padding-left: 20px; }
+        .spec-item h4 { margin: 0; font-family: 'Orbitron'; font-size: 0.8rem; }
+        .spec-item p { margin: 5px 0 0 0; font-size: 0.75rem; color: #444; }
+
+        .signature-line {
+            margin-top: 60px; border-top: 1px solid #ddd;
+            padding-top: 20px; display: flex; justify-content: space-between;
+            font-size: 0.7rem; font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <div style="font-family: 'Orbitron'; color: var(--os-neon); font-size: 0.8rem;">MISSION_DOSSIER_v2026</div>
+            <div style="width: 120px;"></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="dossier-card">
+            <div class="dossier-header">
+                <span class="dossier-label">CONFIDENTIAL STRATEGY // FOR PARTNER REVIEW ONLY</span>
+                <h1 style="font-family: 'Orbitron'; margin: 10px 0 0 0;">THE KinOS INITIATIVE</h1>
+            </div>
+
+            <div class="executive-summary">
+                KinOS is a Philadelphia-based nonprofit 501(c)(3) architecting the world's first <strong>Intergenerational Innovation Ecosystem</strong>. By bridging the cognitive agility of digital-native youth (Ages 10+) with the technical discipline of industry veterans, we are creating a localized "Silicon Valley" model that solves the wealth gap through sovereign technology.
+            </div>
+
+            <div class="tactical-grid">
+                <div class="spec-item">
+                    <h4>HARDWARE INFRASTRUCTURE</h4>
+                    <p>Utilizing <strong>Corsair Vengeance i7500</strong> AI nodes for real-time neural modeling and low-latency prototyping.</p>
+                </div>
+                <div class="spec-item">
+                    <h4>ERGONOMIC LABORATORY</h4>
+                    <p>Stations equipped with <strong>E-WIN 2.0 RGB</strong> professional desks to facilitate 12+ hour innovation sprints in safety.</p>
+                </div>
+                <div class="spec-item">
+                    <h4>DIGITAL SANCTUARY</h4>
+                    <p>In association with <strong>AEA H.org</strong>, providing hardware-level protection against data-mining and electronic abuse.</p>
+                </div>
+                <div class="spec-item">
+                    <h4>ECONOMIC PIPELINE</h4>
+                    <p>Direct transition from Gaming Guild participation to Government-NGO hardware engineering roles.</p>
+                </div>
+            </div>
+
+            <p style="font-size: 0.85rem;">
+                Our 2026 objective is the deployment of the Philadelphia Hub "Node Zero," a blueprint for 20 additional global sites. We are seeking partners for our <strong>$20,000,000 Capital Grant offensive</strong> to secure the future of decentralized innovation.
+            </p>
+
+            <div class="signature-line">
+                <span>Authorized by KinOS Executive Council</span>
+                <span>Verification ID: PHL-2026-NEXUS</span>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
