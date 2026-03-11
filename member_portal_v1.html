@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Member Portal Terminal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-accent: #ff00ff;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            overflow: hidden; /* Portal feels like a desktop app */
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); border-bottom: 1px solid #222;
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- PORTAL LAYOUT --- */
+        .portal-wrapper {
+            margin-top: var(--header-h);
+            display: grid;
+            grid-template-columns: 250px 1fr 300px;
+            height: calc(100vh - var(--header-h));
+        }
+
+        /* Side Navigation */
+        .side-nav {
+            background: rgba(5, 5, 10, 0.9);
+            border-right: 1px solid #1a1a2e;
+            padding: 40px 20px;
+        }
+
+        .nav-item {
+            padding: 15px; margin-bottom: 10px;
+            border: 1px solid transparent;
+            cursor: pointer; font-size: 0.8rem;
+            color: #666; transition: 0.3s;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            border-color: var(--os-neon);
+            color: var(--os-neon);
+            background: rgba(0, 242, 255, 0.05);
+        }
+
+        /* Main Workspace */
+        .workspace {
+            padding: 40px;
+            overflow-y: auto;
+            background: radial-gradient(circle at center, #050515 0%, #010103 100%);
+        }
+
+        .quest-card {
+            background: #000; border: 1px solid #222;
+            padding: 25px; margin-bottom: 20px;
+            position: relative; overflow: hidden;
+        }
+
+        .quest-card::before {
+            content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+            background: var(--os-cobalt);
+        }
+
+        .xp-bar {
+            width: 100%; height: 4px; background: #111; margin-top: 15px;
+        }
+
+        .xp-progress {
+            width: 65%; height: 100%; background: var(--os-neon);
+            box-shadow: 0 0 10px var(--os-neon);
+        }
+
+        /* Right Sidebar: Intel & Hardware Status */
+        .intel-panel {
+            background: rgba(5, 5, 10, 0.9);
+            border-left: 1px solid #1a1a2e;
+            padding: 40px 20px;
+        }
+
+        .hardware-stat {
+            font-size: 0.7rem; margin-bottom: 20px;
+            padding: 10px; border: 1px solid #111;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <div class="user-id" style="font-family: 'Orbitron'; font-size: 0.8rem;">
+                CADET_ID: <span style="color: var(--os-neon);">PHL_772_JAX</span>
+            </div>
+            <div style="width: 120px;"></div>
+        </div>
+    </header>
+
+    <div class="portal-wrapper">
+        <aside class="side-nav">
+            <div class="nav-item active">DASHBOARD</div>
+            <div class="nav-item">QUEST_LOG</div>
+            <div class="nav-item">ACADEMY_FILES</div>
+            <div class="nav-item">GUILD_CHAT</div>
+            <div class="nav-item">HARDWARE_LAB_REMOTE</div>
+        </aside>
+
+        <main class="workspace">
+            <h2 style="font-family: 'Orbitron'; margin-bottom: 30px;">ACTIVE_QUESTS</h2>
+            
+            <div class="quest-card">
+                <div style="display: flex; justify-content: space-between;">
+                    <span style="font-family: 'Orbitron'; font-size: 0.9rem;">PROJECT: NEURAL_INTERFACE_v1</span>
+                    <span style="color: var(--os-accent);">+500 XP</span>
+                </div>
+                <p style="font-size: 0.8rem; color: #888; margin-top: 10px;">Objective: Complete the low-latency kernel patch for AI-handshake protocols.</p>
+                <div class="xp-bar"><div class="xp-progress"></div></div>
+            </div>
+
+            <div class="quest-card">
+                <div style="display: flex; justify-content: space-between;">
+                    <span style="font-family: 'Orbitron'; font-size: 0.9rem;">MENTOR_SESSION: HARDWARE_MOD</span>
+                    <span style="color: var(--os-accent);">+250 XP</span>
+                </div>
+                <p style="font-size: 0.8rem; color: #888; margin-top: 10px;">Objective: Join Senior Mentor 'Architect_Zero' for E-WIN 2.0 desk ergonomic optimization lab.</p>
+                <div class="xp-bar"><div class="xp-progress" style="width: 20%;"></div></div>
+            </div>
+        </main>
+
+        <aside class="intel-panel">
+            <h3 style="font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-cobalt);">SYSTEM_INTEGRITY</h3>
+            <div class="hardware-stat">
+                NODE_01: ONLINE<br>
+                <span style="color: #555;">Corsair Vengeance i7500</span>
+            </div>
+            <div class="hardware-stat">
+                AEAS_SHIELD: ACTIVE<br>
+                <span style="color: #555;">Digital Sanctuary v2.1</span>
+            </div>
+            <div class="hardware-stat" style="border-color: var(--os-accent);">
+                NEW_MESSAGE:<br>
+                <span style="color: var(--os-accent);">Grant Approval Pending...</span>
+            </div>
+        </aside>
+    </div>
+
+</body>
+</html>
