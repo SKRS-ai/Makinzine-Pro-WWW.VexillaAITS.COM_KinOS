@@ -3,93 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CastAiStars | The Digital Backlot</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>VEXILLA.AITS | KinOS & Makinzine Pro</title>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #000; }
-        
-        /* Nebula Pulse Animation */
-        @keyframes nebula-pulse {
-            0% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.4)); }
-            50% { transform: scale(1.05); filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.8)); }
-            100% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.4)); }
+        :root {
+            --bg-deep: #080808;
+            --accent-cyan: #00f3ff;
+            --accent-magenta: #ff0055;
+            --glass: rgba(20, 20, 20, 0.85);
+            --border-glow: rgba(0, 243, 255, 0.3);
+            --font-main: 'Orbitron', sans-serif;
+            --font-mono: 'Share Tech Mono', monospace;
         }
-        .nebula-star {
-            animation: nebula-pulse 4s ease-in-out infinite;
+
+        body {
+            background-color: var(--bg-deep);
+            color: white;
+            font-family: var(--font-main);
+            margin: 0;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 50% 50%, #111 0%, #080808 100%);
         }
-        .text-gradient {
-            background: linear-gradient(to right, #ffffff, #00e5ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+
+        /* Nav Bar: [PROTOCOL_DIRECT_ACCESS] */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border-glow);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 1000;
+            font-size: 0.8rem;
         }
-        .glass-panel {
-            background: rgba(17, 24, 39, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+
+        nav a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            text-shadow: 0 0 5px var(--accent-cyan);
+            letter-spacing: 1px;
+            transition: 0.3s;
         }
+
+        nav a:hover { color: white; transform: scale(1.1); }
+
+        /* Bento Grid Layout */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(200px, auto);
+            gap: 20px;
+            padding: 80px 20px 20px 20px;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--border-glow);
+            padding: 20px;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px var(--border-glow);
+        }
+
+        /* Specific Bento Tiles */
+        .hero { grid-column: span 3; grid-row: span 2; display: flex; align-items: center; }
+        .login { grid-column: span 1; grid-row: span 1; border-color: var(--accent-magenta); }
+        .stats { grid-column: span 1; grid-row: span 1; font-family: var(--font-mono); }
+        .grants { grid-column: span 2; grid-row: span 2; }
+        .history { grid-column: span 2; grid-row: span 1; }
+
+        /* 3D Showcase Mockup */
+        .device-3d {
+            width: 100%;
+            height: 300px;
+            background: url('https://via.placeholder.com/800x400/000/00f3ff?text=MAKINZINE+PRO+3D+SHOWROOM') center/cover;
+            border: 1px dashed var(--accent-cyan);
+        }
+
+        /* Headings */
+        h2 { color: var(--accent-cyan); text-transform: uppercase; font-size: 1.2rem; margin-top: 0; }
+        p { font-size: 0.9rem; line-height: 1.6; color: #ccc; }
+
+        /* Login Buttons */
+        .btn-g {
+            background: white;
+            color: black;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            font-family: var(--font-mono);
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Grant List styling */
+        .grant-list { height: 300px; overflow-y: scroll; font-family: var(--font-mono); font-size: 0.75rem; }
+        .grant-item { padding: 5px; border-bottom: 1px solid #333; display: flex; justify-content: space-between; }
+        .grant-item span { color: var(--accent-cyan); }
     </style>
 </head>
-<body class="text-white overflow-x-hidden">
+<body>
 
-    <nav class="fixed w-full z-50 glass-panel">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-cyan-500 rounded flex items-center justify-center nebula-star">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="black"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                </div>
-                <span class="text-2xl font-black tracking-tighter uppercase">Cast<span class="text-cyan-400">AI</span>Stars</span>
-            </div>
-            <div class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest text-gray-400">
-                <a href="#" class="hover:text-cyan-400 transition">The Backlot</a>
-                <a href="#" class="hover:text-cyan-400 transition">For Directors</a>
-                <a href="#" class="hover:text-cyan-400 transition">For Creators</a>
-            </div>
-            <button class="bg-white text-black px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-cyan-400 transition">Beta Access</button>
-        </div>
+    <nav>
+        <a href="#devices">[CORE_DEVICES]</a>
+        <a href="#os">[KINOS_KERNEL]</a>
+        <a href="#vault">[INVESTOR_VAULT]</a>
+        <a href="#grants">[COMMUNITY_WAVE]</a>
+        <a href="#gov">[GOV_SECURE]</a>
     </nav>
 
-    <section class="relative h-screen flex items-center justify-center pt-20">
-        <div class="absolute inset-0 z-0 opacity-30">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-600 rounded-full mix-blend-screen filter blur-[120px] animate-pulse"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-900 rounded-full mix-blend-screen filter blur-[120px] animate-pulse"></div>
-        </div>
-
-        <div class="relative z-10 text-center max-w-4xl px-6">
-            <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-6 leading-none">
-                THE FUTURE OF FAME IS <span class="text-gradient">SYNTHETIC.</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-400 mb-10 font-light max-w-2xl mx-auto">
-                Welcome to the Headquarters. Cast verified virtual stars for your next production. Powered by <span class="text-white font-bold">Solomon Kin Records</span>.
-            </p>
-            
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <button class="bg-cyan-500 text-black px-10 py-4 rounded-lg font-black text-lg uppercase tracking-widest hover:bg-cyan-400 shadow-[0_0_20px_rgba(0,229,255,0.4)] transition">Enter the Office</button>
-                <button class="border border-gray-700 hover:border-white px-10 py-4 rounded-lg font-black text-lg uppercase tracking-widest transition">Register a Star</button>
+    <div class="container">
+        <div class="card hero">
+            <div style="width: 100%;">
+                <h2>MAKINZINE PRO / [IDENT_01]</h2>
+                <div class="device-3d"></div>
+                <p>Not a tablet. A purpose-driven synthesizer for the Focus Economy. Featuring the Hybrid E-Ink/RLCD Stack.</p>
             </div>
         </div>
-    </section>
 
-    <section class="max-w-7xl mx-auto px-6 py-24 border-t border-gray-900">
-        <div class="grid md:grid-cols-3 gap-12">
-            <div class="glass-panel p-8 rounded-2xl">
-                <h3 class="text-cyan-400 font-bold mb-4 uppercase tracking-widest">Verified Continuity</h3>
-                <p class="text-gray-400">Our stars maintain visual consistency across every scene. No "uncanny valley," just professional assets.</p>
-            </div>
-            <div class="glass-panel p-8 rounded-2xl">
-                <h3 class="text-cyan-400 font-bold mb-4 uppercase tracking-widest">The Digital Soul</h3>
-                <p class="text-gray-400">Every talent registry includes a unique, consistent Voice ID curated by Solomon Kin Records.</p>
-            </div>
-            <div class="glass-panel p-8 rounded-2xl">
-                <h3 class="text-cyan-400 font-bold mb-4 uppercase tracking-widest">Smart Licensing</h3>
-                <p class="text-gray-400">Automated casting contracts that protect creators and empower directors in one click.</p>
+        <div class="card login">
+            <h2>[USER_AUTH]</h2>
+            <p>Access the Private Registry.</p>
+            <button class="btn-g">LOGIN WITH GOOGLE</button>
+            <button class="btn-g" style="background:var(--accent-cyan)">BIOMETRIC SCAN</button>
+        </div>
+
+        <div class="card stats">
+            <h2>[SYSTEM_STATUS]</h2>
+            <div id="terminal-text" style="color: lime; font-size: 0.7rem;">
+                > SYNCING VEXILLA_AITS...<br>
+                > KINOS KERNEL: OPTIMAL<br>
+                > BATTERY: 120H ACTIVE<br>
+                > ENCRYPTION: FIPS 140-2
             </div>
         </div>
-    </section>
 
-    <footer class="py-12 border-t border-gray-900 text-center text-gray-600">
-        <p class="text-xs uppercase tracking-[0.5em]">&copy; 2026 Solomon Kin Records LLC. All Rights Reserved.</p>
-    </footer>
+        <div class="card history">
+            <h2>[LITERARY_ARCHIVE]</h2>
+            <p>From 1731 paper to 2026 Focus Architecture. We are preserving the spatial identity of information.</p>
+        </div>
 
+        <div class="card grants">
+            <h2>[COMMUNITY_WAVE] / 501(c)(3)</h2>
+            <p>Targeted Grants for Local Tech Sovereignty:</p>
+            <div class="grant-list">
+                <div class="grant-item">NSF Phase I SBIR <span>$250k</span></div>
+                <div class="grant-item">DARPA Secure OS <span>$1.2M</span></div>
+                <div class="grant-item">NEA Shiny Gallery <span>$50k</span></div>
+                <div class="grant-item">Knight Foundation <span>$150k</span></div>
+                <div class="grant-item">Ford Digital Equity <span>$200k</span></div>
+                <div class="grant-item">MacArthur Innovation <span>$625k</span></div>
+                <div class="grant-item">EPA Green Tech <span>$100k</span></div>
+                <div class="grant-item">Mellon Archive <span>$300k</span></div>
+                <div class="grant-item">Sloan Public Tech <span>$125k</span></div>
+                <div class="grant-item">Mozilla MOSS <span>$50k</span></div>
+                <div class="grant-item">Gates Global <span>$500k</span></div>
+                <div class="grant-item">Bloomberg Wave <span>$250k</span></div>
+                <div class="grant-item">Rockefeller Resil <span>$400k</span></div>
+                <div class="grant-item">Open Society <span>$200k</span></div>
+                <div class="grant-item">Pew Philadelphia <span>$150k</span></div>
+                <div class="grant-item">Surdna Env <span>$100k</span></div>
+                <div class="grant-item">Hewlett OER <span>$175k</span></div>
+                <div class="grant-item">Kresge Urban <span>$225k</span></div>
+                <div class="grant-item">IMLS Museum <span>$80k</span></div>
+                <div class="grant-item">Google Impact <span>$1M</span></div>
+            </div>
+        </div>
+
+        <div class="card" style="grid-column: span 2;">
+            <h2>[GOV_SECURE] / FEDRAMP</h2>
+            <p>Zero-Trust supply chain. Air-gapped hardware capabilities. Purpose-driven deployment for military and educational logistics.</p>
+        </div>
+    </div>
+
+    <script>
+        // Terminal Text Animation
+        const lines = [
+            "> UPLOADING KINPAGES REGISTRY...",
+            "> VEXILLA_SYNC HANDSHAKE SUCCESSFUL",
+            "> CALCULATING ROI: 350% GROWTH",
+            "> WAVE_CAPACITY: 98%"
+        ];
+        let i = 0;
+        setInterval(() => {
+            document.getElementById('terminal-text').innerHTML += `<br> ${lines[i % lines.length]}`;
+            i++;
+        }, 3000);
+    </script>
 </body>
 </html>
