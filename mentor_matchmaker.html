@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Mentor Matchmaker & Talent Pipeline</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-gold: #ffcc00;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        main { margin-top: 280px; padding: 0 10% 100px 10%; }
+
+        .partner-portal-header {
+            border-bottom: 1px solid #222; padding-bottom: 40px; margin-bottom: 40px;
+            display: flex; justify-content: space-between; align-items: flex-end;
+        }
+
+        .talent-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px;
+        }
+
+        .talent-preview-card {
+            background: rgba(255, 255, 255, 0.02); border: 1px solid #1a1a2e;
+            padding: 25px; transition: 0.3s;
+        }
+
+        .talent-preview-card:hover { border-color: var(--os-gold); background: rgba(255, 204, 0, 0.02); }
+
+        .talent-id { font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-neon); }
+        .talent-specialty { font-size: 0.6rem; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; }
+        
+        .stat-line {
+            display: flex; justify-content: space-between; margin-top: 15px;
+            padding: 8px 0; border-top: 1px solid #111; font-size: 0.7rem;
+        }
+
+        .action-btns {
+            margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+        }
+
+        .btn-sm {
+            padding: 10px; font-family: 'Orbitron'; font-size: 0.6rem; font-weight: 800;
+            cursor: pointer; background: transparent; color: #fff; border: 1px solid #333;
+        }
+
+        .btn-offer { border-color: var(--os-gold); color: var(--os-gold); }
+        .btn-offer:hover { background: var(--os-gold); color: #000; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav style="display: flex; gap: 20px;">
+                <a href="index.html" style="color: var(--os-neon); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ KERNEL ]</a>
+                <a href="alumni_portfolio.html" style="color: var(--os-gold); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ TALENT_POOL ]</a>
+                <a href="mentor_matchmaker.html" style="color: #fff; text-decoration: none; font-size: 0.75rem; font-weight: 900; border-bottom: 2px solid var(--os-gold);">[ PARTNER_PORTAL ]</a>
+            </nav>
+            <div style="font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-gold);">CORPORATE_SYNC_ACTIVE</div>
+        </div>
+    </header>
+
+    <main>
+        <div class="partner-portal-header">
+            <div>
+                <h1 style="font-family: 'Orbitron'; font-size: 1.8rem; margin: 0;">MENTOR_MATCHMAKER</h1>
+                <p style="color: #666; margin-top: 10px;">Connecting verified Philadelphia talent with local industrial partners.</p>
+            </div>
+            <div style="text-align: right;">
+                <div style="font-size: 0.6rem; color: #555;">LOGGED_IN_AS:</div>
+                <div style="font-family: 'Orbitron'; color: var(--os-neon);">PHILLY_REBUILD_VNC</div>
+            </div>
+        </div>
+
+        <div class="talent-grid">
+            <div class="talent-preview-card">
+                <div class="talent-id">CADET_MARCUS_V</div>
+                <div class="talent-specialty">Hardware Engineering & Solar Systems</div>
+                <div class="stat-line"><span>MISSIONS_COMPLETE</span><span style="color: var(--os-neon);">42</span></div>
+                <div class="stat-line"><span>MERIT_RANK</span><span style="color: var(--os-gold);">TOP_1%</span></div>
+                <div class="action-btns">
+                    <button class="btn-sm" onclick="location.href='alumni_portfolio.html'">VIEW_RESUME</button>
+                    <button class="btn-sm btn-offer">SEND_INTERVIEW_REQ</button>
+                </div>
+            </div>
+
+            <div class="talent-preview-card">
+                <div class="talent-id">CADET_SARAH_L</div>
+                <div class="talent-specialty">Cybersecurity & AEAH.org Auditor</div>
+                <div class="stat-line"><span>MISSIONS_COMPLETE</span><span style="color: var(--os-neon);">38</span></div>
+                <div class="stat-line"><span>MERIT_RANK</span><span style="color: var(--os-gold);">TOP_5%</span></div>
+                <div class="action-btns">
+                    <button class="btn-sm">VIEW_RESUME</button>
+                    <button class="btn-sm btn-offer">SEND_INTERVIEW_REQ</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
