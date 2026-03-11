@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Neural Manifest Index</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-gold: #ffcc00;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            background-image: radial-gradient(circle at 50% 50%, #050510 0%, #010103 100%);
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- MANIFEST CONTENT --- */
+        main { margin-top: 250px; padding: 0 5% 100px 5%; }
+
+        .manifest-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+        }
+
+        .sector-box {
+            background: rgba(255, 255, 255, 0.01); border: 1px solid #111;
+            padding: 25px; transition: 0.3s;
+        }
+
+        .sector-box:hover { border-color: var(--os-cobalt); background: rgba(0, 102, 255, 0.03); }
+
+        .sector-title {
+            font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-neon);
+            margin-bottom: 20px; border-bottom: 1px solid #222; padding-bottom: 10px;
+        }
+
+        .node-link {
+            display: block; font-size: 0.7rem; color: #555; text-decoration: none;
+            margin-bottom: 8px; transition: 0.2s;
+        }
+
+        .node-link:hover { color: #fff; padding-left: 5px; }
+        .node-link span { color: var(--os-cobalt); margin-right: 5px; }
+
+        .featured-node { color: var(--os-gold) !important; font-weight: 800; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav style="font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-gold);">[ SYSTEM_SYNCHRONIZED ]</nav>
+        </div>
+    </header>
+
+    <main>
+        <h1 style="font-family: 'Orbitron'; font-size: 2rem; margin-bottom: 40px; text-align: center;">40_NODES_NEURAL_MANIFEST</h1>
+
+        <div class="manifest-grid">
+            <div class="sector-box">
+                <div class="sector-title">INFRASTRUCTURE</div>
+                <a href="index.html" class="node-link"><span>01</span> The Kernel</a>
+                <a href="makinzine_pro.html" class="node-link featured-node"><span>02</span> Makinzine Pro Spec</a>
+                <a href="corsair_cluster.html" class="node-link"><span>03</span> AI Node Clusters</a>
+                <a href="hardware_lab.html" class="node-link"><span>04</span> E-WIN Tactical Stations</a>
+                <a href="network_diagnostics.html" class="node-link"><span>35</span> System Telemetry</a>
+                <a href="resource_library.html" class="node-link"><span>36</span> Blueprint Arsenal</a>
+            </div>
+
+            <div class="sector-box">
+                <div class="sector-title">SOCIAL_SANCTUARY</div>
+                <a href="cadet_onboarding.html" class="node-link"><span>10</span> Cadet Enlistment</a>
+                <a href="mentor_dispatch.html" class="node-link"><span>28</span> Mentor Missions</a>
+                <a href="regional_alliance.html" class="node-link"><span>29</span> Philly Safe Zones</a>
+                <a href="event_horizon.html" class="node-link"><span>30</span> Hardware Jams</a>
+                <a href="alumni_registry.html" class="node-link"><span>31</span> Hall of Architects</a>
+                <a href="parental_command.html" class="node-link"><span>33</span> Guardian Oversight</a>
+            </div>
+
+            <div class="sector-box">
+                <div class="sector-title">GOVERNANCE</div>
+                <a href="aeah_protocol.html" class="node-link"><span>15</span> AEAH.org Security</a>
+                <a href="transparency_ledger.html" class="node-link"><span>27</span> Financial Proof</a>
+                <a href="donation_nexus.html" class="node-link featured-node"><span>32</span> Capital Funding</a>
+                <a href="governance_dao.html" class="node-link"><span>39</span> Consensus Engine</a>
+                <a href="career_pivot.html" class="node-link"><span>34</span> Veteran Bridge</a>
+                <a href="global_peer_exchange.html" class="node-link"><span>38</span> Global Hub Sync</a>
+            </div>
+
+            <div class="sector-box">
+                <div class="sector-title">DEEP_PROTOCOL</div>
+                <a href="encryption_keys.html" class="node-link"><span>12</span> Cipher Core</a>
+                <a href="mobile_command.html" class="node-link"><span>37</span> Handheld UI</a>
+                <a href="archive_unseen.html" class="node-link" style="color:#222 !important;"><span>40</span> Redacted Archive</a>
+                <p style="font-size: 0.6rem; color: #111; margin-top: 40px;">[ NODES 05-26 ENCRYPTED ]</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
