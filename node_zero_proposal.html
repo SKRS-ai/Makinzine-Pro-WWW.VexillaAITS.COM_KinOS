@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Node Zero: Philadelphia Hub Proposal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.8;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- PROPOSAL LAYOUT --- */
+        main { margin-top: 280px; padding: 0 15% 100px 15%; }
+
+        .proposal-hero {
+            border-left: 4px solid var(--os-neon);
+            padding-left: 30px; margin-bottom: 60px;
+        }
+
+        .section-block { margin-bottom: 80px; }
+        .section-block h2 { font-family: 'Orbitron'; color: var(--os-neon); border-bottom: 1px solid #222; padding-bottom: 10px; }
+
+        .budget-table {
+            width: 100%; border-collapse: collapse; margin-top: 20px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .budget-table td, .budget-table th {
+            padding: 15px; border: 1px solid #1a1a2e; font-size: 0.85rem;
+        }
+
+        .budget-table th { background: var(--os-cobalt); color: white; text-align: left; font-family: 'Orbitron'; }
+
+        .call-to-action {
+            background: linear-gradient(45deg, #001133, #000);
+            padding: 50px; border: 1px solid var(--os-cobalt);
+            text-align: center; margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <div style="font-family: 'Orbitron'; color: var(--os-neon); font-size: 0.8rem;">PROPOSAL_REF: PHL-000-ZERO</div>
+            <div style="width: 120px;"></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="proposal-hero">
+            <h1 style="font-family: 'Orbitron'; font-size: 2.5rem; margin: 0;">PROJECT: NODE_ZERO</h1>
+            <p style="font-size: 1.2rem; color: #888;">The Blueprint for Philadelphia's Intergenerational Sovereign Tech Hub</p>
+        </div>
+
+        <div class="section-block">
+            <h2>01. THE PROBLEM</h2>
+            <p>Traditional STEM education in Philadelphia fails to engage the "Gamer Reflex"—leaving 85% of high-potential youth (Ages 10-17) without a professional engineering pathway. Meanwhile, industry veterans lack a structured environment to pass on high-level systems knowledge.</p>
+        </div>
+
+        <div class="section-block">
+            <h2>02. THE KinOS SOLUTION</h2>
+            <p>Node Zero is a physical prototyping lab where Cadets and Mentors co-create hardware solutions. By utilizing <strong>Corsair Vengeance i7500</strong> AI clusters, we provide the computational horsepower required for real-time neural modeling and high-stakes software development.</p>
+        </div>
+
+        <div class="section-block">
+            <h2>03. CAPITAL ALLOCATION (PHASE 1)</h2>
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>INFRASTRUCTURE</th>
+                        <th>SPECIFICATION</th>
+                        <th>INVESTMENT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>AI Compute Nodes</td>
+                        <td>Corsair Vengeance i7500 Clusters (x20)</td>
+                        <td>$120,000</td>
+                    </tr>
+                    <tr>
+                        <td>Prototyping Stations</td>
+                        <td>E-WIN 2.0 RGB Tactical Desks (x40)</td>
+                        <td>$45,000</td>
+                    </tr>
+                    <tr>
+                        <td>Digital Sanctuary</td>
+                        <td>AEA H.org Security Enclave & Hub Lease</td>
+                        <td>$250,000</td>
+                    </tr>
+                    <tr>
+                        <td>Guild Operations</td>
+                        <td>10-Year Legacy Mentorship Fund</td>
+                        <td>$500,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="call-to-action">
+            <h3 style="font-family: 'Orbitron'; color: var(--os-neon);">SECURE THE FUTURE OF PHILADELPHIA</h3>
+            <p style="font-size: 0.9rem; color: #ccc; margin-bottom: 30px;">Node Zero is more than a lab; it is a sovereign territory for American innovation.</p>
+            <button style="background: var(--os-cobalt); color: #fff; border: none; padding: 15px 40px; font-family: 'Orbitron'; cursor: pointer; font-weight: 900;">ENLIST_AS_PARTNER</button>
+        </div>
+    </main>
+
+</body>
+</html>
