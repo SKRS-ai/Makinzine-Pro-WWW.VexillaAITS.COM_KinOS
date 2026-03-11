@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KinOS | Mobile Command</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=JetBrains+Mono:wght@400;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #050508;
+            --os-gold: #ffcc00;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            display: flex; flex-direction: column;
+            height: 100vh; overflow: hidden;
+        }
+
+        /* --- MOBILE TACTICAL HEADER --- */
+        .mobile-header {
+            padding: 20px;
+            background: linear-gradient(to bottom, #000, transparent);
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid rgba(0, 102, 255, 0.3);
+        }
+
+        .status-pill {
+            background: rgba(0, 242, 255, 0.1);
+            border: 1px solid var(--os-neon);
+            padding: 4px 10px; font-size: 0.6rem;
+            color: var(--os-neon); font-weight: 900;
+        }
+
+        /* --- MAIN TACTICAL HUD --- */
+        main {
+            flex: 1; padding: 20px;
+            overflow-y: auto;
+        }
+
+        .hud-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 4px solid var(--os-cobalt);
+            padding: 15px; margin-bottom: 15px;
+        }
+
+        .hud-card.alert { border-left-color: var(--os-gold); }
+
+        .label { font-size: 0.6rem; color: #555; text-transform: uppercase; }
+        .value { font-family: 'Orbitron'; font-size: 1rem; color: #fff; margin-top: 5px; }
+
+        /* --- QUICK ACTIONS --- */
+        .action-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+            margin-top: 20px;
+        }
+
+        .action-btn {
+            background: #111; border: 1px solid #222;
+            padding: 20px; text-align: center;
+            text-decoration: none; color: #fff;
+        }
+
+        .action-btn i { display: block; margin-bottom: 10px; color: var(--os-neon); }
+        .action-btn span { font-size: 0.6rem; font-family: 'Orbitron'; }
+
+        /* --- FOOTER NAV --- */
+        footer {
+            height: 70px; background: #000;
+            display: flex; justify-content: space-around; align-items: center;
+            border-top: 1px solid #111;
+        }
+
+        .nav-item { font-size: 0.5rem; text-align: center; color: #444; text-decoration: none; }
+        .nav-item.active { color: var(--os-neon); }
+
+    </style>
+</head>
+<body>
+
+    <div class="mobile-header">
+        <div style="font-family: 'Orbitron'; font-weight: 900; font-size: 0.8rem;">KinOS_MOBILE</div>
+        <div class="status-pill">AEAH.org_SECURE</div>
+    </div>
+
+    <main>
+        <div class="hud-card">
+            <div class="label">Primary_Device_Status</div>
+            <div class="value">MAKINZINE PRO [ACTIVE]</div>
+            <div style="font-size: 0.6rem; color: var(--os-neon); margin-top: 5px;">Location: North Philly Hub</div>
+        </div>
+
+        <div class="hud-card alert">
+            <div class="label">Current_Mission</div>
+            <div class="value" style="color: var(--os-gold);">KERNEL_REBUILD_24</div>
+            <div style="font-size: 0.6rem; color: #888; margin-top: 5px;">Progress: 68%</div>
+        </div>
+
+        <div class="action-grid">
+            <a href="#" class="action-btn">
+                <span>OPEN_LAB_DOOR</span>
+            </a>
+            <a href="#" class="action-btn">
+                <span>REMOTE_BOOT</span>
+            </a>
+            <a href="#" class="action-btn">
+                <span>AEAH_IDENT</span>
+            </a>
+            <a href="#" class="action-btn">
+                <span>GUILD_CHAT</span>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <a href="#" class="nav-item active">HOME</a>
+        <a href="#" class="nav-item">MAP</a>
+        <a href="#" class="nav-item">SKILLS</a>
+        <a href="#" class="nav-item">SETTINGS</a>
+    </footer>
+
+</body>
+</html>
