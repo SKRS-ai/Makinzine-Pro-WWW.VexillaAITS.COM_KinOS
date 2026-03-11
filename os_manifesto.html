@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | The Sovereign Manifesto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.8;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor {
+            display: flex; align-items: center;
+            padding-top: 45px; padding-left: 60px;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); }
+
+        .system-border {
+            width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--os-cobalt), transparent);
+            margin-top: 50px;
+        }
+
+        nav { display: flex; gap: 25px; }
+        .nav-link {
+            text-decoration: none; color: var(--os-neon);
+            font-size: 0.75rem; font-weight: 900; text-transform: uppercase;
+            padding: 10px; transition: 0.4s;
+        }
+
+        /* --- MANIFESTO CONTENT --- */
+        main { margin-top: 280px; padding: 0 15% 100px 15%; }
+
+        .manifesto-section { margin-bottom: 80px; }
+        .manifesto-section h2 { 
+            font-family: 'Orbitron'; color: var(--os-neon); 
+            border-bottom: 1px solid var(--os-cobalt);
+            padding-bottom: 10px; margin-bottom: 30px;
+        }
+
+        .highlight-box {
+            background: rgba(0, 102, 255, 0.1);
+            border-left: 4px solid var(--os-neon);
+            padding: 30px; margin: 30px 0;
+            font-style: italic; color: #eee;
+        }
+
+        .footer-sig {
+            text-align: center; margin-top: 100px;
+            padding-top: 50px; border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav>
+                <a href="index.html" class="nav-link">KERNEL</a>
+                <a href="os_manifesto.html" class="nav-link" style="color:#fff; border-bottom: 2px solid var(--os-neon);">MANIFESTO</a>
+                <a href="impact_analytics.html" class="nav-link">IMPACT</a>
+                <a href="guild_subscription.html" class="nav-link">GUILD</a>
+            </nav>
+            <div style="width: 120px;"></div>
+        </div>
+        <div class="system-border"></div>
+    </header>
+
+    <main>
+        <div class="manifesto-section">
+            <h1 style="font-family: 'Orbitron'; font-size: 3rem; margin-top: 0; color: var(--os-cobalt);">THE KINOS MANIFESTO</h1>
+            <p style="font-size: 1.2rem; color: var(--os-neon);">Version 1.0 | A Blueprint for Community Sovereignty</p>
+            
+            <div class="highlight-box">
+                "We do not build software to entertain; we build software to empower. We do not play games to escape reality; we play to develop the reflexes required to master it."
+            </div>
+        </div>
+
+        <div class="manifesto-section">
+            <h2>01. THE GAMER-TO-ENGINEER PIPELINE</h2>
+            <p>
+                The modern gamer possesses cognitive traits that are underutilized by the traditional workforce: rapid pattern recognition, high-stakes decision making, and endurance under pressure. KinOS is the bridge. By providing professional-grade hardware—such as <strong>[Corsair Vengeance i7500]</strong> clusters—we convert "Gaming XP" into "Industrial Innovation."
+            </p>
+        </div>
+
+        <div class="manifesto-section">
+            <h2>02. INTERGENERATIONAL EQUITY</h2>
+            <p>
+                Our <strong>Ages 10 to Infinity</strong> mandate is not a slogan; it is a structural necessity. The curiosity of the youth paired with the disciplined engineering of veterans creates a "Neural Nexus" that corporations cannot replicate. Our Philadelphia labs act as the primary node for this exchange.
+            </p>
+        </div>
+
+        <div class="manifesto-section">
+            <h2>03. THE AEA H.ORG PARTNERSHIP</h2>
+            <p>
+                Safety is the foundation of innovation. In association with <strong>AEA H.org</strong>, we implement the "Digital Sanctuary" protocol. This ensures that every KinOS user is protected from the predatory data-mining and electronic abuse prevalent in the modern web. We are building a secure garden where the next top innovative products can grow without interference.
+            </p>
+        </div>
+
+        <div class="footer-sig">
+            <p style="font-family: 'Orbitron'; letter-spacing: 5px; color: var(--os-cobalt);">SIGNED: THE ARCHITECTS OF KinOS</p>
+            <p style="font-size: 0.7rem; color: #444;">ESTABLISHED 2026 | PHILADELPHIA HUB | NONPROFIT TECHNOLOGY COUNCIL</p>
+        </div>
+    </main>
+
+</body>
+</html>
