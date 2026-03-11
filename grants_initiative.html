@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Strategic Grant Alignment Dossier</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --header-h: 110px;
+        }
+
+        body {
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            margin: 0;
+            padding-top: calc(var(--header-h) + 50px);
+        }
+
+        /* --- PERSISTENT OS HEADER (STABILIZED) --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--os-cobalt);
+            display: flex; align-items: center; z-index: 10000;
+            padding: 0 40px;
+        }
+
+        .logo-wrap img {
+            height: 160px;
+            filter: drop-shadow(0 0 20px var(--os-cobalt));
+            transform: translateY(10px);
+        }
+
+        /* --- GRANT GRID SYSTEM --- */
+        .container { padding: 0 8%; }
+        
+        .grant-dossier {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .grant-card {
+            background: rgba(10, 10, 20, 0.9);
+            border: 1px solid #222;
+            padding: 30px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .grant-card:hover {
+            border-color: var(--os-neon);
+            box-shadow: 0 0 30px rgba(0, 102, 255, 0.2);
+        }
+
+        .grant-card h3 {
+            font-family: 'Orbitron';
+            color: var(--os-neon);
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        .tag {
+            font-size: 0.6rem;
+            background: var(--os-cobalt);
+            padding: 2px 8px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .strategy-box {
+            background: #000;
+            border-left: 3px solid var(--os-neon);
+            padding: 15px;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        .highlight { color: #fff; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-wrap">
+            <img src="KINOS LOGO.png" alt="KinOS Shield">
+        </div>
+        <nav style="flex:1; display:flex; justify-content:center; gap:20px;">
+            <a href="index.html" style="color:var(--os-neon); text-decoration:none; font-weight:900;">[RETURN_TO_KERNEL]</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 style="font-family: 'Orbitron'; font-size: 2.5rem;">STRATEGIC_GRANT_TARGETS_v1.0</h1>
+        <p>Our organization has identified 20 primary funding initiatives. We don't just apply; we **align**. Below is the logic of how the **KinOS** ecosystem wins these awards to reinvest in the community.</p>
+
+        <div class="grant-dossier">
+            
+            <div class="grant-card">
+                <span class="tag">Civic Tech</span>
+                <h3>01. The Knight Foundation (Philly Ecosystem)</h3>
+                <p>Focus: Strengthening local democracy through informed and engaged communities.</p>
+                <div class="strategy-box">
+                    <span class="highlight">WIN STRATEGY:</span> KinOS provides a decentralized platform for community members (Ages 10+) to participate in civic innovation. By "gaming" the local budget and infrastructure planning, we drive unprecedented engagement levels.
+                </div>
+            </div>
+
+            <div class="grant-card">
+                <span class="tag">Education</span>
+                <h3>02. National Science Foundation (NSF) - AISL</h3>
+                <p>Focus: Advancing Informal STEM Learning.</p>
+                <div class="strategy-box">
+                    <span class="highlight">WIN STRATEGY:</span> We use our intergenerational mentorship model to prove that "High-Stakes Gaming" is a direct gateway to complex AI engineering and hardware prototyping.
+                </div>
+            </div>
+
+            <div class="grant-card">
+                <span class="tag">Digital Equity</span>
+                <h3>03. Robert Wood Johnson Foundation</h3>
+                <p>Focus: Health Equity and Digital Access.</p>
+                <div class="strategy-box">
+                    <span class="highlight">WIN STRATEGY:</span> In association with AEA H.org, we tackle the psychological impact of electronic abuse. KinOS creates a "Digital Sanctuary" where mental wellness is integrated into the OS.
+                </div>
+            </div>
+
+            <div class="grant-card">
+                <span class="tag">Innovation</span>
+                <h3>04. Bloomberg Philanthropies (Mayors Challenge)</h3>
+                <p>Focus: Bold ideas to improve city life.</p>
+                <div class="strategy-box">
+                    <span class="highlight">WIN STRATEGY:</span> We position KinOS as the "City's Operating System," allowing Philadelphia to prototype municipal software within a secure, gamer-built environment.
+                </div>
+            </div>
+
+            <div class="grant-card">
+                <span class="tag">Economic Dev</span>
+                <h3>05. Ford Foundation (Tech & Society)</h3>
+                <p>Focus: Ensuring technology advances social justice.</p>
+                <div class="strategy-box">
+                    <span class="highlight">WIN STRATEGY:</span> By giving ownership of "top innovative products" to the community creators themselves, we disrupt the traditional corporate wealth-gap model.
+                </div>
+            </div>
+
+            <div class="grant-card">
+                <span class="tag">Art & Tech</span>
+                <h3>06. National Endowment for the Arts (Media Arts)</h3>
+                <div class="strategy-box">
+                    <span class="highlight">WIN STRATEGY:</span> Proving that KinOS UI design and game-engine environments are the premier art forms of the 21st century.
+                </div>
+            </div>
+
+            <div class="grant-card">
+                <span class="tag">AI For Good</span>
+                <h3>07. Google.org Impact Challenge</h3>
+                <div class="strategy-box">
+                    <span class="highlight">WIN STRATEGY:</span> Showcasing our AI-driven intergenerational mentorship nexus that bridges the digital divide for Ages 10 to Infinity.
+                </div>
+            </div>
+
+            <div class="grant-card">
+                <span class="tag">Global Education</span>
+                <h3>08. Bill & Melinda Gates Foundation</h3>
+                <div class="strategy-box">
+                    <span class="highlight">WIN STRATEGY:</span> Scaling the KinOS "Gamified Learning" kernel for global educational infrastructure.
+                </div>
+            </div>
+
+            </div>
+    </div>
+</body>
+</html>
