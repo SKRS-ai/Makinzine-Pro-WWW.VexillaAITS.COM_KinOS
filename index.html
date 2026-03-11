@@ -3,209 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KinOS USA | Philadelphia Digital Sanctuary</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@300;500&display=swap" rel="stylesheet">
+    <title>KinOS USA | Command Interface</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --midnight: #0a0a0a;
-            --obsidian: #121212;
+            --midnight: #050505;
+            --obsidian: #0d0d0d;
             --kinos-red: #cc0000;
-            --cyber-silver: #a0a0a0;
-            --agent-white: #ffffff;
-            --glass: rgba(255, 255, 255, 0.05);
+            --red-glow: rgba(204, 0, 0, 0.4);
+            --cyber-silver: #b0b0b0;
+            --interface-glass: rgba(10, 10, 10, 0.9);
         }
+
+        * { box-sizing: border-box; }
 
         body {
             margin: 0;
             background-color: var(--midnight);
-            color: var(--agent-white);
+            color: #fff;
             font-family: 'JetBrains Mono', monospace;
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Fixed Navigation System Tray */
+        /* --- VANGUARD SYSTEM TRAY (HEADER) --- */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            height: 70px;
-            background: var(--glass);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255, 0, 0, 0.2);
+            height: 90px;
+            background: var(--interface-glass);
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid var(--kinos-red);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 50px;
-            z-index: 1000;
+            padding: 0 5%;
+            z-index: 10000;
         }
 
-        .logo-terminal {
+        .logo-anchor {
             display: flex;
             align-items: center;
             font-family: 'Orbitron', sans-serif;
-            font-weight: bold;
+            font-size: 1.5rem;
             color: var(--kinos-red);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .logo-terminal img {
-            height: 40px;
-            margin-right: 15px;
-            filter: drop-shadow(0 0 5px var(--kinos-red));
-        }
-
-        nav a {
-            color: var(--cyber-silver);
+            letter-spacing: 4px;
             text-decoration: none;
-            margin: 0 20px;
+        }
+
+        .logo-anchor img {
+            height: 60px;
+            margin-right: 15px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { filter: drop-shadow(0 0 2px var(--kinos-red)); }
+            50% { filter: drop-shadow(0 0 15px var(--kinos-red)); }
+            100% { filter: drop-shadow(0 0 2px var(--kinos-red)); }
+        }
+
+        nav ul { display: flex; list-style: none; padding: 0; }
+        nav ul li { margin-left: 30px; }
+        nav ul li a {
+            text-decoration: none;
+            color: var(--cyber-silver);
             font-size: 0.8rem;
+            font-weight: 500;
             transition: 0.3s;
         }
 
-        nav a:hover {
-            color: var(--kinos-red);
-            text-shadow: 0 0 10px var(--kinos-red);
-        }
+        nav ul li a:hover { color: #fff; text-shadow: 0 0 10px var(--kinos-red); }
 
-        .btn-login {
-            border: 1px solid var(--kinos-red);
-            padding: 8px 20px;
-            color: var(--kinos-red);
-            text-transform: uppercase;
-            font-size: 0.7rem;
-            cursor: pointer;
-            transition: 0.4s;
-        }
-
-        .btn-login:hover {
-            background: var(--kinos-red);
-            color: white;
-            box-shadow: 0 0 20px var(--kinos-red);
-        }
-
-        /* Hero Boot Sequence */
+        /* --- HERO SECTOR (INITIALIZATION) --- */
         .hero {
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            background: radial-gradient(circle at center, #1a0000 0%, var(--midnight) 70%);
+            background: radial-gradient(circle at center, #200000 0%, var(--midnight) 80%);
+            border-bottom: 1px solid #222;
         }
 
-        .hero h1 {
+        .system-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            letter-spacing: 5px;
+            font-size: 5rem;
+            margin: 0;
+            background: linear-gradient(to bottom, #fff, #666);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .hero p {
-            color: var(--cyber-silver);
-            max-width: 600px;
-            line-height: 1.6;
+        .terminal-text {
+            color: var(--kinos-red);
+            font-weight: 800;
+            letter-spacing: 10px;
+            margin-top: -10px;
+            text-transform: uppercase;
         }
 
-        .cta-container {
-            margin-top: 30px;
-        }
-
-        .btn-main {
-            background: var(--kinos-red);
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: bold;
-            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-            transition: 0.3s;
-        }
-
-        .btn-main:hover {
-            transform: scale(1.05);
-            filter: brightness(1.2);
-        }
-
-        /* Footer Log */
-        footer {
-            padding: 50px;
+        /* --- MEMBER DOSSIER (REGISTRATION) --- */
+        .registration-hub {
+            padding: 100px 10%;
             background: var(--obsidian);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.7rem;
-            color: #555;
+            text-align: center;
+        }
+
+        .dossier-card {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #333;
+            padding: 50px;
+            background: #000;
+            position: relative;
+        }
+
+        .dossier-card::before {
+            content: "SECURE_CONNECTION_ESTABLISHED";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: var(--kinos-red);
+            padding: 2px 10px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .input-line {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #444;
+            color: var(--kinos-red);
+            padding: 15px;
+            margin-bottom: 20px;
+            font-family: 'JetBrains Mono';
+        }
+
+        /* --- MISSION SPECTRUM (EXPANDED SECTIONS) --- */
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: #222;
+        }
+
+        .mission-sector {
+            background: var(--midnight);
+            padding: 60px 40px;
+            transition: 0.5s;
+        }
+
+        .mission-sector:hover { background: #0f0000; }
+        .mission-sector h3 { font-family: 'Orbitron'; color: var(--kinos-red); }
+
+        /* --- FOOTER (LOG OUT) --- */
+        footer {
+            padding: 80px 10%;
+            border-top: 1px solid var(--kinos-red);
             display: flex;
             justify-content: space-between;
         }
-
-        .footer-links a {
-            color: #777;
-            text-decoration: none;
-            margin-right: 20px;
-        }
-
-        .footer-links a:hover { color: var(--kinos-red); }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-terminal">
-            <img src="kinos-logo.png" alt="KINOS LOGO">
+        <a href="#" class="logo-anchor">
+            <img src="KINOS LOGO.png" alt="KinOS USA Vanguard Shield">
             KinOS USA
-        </div>
+        </a>
         <nav>
-            <a href="#hub">[01_THE_HUB]</a>
-            <a href="#shield">[02_THE_SHIELD]</a>
-            <a href="#circuits">[03_THE_CIRCUIT]</a>
-            <a href="#intel">[04_INTEL]</a>
+            <ul>
+                <li><a href="#academy">ACADEMY</a></li>
+                <li><a href="#sentinel">SENTINEL_OATH</a></li>
+                <li><a href="#intel">COGNITIVE_LAB</a></li>
+                <li><a href="#circuits">PHILLY_CIRCUITS</a></li>
+            </ul>
         </nav>
-        <div class="btn-login" onclick="location.href='#login'">[AGENT_LOGIN]</div>
+        <button style="background: transparent; border: 1px solid var(--kinos-red); color: var(--kinos-red); padding: 10px 20px; cursor: pointer;">[AGENT_LOGIN]</button>
     </header>
 
     <section class="hero">
-        <h1 id="typing-text">INITIALIZING...</h1>
-        <p>LEVEL UP THE MIND. GUARD THE GAME. <br> PHILADELPHIA'S PREMIER GLOBAL GAMING SANCTUARY & ACADEMY.</p>
-        <div class="cta-container">
-            <a href="#register" class="btn-main">INITIALIZE_DOSSIER</a>
+        <h1 class="system-title">KINOS USA</h1>
+        <p class="terminal-text">Level the mind. Guard the game.</p>
+        <p style="color: var(--cyber-silver); max-width: 600px; text-align: center;">Philadelphia's premiere Digital Sanctuary. A high-performance ecosystem for cognitive athletes and public servant agents.</p>
+    </section>
+
+    <section id="register" class="registration-hub">
+        <div class="dossier-card">
+            <h2 style="font-family: 'Orbitron'; margin-bottom: 30px;">INITIALIZE_DOSSIER</h2>
+            <form>
+                <input type="text" placeholder="LEGAL_NAME" class="input-line">
+                <input type="email" placeholder="COMM_CHANNEL_EMAIL" class="input-line">
+                <select class="input-line" style="background: #000;">
+                    <option>RANK: CADET (NEW MEMBER)</option>
+                    <option>RANK: SENTINEL (COMMUNITY PROTECTOR)</option>
+                </select>
+                <div style="margin-top: 30px;">
+                    <button type="submit" style="background: var(--kinos-red); border: none; padding: 20px 60px; color: #fff; font-family: 'Orbitron'; font-weight: bold; cursor: pointer;">SUBMIT_FOR_CLEARANCE</button>
+                </div>
+            </form>
         </div>
     </section>
 
-    <section id="hub" style="padding: 100px 50px;">
-        <h2 style="font-family: 'Orbitron'; color: var(--kinos-red);">THE PHILADELPHIA ALPHA WING</h2>
-        <p>Our members-only training facility is equipped with elite-grade hardware designed for peak performance and cognitive safety.</p>
-        </section>
+    <section class="mission-grid">
+        <div class="mission-sector">
+            <h3>01_THE_SHIELD</h3>
+            <p>Affiliated with **AEAH.ORG**. Our primary directive is identifying and neutralizing electronic abuse. We turn gamers into the first responders of the digital frontier.</p>
+        </div>
+        <div class="mission-sector">
+            <h3>02_THE_LAB</h3>
+            <p>Our Philly Hub tracks **Brain-XP**. We quantify strategic depth and mental endurance, proving that elite gaming is a gateway to high-tier STEAM careers.</p>
+        </div>
+        <div class="mission-sector">
+            <h3>03_THE_VANGUARD</h3>
+            <p>We are neighborly contestants. Our presence at tournaments ensures a professional, high-standard environment for all Philadelphia organizations.</p>
+        </div>
+    </section>
 
     <footer>
-        <div>
-            &copy; 2026 KINOS USA | PHILADELPHIA HUB | COORDINATES: 39.9526&deg; N, 75.1652&deg; W
-            <br>POWERED BY WWW.VEXILLAAITS.COM KINOS
+        <div style="color: var(--cyber-silver);">
+            &copy; 2026 KinOS USA | Powered by VexillaAITS KinOS
+            <br>A Collaborative Project for AEAH.ORG & Philadelphia STEAM
         </div>
-        <div class="footer-links">
-            <a href="#privacy">PRIVACY_POLICY</a>
-            <a href="#terms">TERMS_OF_SERVICE</a>
-            <a href="https://aeah.org">AEA_H_ORG</a>
-            <a href="#report">REPORT_ABUSE</a>
+        <div>
+            <a href="#" style="color: var(--kinos-red); text-decoration: none;">[SAFETY_REPORT_LINK]</a>
         </div>
     </footer>
 
-    <script>
-        // Simple Typing Effect
-        const text = "INITIALIZING KinOS_USA.v3...";
-        let i = 0;
-        function type() {
-            if (i < text.length) {
-                document.getElementById("typing-text").innerHTML += text.charAt(i);
-                i++;
-                setTimeout(type, 100);
-            }
-        }
-        window.onload = () => {
-            document.getElementById("typing-text").innerHTML = "> ";
-            type();
-        };
-    </script>
 </body>
 </html>
