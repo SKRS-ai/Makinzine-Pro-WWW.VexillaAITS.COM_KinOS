@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Deployment Logistics & Supply Chain</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-gold: #ffcc00;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- STABILIZED TITAN HEADER (AEAH.org Optimized) --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- LOGISTICS CONTENT --- */
+        main { margin-top: 280px; padding: 0 10% 100px 10%; }
+
+        .logistics-header {
+            border-bottom: 1px solid #222; padding-bottom: 20px; margin-bottom: 50px;
+        }
+
+        .status-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .asset-card {
+            background: rgba(10, 10, 20, 0.8);
+            border: 1px solid #1a1a2e;
+            padding: 30px;
+            position: relative;
+        }
+
+        .asset-card.active { border-color: var(--os-neon); }
+
+        .shipment-id { font-size: 0.6rem; color: #555; letter-spacing: 2px; }
+        .asset-title { font-family: 'Orbitron'; font-size: 1rem; color: var(--os-gold); margin: 10px 0; }
+        
+        .progress-track {
+            height: 4px; background: #111; margin: 20px 0;
+            position: relative; overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%; background: var(--os-neon);
+            box-shadow: 0 0 10px var(--os-neon);
+        }
+
+        .location-stamp {
+            display: flex; justify-content: space-between; font-size: 0.7rem; color: #888;
+        }
+
+        .aeah-security-verified {
+            margin-top: 20px; font-size: 0.6rem; color: var(--os-neon);
+            text-transform: uppercase; font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav style="display: flex; gap: 20px;">
+                <a href="index.html" style="color: var(--os-neon); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ KERNEL ]</a>
+                <a href="makinzine_pro.html" style="color: var(--os-gold); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ MAKINZINE_PRO ]</a>
+                <a href="deployment_logistics.html" style="color: #fff; text-decoration: none; font-size: 0.75rem; font-weight: 900; border-bottom: 2px solid var(--os-neon);">[ LOGISTICS ]</a>
+            </nav>
+            <div style="font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-neon);">VERIFIED_BY_AEAH.org</div>
+        </div>
+    </header>
+
+    <main>
+        <div class="logistics-header">
+            <h1 style="font-family: 'Orbitron'; font-size: 2rem; margin: 0;">ASSET_DEPLOYMENT_LOG</h1>
+            <p style="color: #666;">Real-time tracking of MAKINZINE PRO and Lab Infrastructure across Philadelphia.</p>
+        </div>
+
+        <div class="status-grid">
+            <div class="asset-card active">
+                <span class="shipment-id">ID: MKZ-P-001-PHL</span>
+                <div class="asset-title">MAKINZINE PRO [BATCH_01]</div>
+                <div class="progress-track"><div class="progress-fill" style="width: 85%;"></div></div>
+                <div class="location-stamp">
+                    <span>ORIGIN: LAB_ZERO</span>
+                    <span>DEST: NORTH_PHILLY_HUB</span>
+                </div>
+                <div class="aeah-security-verified">AEAH.org Hardware-Lock Enabled</div>
+            </div>
+
+            <div class="asset-card">
+                <span class="shipment-id">ID: EWN-D-202-PHL</span>
+                <div class="asset-title">E-WIN 2.0 RGB TACTICAL DESKS</div>
+                <div class="progress-track"><div class="progress-fill" style="width: 40%;"></div></div>
+                <div class="location-stamp">
+                    <span>STATUS: IN_TRANSIT</span>
+                    <span>DEST: KENSINGTON_ACADEMY</span>
+                </div>
+            </div>
+
+            <div class="asset-card active">
+                <span class="shipment-id">ID: CSR-V-750-PHL</span>
+                <div class="asset-title">CORSAIR VENGEANCE i7500 NODES</div>
+                <div class="progress-track"><div class="progress-fill" style="width: 100%;"></div></div>
+                <div class="location-stamp">
+                    <span>STATUS: DEPLOYED</span>
+                    <span>LOC: UNIVERSITY_CITY_NEXUS</span>
+                </div>
+                <div class="aeah-security-verified">AEAH.org Firewall Synchronized</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 80px; padding: 40px; background: rgba(0, 102, 255, 0.05); border: 1px solid #222;">
+            <h3 style="font-family: 'Orbitron'; color: var(--os-neon); margin-top: 0;">LOGISTICS_OVERSIGHT</h3>
+            <p style="font-size: 0.85rem; color: #888; line-height: 1.6;">
+                Every <b>MAKINZINE PRO</b> unit is tracked via a decentralized ledger. This ensures that nonprofit assets are utilized specifically within verified <b>AEAH.org</b> Digital Sanctuaries. For a detailed audit of our 10-year hardware sustainability plan, please visit the <b>Legacy Archives</b>.
+            </p>
+        </div>
+    </main>
+
+</body>
+</html>
