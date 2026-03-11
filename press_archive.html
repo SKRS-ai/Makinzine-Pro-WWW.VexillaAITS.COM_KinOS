@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Media Archive & Press Terminal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor {
+            display: flex; align-items: center;
+            padding-top: 45px; padding-left: 60px;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); }
+
+        .system-border {
+            width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--os-cobalt), transparent);
+            margin-top: 50px;
+        }
+
+        nav { display: flex; gap: 20px; }
+        .nav-link {
+            text-decoration: none; color: var(--os-neon);
+            font-size: 0.75rem; font-weight: 900; text-transform: uppercase;
+            padding: 10px; transition: 0.4s;
+        }
+
+        /* --- PRESS CONTENT --- */
+        main { margin-top: 280px; padding: 0 10% 100px 10%; }
+
+        .press-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .news-card {
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--os-cobalt);
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .news-card:hover {
+            background: rgba(0, 102, 255, 0.08);
+            border-left-color: var(--os-neon);
+        }
+
+        .date-stamp {
+            font-size: 0.7rem; color: var(--os-neon);
+            font-weight: 800; margin-bottom: 10px; display: block;
+        }
+
+        .news-title {
+            font-family: 'Orbitron';
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .news-excerpt {
+            font-size: 0.85rem;
+            color: #888;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            font-size: 0.7rem;
+            color: var(--os-cobalt);
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .media-kit-box {
+            margin-top: 60px;
+            padding: 40px;
+            border: 1px dashed #333;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav>
+                <a href="index.html" class="nav-link">KERNEL</a>
+                <a href="hardware_lab.html" class="nav-link">LAB</a>
+                <a href="press_archive.html" class="nav-link" style="color:#fff; border-bottom: 2px solid var(--os-neon);">PRESS</a>
+                <a href="recruitment_nexus.html" class="nav-link">ENLIST</a>
+            </nav>
+            <div style="width: 120px;"></div>
+        </div>
+        <div class="system-border"></div>
+    </header>
+
+    <main>
+        <h1 style="font-family: 'Orbitron'; text-align: center; margin-bottom: 60px;">MEDIA_ARCHIVE_v1.0</h1>
+
+        <div class="press-grid">
+            <div class="news-card">
+                <span class="date-stamp">MAR 2026</span>
+                <div class="news-title">PHILADELPHIA DECLARED GLOBAL HUB FOR KinOS INNOVATION</div>
+                <div class="news-excerpt">Civic leaders and AEA H.org officials gather to celebrate the launch of the first Intergenerational Prototyping Lab.</div>
+                <a href="#" class="read-more">[VIEW_FULL_INTEL]</a>
+            </div>
+
+            <div class="news-card">
+                <span class="date-stamp">FEB 2026</span>
+                <div class="news-title">KinOS CADETS UNVEIL AI NEURAL INTERFACE PROTOTYPE</div>
+                <div class="news-excerpt">A team of 14-year-old engineers utilize Corsair Vengeance i7500 clusters to break latency records.</div>
+                <a href="#" class="read-more">[VIEW_FULL_INTEL]</a>
+            </div>
+
+            <div class="news-card">
+                <span class="date-stamp">JAN 2026</span>
+                <div class="news-title">THE 10-YEAR COMMITMENT: A NEW MODEL FOR PHILANTHROPY</div>
+                <div class="news-excerpt">Architect-tier donors pledge a decade of support for the Sovereign Gaming ecosystem.</div>
+                <a href="#" class="read-more">[VIEW_FULL_INTEL]</a>
+            </div>
+        </div>
+
+        <div class="media-kit-box">
+            <h3 style="font-family: 'Orbitron'; margin-top: 0;">OFFICIAL_MEDIA_KIT</h3>
+            <p style="color: #666; font-size: 0.85rem;">Download high-resolution assets, logo variations, and organization whitepapers for editorial use.</p>
+            <button style="background: var(--os-cobalt); color: #fff; border: none; padding: 10px 20px; font-family: 'Orbitron'; cursor: pointer;">DOWNLOAD_V1.ZIP</button>
+        </div>
+    </main>
+
+</body>
+</html>
