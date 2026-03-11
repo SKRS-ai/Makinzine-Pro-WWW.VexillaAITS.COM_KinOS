@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Grant Narrative & Response Template</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.6;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- NARRATIVE CONTENT --- */
+        main { margin-top: 280px; padding: 0 10% 100px 10%; }
+
+        .narrative-block {
+            background: #0a0a1a; border: 1px solid #1a1a2e;
+            padding: 40px; margin-bottom: 40px; position: relative;
+        }
+
+        .narrative-block h2 { 
+            font-family: 'Orbitron'; color: var(--os-neon); font-size: 1rem;
+            margin-top: 0; border-bottom: 1px solid #222; padding-bottom: 15px;
+        }
+
+        .copy-btn {
+            position: absolute; top: 20px; right: 20px;
+            background: var(--os-cobalt); color: #fff; border: none;
+            padding: 5px 15px; font-family: 'Orbitron'; font-size: 0.6rem;
+            cursor: pointer; transition: 0.3s;
+        }
+
+        .copy-btn:hover { background: var(--os-neon); color: #000; }
+
+        .text-content { font-size: 0.85rem; color: #ccc; white-space: pre-line; }
+
+        .tag-row { margin-top: 20px; }
+        .tag { 
+            background: rgba(0, 242, 255, 0.1); color: var(--os-neon); 
+            padding: 3px 10px; font-size: 0.6rem; margin-right: 10px;
+            border: 1px solid var(--os-neon);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <div style="font-family: 'Orbitron'; color: var(--os-neon); font-size: 0.8rem;">GRANT_RESPONSE_v2026</div>
+            <div style="width: 120px;"></div>
+        </div>
+    </header>
+
+    <main>
+        <h1 style="font-family: 'Orbitron'; text-align: center; margin-bottom: 50px;">PROPOSAL_NARRATIVE_TERMINAL</h1>
+
+        <div class="narrative-block">
+            <button class="copy-btn">COPY_INTEL</button>
+            <h2>Q: STATEMENT OF NEED</h2>
+            <div class="text-content">
+                Philadelphia’s youth (Ages 10-17) face a significant "Innovation Gap." While gaming has honed their rapid pattern recognition and cognitive reflexes, traditional educational systems fail to bridge these skills into professional engineering. KinOS addresses this by converting gaming aptitude into industrial-grade hardware and AI expertise, providing a sovereign future for underserved communities.
+            </div>
+            <div class="tag-row">
+                <span class="tag">#PHILLY_YOUTH</span> <span class="tag">#COGNITIVE_GAP</span>
+            </div>
+        </div>
+
+        <div class="narrative-block">
+            <button class="copy-btn">COPY_INTEL</button>
+            <h2>Q: PROJECT METHODS & INFRASTRUCTURE</h2>
+            <div class="text-content">
+                Our methodology centers on the "Intergenerational Quest" model. Using **Corsair Vengeance i7500** AI nodes, Cadets work alongside industry Mentors to build sovereign prototypes. The ergonomic laboratory, outfitted with **E-WIN 2.0 RGB** tactical desks, ensures a professional-grade environment that facilitates long-term innovation sprints. Safety is enforced through hardware-level protection audited by **AEA H.org**.
+            </div>
+            <div class="tag-row">
+                <span class="tag">#CORSAIR_INFRA</span> <span class="tag">#AEA_SAFETY</span> <span class="tag">#EWIN_LAB</span>
+            </div>
+        </div>
+
+        <div class="narrative-block">
+            <button class="copy-btn">COPY_INTEL</button>
+            <h2>Q: LONG-TERM SUSTAINABILITY</h2>
+            <div class="text-content">
+                KinOS is sustained by a dual-revenue model: institutional grants and the "Guild Architect" subscription. By securing 10-year legacy commitments from private and corporate donors, we ensure that Node Zero in Philadelphia remains a permanent hub for decentralized innovation.
+            </div>
+            <div class="tag-row">
+                <span class="tag">#10_YEAR_LEGACY</span> <span class="tag">#GUILD_REVENUE</span>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
