@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Career Pivot & Senior Architect Onboarding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-gold: #ffcc00;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- PIVOT LAYOUT --- */
+        main { margin-top: 280px; padding: 0 10% 100px 10%; }
+
+        .pivot-header { text-align: center; margin-bottom: 60px; }
+
+        .skill-map-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;
+        }
+
+        .skill-bridge-card {
+            background: rgba(255, 255, 255, 0.02); border: 1px solid #1a1a2e;
+            padding: 35px; position: relative;
+        }
+
+        .bridge-icon { font-size: 2rem; margin-bottom: 15px; color: var(--os-gold); }
+
+        .skill-transfer {
+            display: flex; justify-content: space-between; align-items: center;
+            margin: 20px 0; padding: 15px; background: rgba(0, 102, 255, 0.05);
+        }
+
+        .transfer-label { font-size: 0.6rem; color: #555; text-transform: uppercase; }
+        .transfer-value { font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-neon); }
+
+        .onboard-form-link {
+            display: inline-block; margin-top: 20px; color: var(--os-gold);
+            text-decoration: none; font-weight: 800; font-size: 0.75rem;
+            border-bottom: 1px solid var(--os-gold); padding-bottom: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav style="display: flex; gap: 20px;">
+                <a href="index.html" style="color: var(--os-neon); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ KERNEL ]</a>
+                <a href="mentor_dispatch.html" style="color: var(--os-gold); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ MENTOR_OPS ]</a>
+                <a href="career_pivot.html" style="color: #fff; text-decoration: none; font-size: 0.75rem; font-weight: 900; border-bottom: 2px solid var(--os-neon);">[ ARCHITECT_BRIDGE ]</a>
+            </nav>
+            <div style="font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-neon);">FACILITATED_BY_AEAH.org</div>
+        </div>
+    </header>
+
+    <main>
+        <div class="pivot-header">
+            <h1 style="font-family: 'Orbitron'; font-size: 2.2rem; margin: 0;">RE-ENGINEER_YOUR_LEGACY</h1>
+            <p style="color: #666; margin-top: 10px;">Philadelphia's Veterans and Professionals: Your experience is the ultimate hardware.</p>
+        </div>
+
+        <div class="skill-map-grid">
+            <div class="skill-bridge-card">
+                <div class="bridge-icon">🛡️</div>
+                <h3 style="font-family: 'Orbitron'; margin: 0;">DEFENSE_TO_DATA</h3>
+                <div class="skill-transfer">
+                    <div>
+                        <div class="transfer-label">PAST_EXPERIENCE</div>
+                        <div class="transfer-value">Strategic Oversight</div>
+                    </div>
+                    <div style="color: var(--os-gold);">➔</div>
+                    <div style="text-align: right;">
+                        <div class="transfer-label">KinOS_ROLE</div>
+                        <div class="transfer-value">AEAH.org Auditor</div>
+                    </div>
+                </div>
+                <p style="font-size: 0.75rem; color: #888;">Translate your discipline and security-first mindset into auditing Digital Sanctuaries for Philadelphia's youth.</p>
+                <a href="#" class="onboard-form-link">[ VIEW_TRANSITION_PATHWAY ]</a>
+            </div>
+
+            <div class="skill-bridge-card">
+                <div class="bridge-icon">⚙️</div>
+                <h3 style="font-family: 'Orbitron'; margin: 0;">MECHANICAL_TO_MODULAR</h3>
+                <div class="skill-transfer">
+                    <div>
+                        <div class="transfer-label">PAST_EXPERIENCE</div>
+                        <div class="transfer-value">Precision Tooling</div>
+                    </div>
+                    <div style="color: var(--os-gold);">➔</div>
+                    <div style="text-align: right;">
+                        <div class="transfer-label">KinOS_ROLE</div>
+                        <div class="transfer-value">MAKINZINE_PRO Lead</div>
+                    </div>
+                </div>
+                <p style="font-size: 0.75rem; color: #888;">Your understanding of physical tolerances and assembly is exactly what Cadets need to master the MAKINZINE PRO hardware.</p>
+                <a href="#" class="onboard-form-link">[ VIEW_TRANSITION_PATHWAY ]</a>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
