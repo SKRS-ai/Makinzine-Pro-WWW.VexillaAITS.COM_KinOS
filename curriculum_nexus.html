@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Curriculum Nexus & Quest Tree</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-gold: #ffcc00;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- QUEST TREE LAYOUT --- */
+        main { margin-top: 280px; padding: 0 10% 100px 10%; }
+
+        .quest-tree-header {
+            text-align: center; margin-bottom: 60px;
+        }
+
+        .pathway-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .pathway-tier {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid #1a1a2e;
+            padding: 30px;
+            position: relative;
+        }
+
+        .tier-label {
+            font-family: 'Orbitron'; font-size: 0.7rem; color: var(--os-gold);
+            letter-spacing: 2px; margin-bottom: 10px; display: block;
+        }
+
+        .pathway-title {
+            font-family: 'Orbitron'; font-size: 1.2rem; margin-bottom: 20px;
+            color: var(--os-neon);
+        }
+
+        .module-list { list-style: none; padding: 0; }
+        .module-item {
+            padding: 10px; border-bottom: 1px solid #111;
+            font-size: 0.8rem; display: flex; align-items: center;
+        }
+
+        .module-item::before {
+            content: "[○]"; color: var(--os-cobalt); margin-right: 10px;
+        }
+
+        .unlocked { color: #fff; }
+        .locked { color: #444; }
+
+        .hardware-dependency {
+            margin-top: 30px; font-size: 0.7rem; color: #666; font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <div style="font-family: 'Orbitron'; color: var(--os-gold); font-size: 0.8rem;">CURRICULUM_VERSION_1.0</div>
+            <div style="width: 120px;"></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="quest-tree-header">
+            <h1 style="font-family: 'Orbitron'; font-size: 2.5rem; margin: 0;">INTERGENERATIONAL_QUEST_TREE</h1>
+            <p style="color: #666;">Leveling up Philadelphia's Youth from Players to Architects.</p>
+        </div>
+
+        <div class="pathway-container">
+            <div class="pathway-tier">
+                <span class="tier-label">RANK: CADET</span>
+                <div class="pathway-title">SYSTEMS_LITERACY</div>
+                <ul class="module-list">
+                    <li class="module-item unlocked">Hardware Anatomy (Corsair Node Sync)</li>
+                    <li class="module-item unlocked">Digital Sanctuary Ethics (AEA H.org)</li>
+                    <li class="module-item unlocked">Logic Gates & Reflex Coding</li>
+                    <li class="module-item locked">Advanced Neural Interfacing</li>
+                </ul>
+                <div class="hardware-dependency">Requires: Corsair Vengeance i7500 Workstation</div>
+            </div>
+
+            <div class="pathway-tier">
+                <span class="tier-label">RANK: VANGUARD</span>
+                <div class="pathway-title">PROTOTYPING_OPS</div>
+                <ul class="module-list">
+                    <li class="module-item locked">3D Spatial Engineering</li>
+                    <li class="module-item locked">Circuit Board Muntng</li>
+                    <li class="module-item locked">Ergonomic Station Modding</li>
+                    <li class="module-item locked">AI Agent Deployment</li>
+                </ul>
+                <div class="hardware-dependency">Requires: E-WIN 2.0 RGB Lab Environment</div>
+            </div>
+
+            <div class="pathway-tier">
+                <span class="tier-label">RANK: ARCHITECT</span>
+                <div class="pathway-title">SOVEREIGN_GOVERNANCE</div>
+                <ul class="module-list">
+                    <li class="module-item locked">Nonprofit Fund Stewardship</li>
+                    <li class="module-item locked">Strategic Grant Writing</li>
+                    <li class="module-item locked">Intergenerational Mentorship</li>
+                    <li class="module-item locked">Global Hub Deployment</li>
+                </ul>
+                <div class="hardware-dependency">Requires: 10-Year Founder Status</div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
