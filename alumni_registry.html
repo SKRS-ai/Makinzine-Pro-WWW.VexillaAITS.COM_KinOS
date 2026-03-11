@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Alumni Registry & Legacy Success</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-gold: #ffcc00;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- ALUMNI GRID --- */
+        main { margin-top: 280px; padding: 0 10% 100px 10%; }
+
+        .alumni-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 30px;
+        }
+
+        .alumni-card {
+            background: rgba(255, 255, 255, 0.02); border: 1px solid #1a1a2e;
+            padding: 40px; position: relative; overflow: hidden;
+        }
+
+        .alumni-card::before {
+            content: "ARCHITECT_GRADUATE"; position: absolute; top: 15px; right: -30px;
+            background: var(--os-gold); color: #000; font-size: 0.5rem; font-weight: 900;
+            padding: 5px 40px; transform: rotate(45deg); font-family: 'Orbitron';
+        }
+
+        .alumni-photo {
+            width: 80px; height: 80px; background: #222; border: 2px solid var(--os-neon);
+            margin-bottom: 20px;
+        }
+
+        .alumni-name { font-family: 'Orbitron'; font-size: 1.2rem; color: var(--os-neon); margin-bottom: 5px; }
+        .alumni-current-role { font-size: 0.75rem; color: var(--os-gold); margin-bottom: 20px; text-transform: uppercase; }
+
+        .pathway-log {
+            font-size: 0.7rem; color: #666; border-top: 1px solid #222; padding-top: 15px;
+        }
+
+        .pathway-step { margin-bottom: 5px; display: flex; align-items: center; }
+        .pathway-step::before { content: "►"; color: var(--os-cobalt); margin-right: 10px; font-size: 0.6rem; }
+
+        .quote { font-style: italic; color: #ccc; font-size: 0.8rem; margin: 20px 0; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav style="display: flex; gap: 20px;">
+                <a href="index.html" style="color: var(--os-neon); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ KERNEL ]</a>
+                <a href="makinzine_pro.html" style="color: var(--os-gold); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ MAKINZINE_PRO ]</a>
+                <a href="alumni_registry.html" style="color: #fff; text-decoration: none; font-size: 0.75rem; font-weight: 900; border-bottom: 2px solid var(--os-gold);">[ ALUMNI_REGISTRY ]</a>
+            </nav>
+            <div style="font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-neon);">VERIFIED_BY_AEAH.org</div>
+        </div>
+    </header>
+
+    <main>
+        <div style="margin-bottom: 60px;">
+            <h1 style="font-family: 'Orbitron'; font-size: 2.5rem; margin: 0;">HALL_OF_ARCHITECTS</h1>
+            <p style="color: #666;">Documenting the transition from Philadelphia Cadets to Global Innovators.</p>
+        </div>
+
+        <div class="alumni-grid">
+            <div class="alumni-card">
+                <div class="alumni-photo"></div>
+                <div class="alumni-name">Marcus V.</div>
+                <div class="alumni-current-role">Senior Hardware Engineer @ Robotics Lead</div>
+                <div class="quote">"I started on a MAKINZINE PRO prototype in a basement in West Philly. That device taught me that I could build the world I wanted to live in."</div>
+                <div class="pathway-log">
+                    <div class="pathway-step">2026: Enlisted as Cadet (Age 11)</div>
+                    <div class="pathway-step">2028: Optimized Corsair Node Cluster</div>
+                    <div class="pathway-step">2032: Awarded KinOS Legacy Scholarship</div>
+                </div>
+            </div>
+
+            <div class="alumni-card">
+                <div class="alumni-photo"></div>
+                <div class="alumni-name">Elena R.</div>
+                <div class="alumni-current-role">Lead Cybersecurity Auditor @ AEAH Systems</div>
+                <div class="quote">"The Digital Sanctuary wasn't just a safety protocol for me; it was the foundation of my career in data sovereignty."</div>
+                <div class="pathway-log">
+                    <div class="pathway-step">2026: Joined North Philly Safe Zone</div>
+                    <div class="pathway-step">2029: Certified Vanguard Mentor</div>
+                    <div class="pathway-step">2034: Board Member, KinOS Global</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
