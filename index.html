@@ -3,203 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VEXILLA.AITS | KinOS & Makinzine Pro</title>
+    <title>VEXILLA | Makinzine Pro & KinOS</title>
     <style>
         :root {
-            --bg-deep: #080808;
-            --accent-cyan: #00f3ff;
-            --accent-magenta: #ff0055;
-            --glass: rgba(20, 20, 20, 0.85);
-            --border-glow: rgba(0, 243, 255, 0.3);
-            --font-main: 'Orbitron', sans-serif;
-            --font-mono: 'Share Tech Mono', monospace;
+            --gold: #d4af37;
+            --deep-slate: #0a0b0c;
+            --text-silver: #e0e0e0;
+            --interface-cyan: #00e5ff;
         }
 
-        body {
-            background-color: var(--bg-deep);
-            color: white;
-            font-family: var(--font-main);
-            margin: 0;
+        body, html {
+            margin: 0; padding: 0; width: 100%; height: 100%;
+            background-color: var(--deep-slate);
+            color: var(--text-silver);
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
             overflow-x: hidden;
-            background-image: radial-gradient(circle at 50% 50%, #111 0%, #080808 100%);
         }
 
-        /* Nav Bar: [PROTOCOL_DIRECT_ACCESS] */
+        /* High-Level Nav */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 60px;
-            background: var(--glass);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--border-glow);
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            z-index: 1000;
-            font-size: 0.8rem;
+            position: fixed; top: 0; width: 100%; height: 80px;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 50px; box-sizing: border-box;
+            background: rgba(10, 11, 12, 0.9);
+            backdrop-filter: blur(20px); z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        nav a {
-            color: var(--accent-cyan);
-            text-decoration: none;
-            text-shadow: 0 0 5px var(--accent-cyan);
-            letter-spacing: 1px;
-            transition: 0.3s;
+        .logo { font-weight: 800; letter-spacing: 4px; color: var(--gold); }
+        .nav-links a { 
+            text-decoration: none; color: white; margin-left: 30px; 
+            font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;
+            opacity: 0.6; transition: 0.3s;
+        }
+        .nav-links a:hover { opacity: 1; color: var(--interface-cyan); }
+
+        /* Hero Section */
+        section { height: 100vh; display: flex; align-items: center; padding: 0 10%; position: relative; }
+        
+        .hero-text { max-width: 500px; z-index: 2; }
+        .hero-text h1 { font-size: 4rem; line-height: 1; margin: 0; font-weight: 900; }
+        .hero-text p { color: #888; font-size: 1.1rem; margin-top: 20px; }
+
+        .device-bg {
+            position: absolute; right: 0; top: 10%; width: 60%; height: 80%;
+            background: url('https://via.placeholder.com/1200x800/0a0b0c/00e5ff?text=MAKINZINE_PRO_PARALLAX_RENDER') no-repeat center right;
+            background-size: contain; z-index: 1;
         }
 
-        nav a:hover { color: white; transform: scale(1.1); }
-
-        /* Bento Grid Layout */
-        .container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: minmax(200px, auto);
-            gap: 20px;
-            padding: 80px 20px 20px 20px;
-            max-width: 1400px;
-            margin: auto;
+        /* Bento Presentation Grid */
+        .grid-section { 
+            display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; 
+            padding: 100px 50px; background: #0e0f11;
         }
 
-        .card {
-            background: var(--glass);
-            border: 1px solid var(--border-glow);
-            padding: 20px;
-            position: relative;
-            transition: transform 0.3s, box-shadow 0.3s;
-            overflow: hidden;
+        .tile { 
+            background: #141518; border: 1px solid rgba(255,255,255,0.05); 
+            padding: 40px; border-radius: 4px; transition: 0.4s;
         }
+        .tile:hover { border-color: var(--interface-cyan); transform: scale(1.02); }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px var(--border-glow);
+        .feature-tile { grid-column: span 4; height: 300px; }
+        .large-tile { grid-column: span 8; height: 620px; grid-row: span 2; }
+        
+        /* Buttons */
+        .cta-btn {
+            display: inline-block; padding: 15px 40px; border: 1px solid var(--gold);
+            color: var(--gold); text-decoration: none; margin-top: 30px;
+            letter-spacing: 3px; font-size: 0.8rem; transition: 0.3s;
         }
+        .cta-btn:hover { background: var(--gold); color: black; }
 
-        /* Specific Bento Tiles */
-        .hero { grid-column: span 3; grid-row: span 2; display: flex; align-items: center; }
-        .login { grid-column: span 1; grid-row: span 1; border-color: var(--accent-magenta); }
-        .stats { grid-column: span 1; grid-row: span 1; font-family: var(--font-mono); }
-        .grants { grid-column: span 2; grid-row: span 2; }
-        .history { grid-column: span 2; grid-row: span 1; }
+        .stat-number { font-size: 3rem; font-weight: 900; color: var(--interface-cyan); }
 
-        /* 3D Showcase Mockup */
-        .device-3d {
-            width: 100%;
-            height: 300px;
-            background: url('https://via.placeholder.com/800x400/000/00f3ff?text=MAKINZINE+PRO+3D+SHOWROOM') center/cover;
-            border: 1px dashed var(--accent-cyan);
-        }
-
-        /* Headings */
-        h2 { color: var(--accent-cyan); text-transform: uppercase; font-size: 1.2rem; margin-top: 0; }
-        p { font-size: 0.9rem; line-height: 1.6; color: #ccc; }
-
-        /* Login Buttons */
-        .btn-g {
-            background: white;
-            color: black;
-            border: none;
-            padding: 10px;
-            width: 100%;
-            cursor: pointer;
-            font-family: var(--font-mono);
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        /* Grant List styling */
-        .grant-list { height: 300px; overflow-y: scroll; font-family: var(--font-mono); font-size: 0.75rem; }
-        .grant-item { padding: 5px; border-bottom: 1px solid #333; display: flex; justify-content: space-between; }
-        .grant-item span { color: var(--accent-cyan); }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#devices">[CORE_DEVICES]</a>
-        <a href="#os">[KINOS_KERNEL]</a>
-        <a href="#vault">[INVESTOR_VAULT]</a>
-        <a href="#grants">[COMMUNITY_WAVE]</a>
-        <a href="#gov">[GOV_SECURE]</a>
-    </nav>
+<nav>
+    <div class="logo">VEXILLA.AITS</div>
+    <div class="nav-links">
+        <a href="#showroom">[V_SHOWROOM]</a>
+        <a href="#os">[K_OS]</a>
+        <a href="#vault">[ROI_VAULT]</a>
+        <a href="#collective">[COMMUNITY]</a>
+        <a href="#gov">[FED_SECURE]</a>
+    </div>
+</nav>
 
-    <div class="container">
-        <div class="card hero">
-            <div style="width: 100%;">
-                <h2>MAKINZINE PRO / [IDENT_01]</h2>
-                <div class="device-3d"></div>
-                <p>Not a tablet. A purpose-driven synthesizer for the Focus Economy. Featuring the Hybrid E-Ink/RLCD Stack.</p>
-            </div>
-        </div>
+<section id="hero">
+    <div class="hero-text">
+        <h1>NOT A TABLET.</h1>
+        <p>The Makinzine Pro is a purpose-driven literary synthesizer. 120-hour active battery. 10-year hardware lifecycle. The new standard for the Focus Economy.</p>
+        <a href="#" class="cta-btn">ACCESS THE REGISTRY</a>
+    </div>
+    <div class="device-bg"></div>
+</section>
 
-        <div class="card login">
-            <h2>[USER_AUTH]</h2>
-            <p>Access the Private Registry.</p>
-            <button class="btn-g">LOGIN WITH GOOGLE</button>
-            <button class="btn-g" style="background:var(--accent-cyan)">BIOMETRIC SCAN</button>
-        </div>
-
-        <div class="card stats">
-            <h2>[SYSTEM_STATUS]</h2>
-            <div id="terminal-text" style="color: lime; font-size: 0.7rem;">
-                > SYNCING VEXILLA_AITS...<br>
-                > KINOS KERNEL: OPTIMAL<br>
-                > BATTERY: 120H ACTIVE<br>
-                > ENCRYPTION: FIPS 140-2
-            </div>
-        </div>
-
-        <div class="card history">
-            <h2>[LITERARY_ARCHIVE]</h2>
-            <p>From 1731 paper to 2026 Focus Architecture. We are preserving the spatial identity of information.</p>
-        </div>
-
-        <div class="card grants">
-            <h2>[COMMUNITY_WAVE] / 501(c)(3)</h2>
-            <p>Targeted Grants for Local Tech Sovereignty:</p>
-            <div class="grant-list">
-                <div class="grant-item">NSF Phase I SBIR <span>$250k</span></div>
-                <div class="grant-item">DARPA Secure OS <span>$1.2M</span></div>
-                <div class="grant-item">NEA Shiny Gallery <span>$50k</span></div>
-                <div class="grant-item">Knight Foundation <span>$150k</span></div>
-                <div class="grant-item">Ford Digital Equity <span>$200k</span></div>
-                <div class="grant-item">MacArthur Innovation <span>$625k</span></div>
-                <div class="grant-item">EPA Green Tech <span>$100k</span></div>
-                <div class="grant-item">Mellon Archive <span>$300k</span></div>
-                <div class="grant-item">Sloan Public Tech <span>$125k</span></div>
-                <div class="grant-item">Mozilla MOSS <span>$50k</span></div>
-                <div class="grant-item">Gates Global <span>$500k</span></div>
-                <div class="grant-item">Bloomberg Wave <span>$250k</span></div>
-                <div class="grant-item">Rockefeller Resil <span>$400k</span></div>
-                <div class="grant-item">Open Society <span>$200k</span></div>
-                <div class="grant-item">Pew Philadelphia <span>$150k</span></div>
-                <div class="grant-item">Surdna Env <span>$100k</span></div>
-                <div class="grant-item">Hewlett OER <span>$175k</span></div>
-                <div class="grant-item">Kresge Urban <span>$225k</span></div>
-                <div class="grant-item">IMLS Museum <span>$80k</span></div>
-                <div class="grant-item">Google Impact <span>$1M</span></div>
-            </div>
-        </div>
-
-        <div class="card" style="grid-column: span 2;">
-            <h2>[GOV_SECURE] / FEDRAMP</h2>
-            <p>Zero-Trust supply chain. Air-gapped hardware capabilities. Purpose-driven deployment for military and educational logistics.</p>
-        </div>
+<div class="grid-section">
+    <div class="tile feature-tile">
+        <div class="stat-number">350%</div>
+        <p>Projected User Focus Retention vs. Standard Tablets.</p>
     </div>
 
-    <script>
-        // Terminal Text Animation
-        const lines = [
-            "> UPLOADING KINPAGES REGISTRY...",
-            "> VEXILLA_SYNC HANDSHAKE SUCCESSFUL",
-            "> CALCULATING ROI: 350% GROWTH",
-            "> WAVE_CAPACITY: 98%"
-        ];
-        let i = 0;
-        setInterval(() => {
-            document.getElementById('terminal-text').innerHTML += `<br> ${lines[i % lines.length]}`;
-            i++;
-        }, 3000);
-    </script>
+    <div class="tile large-tile">
+        <h2>KINOS: THE PURPOSE-DRIVEN KERNEL</h2>
+        <p>A zero-bloat, air-gapped operating system designed for government contracts and high-fidelity literary luxury.</p>
+        <div style="margin-top: 50px; border-left: 2px solid var(--interface-cyan); padding-left: 20px;">
+            <p>> NO NOTIFICATIONS<br>> NO TRACKERS<br>> NO DATA LEAKAGE</p>
+        </div>
+        
+    </div>
+
+    <div class="tile feature-tile">
+        <h2>SNAP-FIX 2.0</h2>
+        <p>User-replaceable modules. Designed to combat planned obsolescence and secure EPA Green-Tech grants.</p>
+    </div>
+
+    <div class="tile feature-tile" style="grid-column: span 12; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <h2>THE COLLECTIVE [NON-PROFIT]</h2>
+            <p>20+ Targeted Federal & Private Grants including NSF, DARPA, and NEA.</p>
+        </div>
+        <a href="#" class="cta-btn" style="border-color: var(--interface-cyan); color: var(--interface-cyan);">VIEW GRANT PORTFOLIO</a>
+    </div>
+</div>
+
 </body>
 </html>
