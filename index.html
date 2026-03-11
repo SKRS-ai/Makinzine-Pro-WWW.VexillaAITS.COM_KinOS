@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>KinOS | The Future of American Innovation</title>
+    <title>KinOS | The Neural Nexus of American Innovation</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --os-cobalt: #0066ff;
             --os-neon: #00f2ff;
             --os-obsidian: #010103;
-            --panel-bg: rgba(5, 5, 10, 0.98);
-            --header-height: 220px; /* Increased to house 2X Logo */
+            --panel-bg: rgba(5, 5, 10, 0.95);
+            --nav-height: 60px;
         }
 
         body, html {
@@ -21,72 +21,93 @@
             scroll-behavior: smooth;
         }
 
-        /* --- STABILIZED NAVIGATION & LOGO HEADER --- */
+        /* --- THE LOW-PROFILE / OVERSIZED LOGO HEADER --- */
         header {
-            position: fixed; top: 0; width: 100%; height: var(--header-height);
-            background: var(--panel-bg); backdrop-filter: blur(25px);
-            border-bottom: 3px solid var(--os-cobalt);
-            display: flex; flex-direction: column; justify-content: space-between;
-            z-index: 10000; box-shadow: 0 15px 40px rgba(0,0,0,0.9);
+            position: fixed; top: 0; width: 100%;
+            height: 100px; /* Shorter vertical height */
+            background: var(--panel-bg); backdrop-filter: blur(20px);
+            border-bottom: 2px solid var(--os-cobalt);
+            z-index: 10000;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 4%;
         }
 
-        /* LOGO: TOP-LEFT / 2X LARGER / NO OVERLAP */
         .logo-system-container {
-            padding: 20px 60px;
-            display: flex; align-items: flex-start;
+            position: relative;
+            height: 100%;
+            display: flex; align-items: center;
         }
 
         .logo-system-container img {
-            height: 140px; /* 2X Enlargement */
+            height: 180px; /* Massive scale, breaks header bounds */
             width: auto;
-            filter: drop-shadow(0 0 20px var(--os-cobalt));
+            position: absolute;
+            top: -20px; /* Pulls logo up to prevent "fat" header */
+            filter: drop-shadow(0 0 25px var(--os-cobalt));
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        /* NAVIGATION: CENTER-FIXED STABILIZATION */
+        .logo-system-container img:hover { transform: scale(1.1) rotate(-2deg); }
+
+        /* --- CENTER-STABILIZED NAVIGATION --- */
         nav {
-            width: 100%; background: rgba(0,0,0,0.5);
-            display: flex; justify-content: center; padding: 10px 0;
-            border-top: 1px solid #222;
+            flex-grow: 1;
+            display: flex; justify-content: center;
+            gap: 30px;
         }
 
         .nav-link {
             text-decoration: none; color: var(--os-neon);
-            font-size: 0.8rem; font-weight: 800; margin: 0 25px;
-            text-transform: uppercase; transition: 0.3s;
+            font-size: 0.75rem; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 2px;
+            padding: 10px 15px; border-bottom: 1px solid transparent;
+            transition: 0.3s;
         }
 
-        .nav-link:hover { color: white; text-shadow: 0 0 15px var(--os-cobalt); }
+        .nav-link:hover { border-bottom: 1px solid var(--os-neon); color: white; }
 
-        /* --- CONTENT SECTIONING --- */
-        main { margin-top: calc(var(--header-height) + 20px); padding: 0 8% 100px 8%; }
-
-        .os-window {
-            background: rgba(10, 10, 20, 0.9); border: 1px solid #1a1a2e;
-            border-top: 35px solid #111; padding: 50px; margin-bottom: 80px;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+        /* --- HERO: THE PSYCHOLOGY OF KINOS --- */
+        .hero-section {
+            margin-top: 140px;
+            padding: 100px 8%;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 102, 255, 0.15) 0%, transparent 50%);
         }
 
-        /* --- 4-TIER DONATION SYSTEM --- */
-        .tier-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;
+        .glitch-header {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4rem; font-weight: 900;
+            line-height: 1; margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, var(--os-cobalt));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
-        .tier-card {
-            background: #000; border: 1px solid var(--os-cobalt); padding: 30px;
-            text-align: center; transition: 0.4s;
+        /* --- TEXT HEAVY ENGAGEMENT WINDOWS --- */
+        .window-pane {
+            background: rgba(10, 10, 20, 0.8);
+            border: 1px solid #1a1a2e; border-left: 4px solid var(--os-cobalt);
+            padding: 50px; margin-bottom: 50px;
+            box-shadow: 20px 20px 0px rgba(0, 102, 255, 0.05);
         }
 
-        .tier-card:hover { transform: scale(1.05); box-shadow: 0 0 30px var(--os-cobalt); }
+        .matrix-text { font-size: 1rem; line-height: 1.8; color: #ccc; }
+        .highlight { color: var(--os-neon); font-weight: bold; }
 
-        select.duration-picker {
-            background: #111; color: var(--os-neon); border: 1px solid var(--os-cobalt);
-            padding: 10px; margin-top: 20px; width: 100%;
+        /* --- 4-TIER SUBSCRIPTION --- */
+        .subscription-matrix {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;
+            padding: 50px 0;
         }
 
-        /* --- FOOTER --- */
-        footer {
-            padding: 80px 8%; background: #000; border-top: 3px solid var(--os-cobalt);
-            display: flex; justify-content: space-between; align-items: center;
+        .tier-box {
+            background: #05050a; border: 1px solid #222; padding: 40px;
+            text-align: left; position: relative; overflow: hidden;
+        }
+
+        .tier-box:hover { border-color: var(--os-cobalt); }
+        .tier-box::after {
+            content: ""; position: absolute; top: 0; right: 0;
+            width: 50px; height: 50px; background: var(--os-cobalt);
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
         }
     </style>
 </head>
@@ -97,81 +118,61 @@
             <img src="KINOS LOGO.png" alt="KinOS Vanguard Seal">
         </div>
         <nav>
-            <a href="index.html" class="nav-link">KERNEL</a>
-            <a href="#about" class="nav-link">ABOUT_US</a>
-            <a href="#donations" class="nav-link">FUND_FUTURE</a>
-            <a href="#grants" class="nav-link">GRANTS</a>
-            <a href="#hardware" class="nav-link">DEVICES</a>
+            <a href="#kernel" class="nav-link">SYSTEM_KERNEL</a>
+            <a href="#psychology" class="nav-link">COGNITIVE_OATH</a>
+            <a href="#donations" class="nav-link">COMMITMENT_MATRIX</a>
+            <a href="#grants" class="nav-link">GOV_ALIGNMENT</a>
         </nav>
-    </header>
+        <div style="width: 150px;"></div> </header>
 
-    <main>
-        <section id="about" class="os-window">
-            <h1 style="font-family: 'Orbitron'; color: var(--os-cobalt);">KinOS: The American Operating System</h1>
-            <p><strong>KinOS</strong> is a revolutionary non-profit endeavor building the next generation of American infrastructure. We are more than just a gaming OS; we are a high-productivity ecosystem integrating AI, Blockchain minting, and advanced prototyping tools.</p>
-            <p>Our mission is to empower communities to design and own the <strong>next top innovative products</strong>. By partnering with local hubs and worldwide events, we ensure that the citizens responsible for innovation are the ones who benefit from its success.</p>
-        </section>
+    <main class="hero-section">
+        <h1 class="glitch-header">WHERE ELITE MINDS <br>MINT THE FUTURE.</h1>
+        
+        <div id="psychology" class="window-pane">
+            <h2 style="font-family: 'Orbitron'; color: var(--os-neon);">THE KINOS PSYCHOLOGY: BEYOND THE SCREEN</h2>
+            <p class="matrix-text">
+                Gaming is not a pastime; it is the <span class="highlight">ultimate cognitive gym</span>. At KinOS, we leverage high-stakes gaming psychology—dopamine regulation, rapid decision-making, and strategic endurance—to pivot the American youth toward world-class innovation. 
+                <br><br>
+                We have formed a <span class="highlight">Intergenerational Mentorship Nexus</span>. Whether you are a 10-year-old coding prodigy or a 60-year-old hardware engineer, KinOS is your collaborative Operating System. This is where <span class="highlight">Government Engagement</span> meets <span class="highlight">Community Autonomy</span>. We aren't just playing; we are prototyping the decentralized infrastructure of tomorrow.
+            </p>
+        </div>
 
-        <section id="donations" class="os-window">
-            <h2 style="font-family: 'Orbitron'; color: var(--os-neon); text-align: center;">4-TIER COMMITMENT PROTOCOL</h2>
-            <div class="tier-grid">
-                <div class="tier-card">
+        <div id="donations" class="window-pane">
+            <h2 style="font-family: 'Orbitron'; text-align: center;">4-TIER COMMITMENT PROTOCOL</h2>
+            <p style="text-align: center; color: var(--os-neon);">Secure your legacy. Select a tier and lock your commitment duration (1mo - 10yrs).</p>
+            
+            <div class="subscription-matrix">
+                <div class="tier-box">
                     <h3>CADET</h3>
-                    <p>$10 / Month</p>
-                    <select class="duration-picker">
-                        <option>1 Month Commitment</option>
-                        <option>12 Months (1 Year)</option>
-                        <option>10 Years (Legacy)</option>
+                    <p>Foundation level engagement for young innovators (Ages 10+).</p>
+                    <select style="width:100%; padding:10px; background:#111; color:white; border:1px solid var(--os-cobalt);">
+                        <option>1 Month</option><option>1 Year</option><option>10 Years</option>
                     </select>
-                    <button style="margin-top:20px; background:var(--os-cobalt); border:none; color:white; padding:10px 20px;">INITIATE</button>
                 </div>
-                <div class="tier-card" style="border-color: #fff;">
+                <div class="tier-box">
                     <h3>SENTINEL</h3>
-                    <p>$50 / Month</p>
-                    <select class="duration-picker">
-                        <option>1 Month Commitment</option>
-                        <option>12 Months (1 Year)</option>
-                        <option>10 Years (Legacy)</option>
+                    <p>Community protector and hardware beta-tester.</p>
+                    <select style="width:100%; padding:10px; background:#111; color:white; border:1px solid var(--os-cobalt);">
+                        <option>1 Month</option><option>1 Year</option><option>10 Years</option>
                     </select>
-                    <button style="margin-top:20px; background:white; color:black; padding:10px 20px;">INITIATE</button>
                 </div>
-                <div class="tier-card">
+                <div class="tier-box">
                     <h3>VANGUARD</h3>
-                    <p>$150 / Month</p>
-                    <select class="duration-picker">
-                        <option>1 Month Commitment</option>
-                        <option>12 Months (1 Year)</option>
-                        <option>10 Years (Legacy)</option>
+                    <p>Elite status. Direct line to Government & NGO stakeholders.</p>
+                    <select style="width:100%; padding:10px; background:#111; color:white; border:1px solid var(--os-cobalt);">
+                        <option>1 Month</option><option>1 Year</option><option>10 Years</option>
                     </select>
-                    <button style="margin-top:20px; background:var(--os-cobalt); border:none; color:white; padding:10px 20px;">INITIATE</button>
                 </div>
-                <div class="tier-card" style="border: 2px solid var(--os-neon);">
+                <div class="tier-box">
                     <h3>ARCHITECT</h3>
-                    <p>$500 / Month</p>
-                    <select class="duration-picker">
-                        <option>1 Month Commitment</option>
-                        <option>12 Months (1 Year)</option>
-                        <option>10 Years (Legacy)</option>
+                    <p>Legacy founder. Own a seat at the innovation table.</p>
+                    <select style="width:100%; padding:10px; background:#111; color:white; border:1px solid var(--os-cobalt);">
+                        <option>1 Month</option><option>1 Year</option><option>10 Years</option>
                     </select>
-                    <button style="margin-top:20px; background:var(--os-neon); border:none; color:black; padding:10px 20px;">INITIATE</button>
                 </div>
             </div>
-            <p style="font-size: 0.8rem; margin-top: 30px; text-align: center; color: #888;">*All donations go directly into Community Hardware Prototyping and STEAM Education Grants.</p>
-        </section>
-
-        <section id="hardware" class="os-window">
-            <h2 style="color: var(--os-cobalt);">DEVICE PROTOTYPING & INNOVATION</h2>
-            <p>We are currently prototyping high-performance devices supported by <strong>KinOS</strong>. Using the 180°C thermal-tested components and the <strong>[Corsair Vengeance i7500]</strong> as our training kernel, we are building the hardware America needs to stay competitive.</p>
-        </section>
-    </main>
-
-    <footer>
-        <img src="KINOS LOGO.png" alt="KinOS Logo Footer" style="height: 80px; opacity: 0.5;">
-        <div style="text-align: right; color: #555;">
-            &copy; 2026 KinOS | Philadelphia Hub | AEA H.ORG Partner<br>
-            Changing the way America innovates.
         </div>
-    </footer>
+    </main>
 
 </body>
 </html>
