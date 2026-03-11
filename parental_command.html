@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Parental Command & Safety Oversight</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-gold: #ffcc00;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- PARENTAL DASHBOARD --- */
+        main { margin-top: 280px; padding: 0 10% 100px 10%; }
+
+        .dashboard-container {
+            display: grid; grid-template-columns: 300px 1fr; gap: 40px;
+        }
+
+        .cadet-profile {
+            background: rgba(255, 255, 255, 0.02); border: 1px solid #222; padding: 30px;
+            text-align: center;
+        }
+
+        .safety-status {
+            padding: 10px; border: 1px solid var(--os-neon);
+            color: var(--os-neon); font-size: 0.6rem; font-weight: 900;
+            margin-top: 20px; text-transform: uppercase;
+        }
+
+        .quest-log {
+            background: #050510; border: 1px solid #1a1a2e; padding: 30px;
+        }
+
+        .quest-entry {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 0; border-bottom: 1px solid #111;
+        }
+
+        .quest-info h4 { font-family: 'Orbitron'; margin: 0; font-size: 0.85rem; color: var(--os-gold); }
+        .quest-info p { margin: 5px 0 0 0; font-size: 0.7rem; color: #666; }
+
+        .progress-circle {
+            width: 40px; height: 40px; border: 3px solid var(--os-cobalt);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 0.6rem; font-weight: 900;
+        }
+
+        .alert-box {
+            margin-top: 40px; padding: 20px; background: rgba(255, 0, 0, 0.05);
+            border: 1px solid #440000; display: flex; align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav style="display: flex; gap: 20px;">
+                <a href="index.html" style="color: var(--os-neon); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ KERNEL ]</a>
+                <a href="guardian_oversight.html" style="color: #fff; text-decoration: none; font-size: 0.75rem; font-weight: 900; border-bottom: 2px solid var(--os-neon);">[ PARENTAL_COMMAND ]</a>
+            </nav>
+            <div style="font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-neon);">MONITORED_BY_AEAH.org</div>
+        </div>
+    </header>
+
+    <main>
+        <div class="dashboard-container">
+            <aside>
+                <div class="cadet-profile">
+                    <div style="width: 100px; height: 100px; background: #111; border: 2px solid var(--os-cobalt); margin: 0 auto 20px auto;"></div>
+                    <h2 style="font-family: 'Orbitron'; font-size: 1rem; margin: 0;">CADET_JAX_04</h2>
+                    <p style="font-size: 0.6rem; color: #555;">PHILADELPHIA HUB | NODE ZERO</p>
+                    <div class="safety-status">AEAH.org Shield: ACTIVE</div>
+                    
+                    <div style="margin-top: 30px; text-align: left;">
+                        <span style="font-size: 0.6rem; color: #444; display: block;">HARDWARE_SYNC:</span>
+                        <span style="font-size: 0.75rem; color: #ccc;">MAKINZINE PRO v1.2</span>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="quest-log">
+                <h3 style="font-family: 'Orbitron'; font-size: 1rem; margin-top: 0; color: var(--os-neon);">ACTIVE_LEARNING_PATHWAY</h3>
+                
+                <div class="quest-entry">
+                    <div class="quest-info">
+                        <h4>Hardware Anatomy 101</h4>
+                        <p>Identified components on the MAKINZINE PRO circuit board.</p>
+                    </div>
+                    <div class="progress-circle">100%</div>
+                </div>
+
+                <div class="quest-entry">
+                    <div class="quest-info">
+                        <h4>Sovereign Encryption Lab</h4>
+                        <p>Simulating an AEAH.org security handshake.</p>
+                    </div>
+                    <div class="progress-circle" style="border-color: var(--os-gold);">45%</div>
+                </div>
+
+                <div class="quest-entry">
+                    <div class="quest-info" style="opacity: 0.4;">
+                        <h4>Corsair i7500 Cluster Management</h4>
+                        <p>Advanced AI Node coordination (Locked until Level 5).</p>
+                    </div>
+                    <div class="progress-circle" style="border-color: #333; color: #333;">0%</div>
+                </div>
+
+                <div class="alert-box">
+                    <div style="color: #ff0000; font-size: 1.2rem; margin-right: 20px;">!</div>
+                    <div style="font-size: 0.7rem; color: #aaa;">
+                        <b style="color: #fff;">Safety Insight:</b> Cadet Jax_04 attempted to access an unverified external node. <b>AEAH.org</b> successfully blocked the connection. No action required.
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+</body>
+</html>
