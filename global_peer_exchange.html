@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Global Peer Exchange</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-gold: #ffcc00;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- EXCHANGE LAYOUT --- */
+        main { margin-top: 280px; padding: 0 10% 100px 10%; }
+
+        .exchange-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;
+        }
+
+        .node-card {
+            background: rgba(255, 255, 255, 0.02); border: 1px solid #1a1a2e;
+            padding: 30px; position: relative; overflow: hidden;
+        }
+
+        .node-card::before {
+            content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+            background: var(--os-cobalt);
+        }
+
+        .node-card.online::before { background: var(--os-neon); box-shadow: 0 0 15px var(--os-neon); }
+
+        .node-location { font-family: 'Orbitron'; font-size: 1.1rem; color: #fff; margin-bottom: 5px; }
+        .node-tag { font-size: 0.6rem; color: var(--os-gold); text-transform: uppercase; letter-spacing: 2px; }
+
+        .data-stream {
+            margin-top: 20px; font-size: 0.65rem; color: #444; font-family: 'JetBrains Mono';
+            background: #000; padding: 10px; border: 1px solid #111;
+        }
+
+        .connect-btn {
+            margin-top: 25px; width: 100%; background: transparent;
+            border: 1px solid var(--os-cobalt); color: var(--os-cobalt);
+            padding: 10px; font-family: 'Orbitron'; font-size: 0.7rem;
+            cursor: pointer; font-weight: 800;
+        }
+
+        .connect-btn:hover { background: var(--os-cobalt); color: #fff; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav style="display: flex; gap: 20px;">
+                <a href="index.html" style="color: var(--os-neon); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ KERNEL ]</a>
+                <a href="global_peer_exchange.html" style="color: #fff; text-decoration: none; font-size: 0.75rem; font-weight: 900; border-bottom: 2px solid var(--os-neon);">[ GLOBAL_EXCHANGE ]</a>
+            </nav>
+            <div style="font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-neon);">NETWORK_PEERING_AEAH.org</div>
+        </div>
+    </header>
+
+    <main>
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h1 style="font-family: 'Orbitron'; font-size: 2.2rem; margin: 0;">GLOBAL_PEER_EXCHANGE</h1>
+            <p style="color: #666;">Synchronizing hardware-sovereign guilds across the planet.</p>
+        </div>
+
+        <div class="exchange-grid">
+            <div class="node-card online">
+                <div class="node-location">PHILADELPHIA, USA</div>
+                <div class="node-tag">HUB_ORIGIN [NODE_ZERO]</div>
+                <div class="data-stream">
+                    > ACTIVE_CADETS: 1,402<br>
+                    > MAKINZINE_UNITS: 412<br>
+                    > AEAH_SHIELD: 100%
+                </div>
+                <button class="connect-btn">VIEW_LOCAL_BLUEPRINTS</button>
+            </div>
+
+            <div class="node-card online">
+                <div class="node-location">NAIROBI, KENYA</div>
+                <div class="node-tag">REGIONAL_HUB_02</div>
+                <div class="data-stream">
+                    > ACTIVE_CADETS: 894<br>
+                    > MAKINZINE_UNITS: 210<br>
+                    > AEAH_SHIELD: 100%
+                </div>
+                <button class="connect-btn">CONNECT_TO_PEER</button>
+            </div>
+
+            <div class="node-card">
+                <div class="node-location">BERLIN, GERMANY</div>
+                <div class="node-tag">REGIONAL_HUB_03</div>
+                <div class="data-stream">
+                    > INITIALIZING_INFRASTRUCTURE...<br>
+                    > AWAITING_MAKINZINE_SHIPMENT<br>
+                    > AEAH_SHIELD: PENDING
+                </div>
+                <button class="connect-btn">VIEW_HUB_STATUS</button>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
