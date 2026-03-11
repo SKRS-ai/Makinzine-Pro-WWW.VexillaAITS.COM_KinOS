@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Mentor Dispatch & Technical Support</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --os-gold: #ffcc00;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- DISPATCH CONTENT --- */
+        main { margin-top: 280px; padding: 0 10% 100px 10%; }
+
+        .dispatch-grid {
+            display: grid; grid-template-columns: 1fr 350px; gap: 40px;
+        }
+
+        .ticket-list h2 { font-family: 'Orbitron'; color: var(--os-gold); font-size: 1.2rem; margin-bottom: 30px; }
+
+        .ticket-card {
+            background: #050510; border: 1px solid #1a1a2e;
+            padding: 25px; margin-bottom: 20px; transition: 0.3s;
+        }
+
+        .ticket-card:hover { border-color: var(--os-neon); box-shadow: 0 0 15px rgba(0, 242, 255, 0.1); }
+
+        .ticket-header { display: flex; justify-content: space-between; margin-bottom: 15px; }
+        .ticket-id { font-size: 0.6rem; color: #555; }
+        .urgency { font-size: 0.6rem; font-weight: 900; padding: 2px 8px; background: #222; }
+        .high { color: #ff0000; border: 1px solid #ff0000; }
+
+        .ticket-desc { font-size: 0.85rem; color: #ccc; margin-bottom: 20px; }
+
+        .accept-btn {
+            background: var(--os-cobalt); color: #fff; border: none;
+            padding: 10px 20px; font-family: 'Orbitron'; font-size: 0.7rem;
+            font-weight: 900; cursor: pointer;
+        }
+
+        /* SIDEBAR */
+        .mentor-stats {
+            background: rgba(255, 255, 255, 0.02); border: 1px solid #222; padding: 30px;
+        }
+
+        .stat-item { margin-bottom: 25px; }
+        .stat-label { font-size: 0.6rem; color: #666; display: block; margin-bottom: 5px; }
+        .stat-val { font-family: 'Orbitron'; font-size: 1.1rem; color: var(--os-neon); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav style="display: flex; gap: 20px;">
+                <a href="index.html" style="color: var(--os-neon); text-decoration: none; font-size: 0.75rem; font-weight: 900;">[ KERNEL ]</a>
+                <a href="mentor_dispatch.html" style="color: #fff; text-decoration: none; font-size: 0.75rem; font-weight: 900; border-bottom: 2px solid var(--os-gold);">[ MENTOR_DISPATCH ]</a>
+            </nav>
+            <div style="font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-neon);">ENCRYPTED_BY_AEAH.org</div>
+        </div>
+    </header>
+
+    <main>
+        <div class="dispatch-grid">
+            <section class="ticket-list">
+                <h2>ACTIVE_TECHNICAL_TICKETS</h2>
+
+                <div class="ticket-card">
+                    <div class="ticket-header">
+                        <span class="ticket-id">TICKET_ID: MKZ-772-BIOS</span>
+                        <span class="urgency high">CRITICAL_HELP_REQUIRED</span>
+                    </div>
+                    <div class="ticket-desc">
+                        Cadet <b>PHL_JAX</b> is experiencing a kernel panic during the AEAH.org handshake on a <b>MAKINZINE PRO</b> unit. Requires a Senior Architect for remote debugger assistance.
+                    </div>
+                    <button class="accept-btn">ACCEPT_MISSION</button>
+                </div>
+
+                <div class="ticket-card">
+                    <div class="ticket-header">
+                        <span class="ticket-id">TICKET_ID: CSR-901-AI</span>
+                        <span class="urgency">STANDARD_QUEST</span>
+                    </div>
+                    <div class="ticket-desc">
+                        Reviewing neural weight distributions on <b>Corsair Vengeance i7500</b> Node 04. Cadet needs guidance on localizing AI processing to reduce latency.
+                    </div>
+                    <button class="accept-btn">ACCEPT_MISSION</button>
+                </div>
+            </section>
+
+            <aside>
+                <div class="mentor-stats">
+                    <h3 style="font-family: 'Orbitron'; font-size: 0.8rem; margin-top: 0;">GUILD_STRENGTH</h3>
+                    <div class="stat-item">
+                        <span class="stat-label">ACTIVE_MENTORS</span>
+                        <span class="stat-val">128</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">TICKETS_SOLVED</span>
+                        <span class="stat-val">2,491</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">AVERAGE_RESPONSE</span>
+                        <span class="stat-val">14m : 22s</span>
+                    </div>
+                    <div style="border-top: 1px solid #333; padding-top: 20px;">
+                        <p style="font-size: 0.7rem; color: #666;">Want to enlist as a Senior Architect? Your background in hardware engineering is a critical asset to the Philadelphia Hub.</p>
+                        <a href="recruitment_nexus.html" style="color: var(--os-gold); font-size: 0.7rem; font-weight: 800; text-decoration: none;">[ APPLY_FOR_CERTIFICATION ]</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+</body>
+</html>
