@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Technical Handover & Repository Manifest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.5;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); margin-top: 45px; margin-left: 60px;}
+
+        /* --- HANDOVER CONTENT --- */
+        main { margin-top: 280px; padding: 0 10% 100px 10%; }
+
+        .terminal-window {
+            background: #000; border: 1px solid #333;
+            padding: 40px; box-shadow: inset 0 0 30px rgba(0, 102, 255, 0.1);
+        }
+
+        .dir-tree { color: var(--os-neon); font-size: 0.85rem; margin-bottom: 40px; }
+
+        .file-list {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 15px;
+            font-size: 0.75rem; border-top: 1px solid #222; padding-top: 20px;
+        }
+
+        .file-item { color: #888; border-bottom: 1px solid #111; padding: 5px 0; }
+        .file-item b { color: #ccc; }
+
+        .tech-spec {
+            margin-top: 40px; padding: 20px; background: rgba(0, 102, 255, 0.05);
+            border: 1px solid var(--os-cobalt);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <div style="font-family: 'Orbitron'; color: var(--os-neon); font-size: 0.8rem;">REPO_HANDOVER_v1.0</div>
+            <div style="width: 120px;"></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="terminal-window">
+            <h1 style="font-family: 'Orbitron'; font-size: 1.5rem; margin-top: 0;">TECHNICAL_HANDOVER_PROTOCOL</h1>
+            
+            <div class="dir-tree">
+                Root/<br>
+                ├── assets/<br>
+                │   ├── images/ (KINOS LOGO.png, Product_Renders)<br>
+                │   └── fonts/ (Orbitron, JetBrains Mono)<br>
+                ├── css/ (global_style.css)<br>
+                └── nodes/ (All .html files listed below)<br>
+            </div>
+
+            <h3 style="font-family: 'Orbitron'; font-size: 0.8rem; color: var(--os-cobalt);">REPOSITORY_FILES (20 TOTAL)</h3>
+            <div class="file-list">
+                <div class="file-item">01. <b>index.html</b> (The Kernel)</div>
+                <div class="file-item">02. <b>grants_initiative.html</b> (Funding)</div>
+                <div class="file-item">03. <b>guild_subscription.html</b> (Revenue)</div>
+                <div class="file-item">04. <b>hardware_lab.html</b> (R&D)</div>
+                <div class="file-item">05. <b>community_hubs.html</b> (Philly HQ)</div>
+                <div class="file-item">06. <b>recruitment_nexus.html</b> (Enlist)</div>
+                <div class="file-item">07. <b>impact_analytics.html</b> (Social Data)</div>
+                <div class="file-item">08. <b>security_protocols.html</b> (Safety)</div>
+                <div class="file-item">09. <b>os_manifesto.html</b> (Philosophy)</div>
+                <div class="file-item">10. <b>association_nexus.html</b> (Alliances)</div>
+                <div class="file-item">11. <b>faq_terminal.html</b> (Intel)</div>
+                <div class="file-item">12. <b>press_archive.html</b> (Media)</div>
+                <div class="file-item">13. <b>legacy_archives.html</b> (Founders)</div>
+                <div class="file-item">14. <b>developer_console.html</b> (Admin)</div>
+                <div class="file-item">15. <b>global_grant_tracker.html</b> (Mission)</div>
+                <div class="file-item">16. <b>member_portal_v1.html</b> (Cadet UX)</div>
+                <div class="file-item">17. <b>guardian_oversight.html</b> (Parental)</div>
+                <div class="file-item">18. <b>global_sitemap.html</b> (The Map)</div>
+                <div class="file-item">19. <b>mission_dossier.html</b> (The Pitch)</div>
+                <div class="file-item">20. <b>technical_handover.html</b> (The Repo)</div>
+            </div>
+
+            <div class="tech-spec">
+                <h4 style="font-family: 'Orbitron'; margin: 0; font-size: 0.8rem;">SYSTEM_REQUIREMENTS</h4>
+                <p style="font-size: 0.75rem; color: #aaa;">
+                    Hosting: Sovereign Node Recommended. <br>
+                    Hardware: Optimized for 4K display on <b>Corsair Vengeance i7500</b>. <br>
+                    Governance: Compliant with AEA H.org Safety Enclaves.
+                </p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
