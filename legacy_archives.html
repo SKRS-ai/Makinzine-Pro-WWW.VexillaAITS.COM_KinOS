@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinOS | Legacy Archives & Founder Registry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --os-cobalt: #0066ff;
+            --os-neon: #00f2ff;
+            --os-obsidian: #010103;
+            --header-h: 130px;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--os-obsidian);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- STABILIZED TITAN HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-h);
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(30px);
+            z-index: 10000; display: flex; flex-direction: column; align-items: center;
+        }
+
+        .header-top {
+            width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; height: 100%;
+        }
+
+        .logo-anchor {
+            display: flex; align-items: center;
+            padding-top: 45px; padding-left: 60px;
+        }
+
+        .logo-anchor img { height: 190px; filter: drop-shadow(0 0 35px var(--os-cobalt)); }
+
+        .system-border {
+            width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--os-cobalt), transparent);
+            margin-top: 50px;
+        }
+
+        nav { display: flex; gap: 20px; }
+        .nav-link {
+            text-decoration: none; color: var(--os-neon);
+            font-size: 0.75rem; font-weight: 900; text-transform: uppercase;
+            padding: 10px; transition: 0.4s;
+        }
+
+        /* --- LEGACY CONTENT --- */
+        main { margin-top: 280px; padding: 0 10% 100px 10%; text-align: center; }
+
+        .registry-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .registry-entry {
+            border: 1px solid #1a1a2e;
+            padding: 20px;
+            background: rgba(0, 102, 255, 0.02);
+            transition: 0.3s;
+        }
+
+        .registry-entry:hover {
+            border-color: var(--os-neon);
+            background: rgba(0, 242, 255, 0.05);
+        }
+
+        .rank-tag {
+            font-size: 0.6rem;
+            color: var(--os-neon);
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .founder-name {
+            font-family: 'Orbitron';
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .legacy-stat-box {
+            background: #000;
+            border: 1px solid var(--os-cobalt);
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-anchor">
+                <img src="KINOS LOGO.png" alt="KinOS Shield">
+            </div>
+            <nav>
+                <a href="index.html" class="nav-link">KERNEL</a>
+                <a href="guild_subscription.html" class="nav-link">GUILD</a>
+                <a href="legacy_archives.html" class="nav-link" style="color:#fff; border-bottom: 2px solid var(--os-neon);">LEGACY</a>
+                <a href="impact_analytics.html" class="nav-link">IMPACT</a>
+            </nav>
+            <div style="width: 120px;"></div>
+        </div>
+        <div class="system-border"></div>
+    </header>
+
+    <main>
+        <div class="legacy-stat-box">
+            <h1 style="font-family: 'Orbitron'; color: var(--os-neon); margin-top: 0;">LEGACY_REGISTRY</h1>
+            <p style="color: #888; max-width: 800px; margin: 0 auto;">
+                These individuals and organizations have secured a 10-year commitment to the KinOS ecosystem. Their contribution powers the <strong>[Corsair Vengeance i7500]</strong> AI clusters and the <strong>[E-WIN 2.0 RGB]</strong> prototyping labs that serve our youth.
+            </p>
+        </div>
+
+        <h2 style="font-family: 'Orbitron'; font-size: 1.2rem; border-bottom: 1px solid #222; padding-bottom: 10px;">ARCHITECT_LEVEL_FOUNDERS</h2>
+        
+        <div class="registry-container">
+            <div class="registry-entry"><span class="rank-tag">ARCHITECT</span><div class="founder-name">PHILLY_TECH_VANGUARD</div></div>
+            <div class="registry-entry"><span class="rank-tag">ARCHITECT</span><div class="founder-name">CYBER_SHELTER_LLC</div></div>
+            <div class="registry-entry"><span class="rank-tag">ARCHITECT</span><div class="founder-name">AEA_SAFETY_INITIATIVE</div></div>
+            <div class="registry-entry"><span class="rank-tag">ARCHITECT</span><div class="founder-name">GEN_Z_INNOVATIONS</div></div>
+            <div class="registry-entry"><span class="rank-tag">ARCHITECT</span><div class="founder-name">QUANTUM_GAMING_HUB</div></div>
+            <div class="registry-entry"><span class="rank-tag">ARCHITECT</span><div class="founder-name">NEURAL_BLOCK_DATA</div></div>
+        </div>
+
+        <p style="margin-top: 80px; font-size: 0.8rem; color: #444;">
+            Registry data is immutable and stored on the KinOS Sovereign Ledger.
+        </p>
+    </main>
+
+</body>
+</html>
